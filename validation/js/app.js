@@ -1,3 +1,7 @@
+
+//Form validation script
+// A. Adu-Sarkodie
+
 function validateForm(){
     var firstNameField = document.getElementById("first-name");
     var emailField = document.getElementById("email");
