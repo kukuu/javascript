@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Jasmine v2.0 DOM Tests Spec Runner</title>
+ 
+  <link rel="shortcut icon" type="image/png" href="images/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-core/jasmine.css">
+ 
+  <script type="text/javascript" src="lib/jasmine-core/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-core/jasmine-html.js"></script>
+  <script type="text/javascript" src="lib/jasmine-core/boot.js"></script>
+  <script type="text/javascript" src="lib/jasmine-core/jquery-2.2.0.js"></script>
+  <script type="text/javascript" src="lib/jasmine-core/jasmine-jquery.js"></script>
+   
+  <script type="text/javascript">
+     var MSG = "Show Table";
+      
+     function hideMessage() {
+       $( "#pMsg" ).html("Hide Table");
+     }
+     
+     function showMessage() {
+       $( "#pMsg" ).html(MSG); 
+     }
+      
+     function setUpHTMLFixture() {
+       setFixtures('<form id="testForm" action="">'
+                  +'  <h1>Test Form</h1>'
+                  +'  <input type="text" id="txtMessage">'
+                  +'  <br>'
+                  +'  <button id="btnHideMessage" type="button" onclick="hideMessage()">Hide Message</button>'
+                  +'  <button id="btnShowMessage" type="button" onclick="showMessage()">Show Message</button>'
+                  +'  <br>'
+                  +'  <p id="pMsg"></p>'
+                  +'</form>');
+       
+    }
+ 
+describe("Hide and Show Table Test", function() { 
+  describe("Hide and Show Click Event Tests", function() {
+    var spyEvent;
+       
+    beforeEach(function() {
+      setUpHTMLFixture();
+    });
+       
+    it ("should invoke the btnShowMessage click event.", function() {
+      spyEvent = spyOnEvent('#btnShowMessage', 'click');
+      $('#btnShowMessage').trigger( "click" );
+           
+      expect('click').toHaveBeenTriggeredOn('#btnShowMessage');
+      expect(spyEvent).toHaveBeenTriggered();
+    });
+       
+    it ("should invoke the btnHideMessage click event.", function() {
+      spyEvent = spyOnEvent('#btnHideMessage', 'click');
+      $('#btnHideMessage').trigger( "click" );
+           
+      expect('click').toHaveBeenTriggeredOn('#btnHideMessage');
+      expect(spyEvent).toHaveBeenTriggered();
+    });
+  });
+       
+  describe("Show message tests", function() {
+    beforeEach(function() {
+      setUpHTMLFixture();
+      $('#txtMessage').val(MSG);
+      $('#btnShowMessage').trigger( "click" );
+    });
+     
+    it ("should display the message when button is clicked to 'Show Table'.", function() {
+      expect($('#pMsg')).toHaveText($('#txtMessage').val());
+    });
+  });
+    
+  describe("Hide message tests", function() {
+    beforeEach(function() {
+      setUpHTMLFixture();
+      $('#pMsg').text(MSG);
+      $('#btnHideMessage').trigger( "click" );
+    });
+     
+    it ("should change the message when button is clicked to 'Hide Table'.", function() {
+      expect($('#pMsg')).toHaveText("Hide Table");
+    });
+  });
+});
+</script>
+</head>
+<body>
+</body>
+</html>

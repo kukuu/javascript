@@ -1,0 +1,52 @@
+Help instructions to follow
+............................
+
+1. Test resource folder name:
+Candidate Name: Alexander Adu-Sarkodie
+Company: Essensys
+Name of test: alexas-test
+
+1. Directory structure:
+
+ node_modules
+    => bodyParser
+    => express
+
+ public
+    => assets
+       => styles
+       => SAAS
+       => scripts
+       => images
+
+    => lib
+
+    => scripts
+       => REACT
+
+    => index
+
+    => ncc (CSV)
+
+ tests
+    => jasmine
+
+ ux-specs
+
+ app.json
+
+ comments.json
+
+ server.js
+
+2. Server command to execute:
+ > node server
+
+
+3. csv (Spreadsheet)Tabular Chat is displayed using HighChartJS
+
+(Check Browser is not affected by CORS - Possibly Chrome. FF OK).
+
+4. Update the CSV and changes are picked up by the application
+
+5. Enhanced the application with a live run time "Text Chat Application (viewChat)" I have developed in REACT. Useful to support customer care. The JSON data is updated at runtime as you type, so the data can be re-used and fed into any other API for any data intensive application

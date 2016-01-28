@@ -1,0 +1,105 @@
+			
+$border: 1px solid #808080;
+$smallfont: 0.80em;
+$centertext: center;
+$displaynone: none;
+
+.header {
+	margin-bottom: 2em;
+	text-align: right;
+}
+.f-nav {
+	border-top: $border;
+	margin: 0 -1em;
+}
+.f-nav li a {
+	display: block;
+	padding: 0.8em 1em;
+	border-bottom: $border;
+	font-size: 0.75em;
+}
+
+.f-nav li a.active {
+	color: #b2d650;
+	font-weight: bold;
+}
+.content img {
+	float: right;
+}
+div.panel, p.flip {
+	margin: 0px;
+	padding: 5px;
+	text-align: $centertext;
+}
+
+p.flip {
+	width: 10%;
+	text-align: center;
+	margin-left: 45%;background: #e5eecc;
+	background: #e5eecc;
+}
+
+div.panel {
+	height:120px;
+	display:none;
+}
+
+.pattern {
+    background: $displaynone;
+    border-bottom: none;
+    overflow: visible;
+}
+
+table {
+	width: 100%;
+}
+
+.commentAuthor {
+	color: #ffcc33;
+	font-weight: bold;
+	padding-top: 5px;
+	margin-bottom: 0px;
+}
+
+input[type=submit] {
+	margin-top: -1px;
+}
+
+
+@media screen and (min-width: 40em) {
+	.f-nav-link {
+		display: $displaynone;
+	}
+	.f-nav {
+		position: absolute;
+		top: 0;
+		left: 0;
+		border: 0;
+		margin: 0 0 0 17%;
+	}
+	.f-nav li {
+		display: inline-block;
+		margin-right: 0.25em;
+	}
+	.f-nav li a {
+		border: 0;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.f-nav li a {
+		text-align: $centertext;
+	}
+	
+	.f-nav {
+	    margin-top: 80px;
+	}
+
+	p.flip {
+	    width: 17%;	    
+	}
+
+	.csv,p.flip {
+	 	font-size:$smallfont;
+	}
+}
