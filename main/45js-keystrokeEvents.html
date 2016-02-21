@@ -1,0 +1,27 @@
+<!DOCTYPE  html>
+<html lang="en">
+	<head>
+		<title>Displaying Keypreses</title>
+		<script type="text/javascript">
+			function displayKey(e){
+				//which key was pressed?
+				if (e.keyCode){
+					var keycode = e.keyCode;
+				}
+				else {
+					var keycode = e.which;
+				}
+
+				character =String.fromCharCode(keycode);
+				//Find object for the destination paragraph
+				var keys_paragraph = document.getElementById('keys');
+				keys_paragraph.innerHTML += character;
+			}
+
+		</script
+	</head>
+	<body onkeypress="displayKey(event)">
+		<h4>Displaying typed characters (Please type)</h4>
+		<p id="keys"></p>
+	</body>
+</html>

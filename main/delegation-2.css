@@ -1,0 +1,11 @@
+#chunk {
+width:600px;
+margin: 10px auto;
+padding: 10px;
+background-color: #f2faff;
+border: solid 1px #0051bd;
+}
+
+.dynamic1  li ul {display:none;}
+
+.dynamic  li ul {display:none;}
