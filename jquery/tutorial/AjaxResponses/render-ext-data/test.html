@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Ajax Response</title>
+	<script>
+		$(ready).ready(function(){
+			$(':submit').live('click',function(){
+				var button = $(this).val();
+				$.ajax({
+					data:'button =' + $(this).val(),
+					dataType: 'json',
+					url:'http://home/local/persons.php',
+					error:function(msg){
+						alert(msg.s)
+					},
+					success:function(data){
+						$('#resultList').html('');
+						if(button =='list'){
+							for(var i in data){
+								$(#resultList).append('<li><a href="' + data[i].id + '">' + data[i].persons.title +  data[i].persons.name + data[i].persons.surname +'</a></li>');
+ 				if ( i == 5 ) return false;
+
+							}
+						}
+					},	
+				});
+				return false;
+			
+			})
+		
+		
+		
+		});
+	
+	
+	
+	</script>
+</head>
+
+<body>
+	<form method="post" action="">
+		<button type="submit" value="list">Get List</button>
+	</form>
+	<div id="resultList">Loading.....</div>
+</body>
+</html>

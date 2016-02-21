@@ -1,0 +1,86 @@
+
+// **
+//		Typography mixin library
+//    ------------------------
+//		@version	   1.0
+//		@date			2012-08-08 
+//		@author			Alexander Adu-Sarkodie <alex.adu-sarkodie@thebioagency.com>
+//		@note		   these styles can be used in any LESS component file
+// **
+
+
+@letter-spacing: -0.0425em;
+
+.weight-light () {
+   font-weight: 300;
+   -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.weight-body () {
+   font-weight: 400;
+   -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.weight-bold () {
+   font-weight: 700;
+   -webkit-font-smoothing: antialiased;
+}
+
+
+//		BASIC STYLES
+	
+body {
+	color: @site-text;
+	.weight-body;
+	font: normal 100% Cambria, Georgia, serif; /*serif-heavy font stack: Set our base type size to the browser’s default,which in most cases is 16 pixels.*/
+	line-height: 1.4;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+b,
+strong {
+	.weight-bold;
+}
+
+i,
+em {
+	font-style: italic;
+}
+
+
+//		ANCHOR STYLES
+
+a {
+	text-decoration: none;
+}
+
+a .cta {
+	color: @anchor-color;
+	.weight-bold;
+}
+
+a:hover 
+a:focus {
+	color: @anchor-active;
+	text-decoration: none;
+}
+
+a:active  {
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

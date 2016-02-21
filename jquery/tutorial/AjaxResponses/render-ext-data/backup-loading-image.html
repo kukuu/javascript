@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type='text/css'>
+    
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+$(document).ready(function(){
+    var data = '[{"image":"1.jpg"},{"image":"http:\/\/pcdn.500px.net\/5953805\/d0dd841969187f47e8ad9157713949b4b95b3bda\/4.jpg"},{"image":"http:\/\/pcdn.500px.net\/5735750\/0dd26cb9f53b7bbbedf1b65c0d0aac013f77466c\/4.jpg"}]';
+    var obj = $.parseJSON(data);
+    $.each(obj, function(index,item) {
+       $('#imagewrap').append('<img class="images" src="'+item.image+'" />');         
+    });
+    $('.images').bind('load', function() {
+        alert($(this).width() + 'x' + $(this).height());
+    });  
+});
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <div id="imagewrap"></div>
+  
+</body>
+
+
+</html>
+

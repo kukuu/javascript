@@ -1,0 +1,31 @@
+* http://jsfiddle.net/clickthelink/Uwcuz/1/
+
+* http://stackoverflow.com/questions/15020951/should-i-use-jquery-ajax-api-in-jquerymobile
+
+* http://jsfiddle.net/Gajotres/jLdFj/
+
+* http://localhost/lectures/level_2/addtobasket/add-2-basket.php
+
+* http://localhost/addToBasket/jBasket/jBasket/standard/
+
+* localhost/SPA/addyosmani-backbonejs/index.php
+
+*localhost/SPA/addyosmani-backbonejs/index.php
+
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model?redirectlocale=en-US&redirectslug=JavaScript%2FGuide%2FDetails_of_the_Object_Model
+
+* http://www.goldhawk-college.com/istudio/addtobasket/
+
+* http://html.net/tutorials/javascript/lesson21.php
+
+* http://www.goldhawk-college.com/istudio/cutups/count-down.html
+
+* http://www.goldhawk-college.com/istudio/index.html
+
+* C:\Users\alexs\Documents\DigiTek\forms-validation
+
+* C:\Users\alexs\Documents\DigiTek\AjaxResponses\ajax-xml
+
+* C:\Users\alexs\Documents\BAT\Prototype4\type-1\scripts
+
+* This will be meaty

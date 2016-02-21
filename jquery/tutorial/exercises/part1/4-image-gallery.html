@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> Friends at Marks & Spencer</title>
+  
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  
+  <style type='text/css'>
+  	#imagewrap img {padding:0 10px 10px 0;}
+	h1{color:green;}
+  </style>
+  
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+$(document).ready(function(){
+    var data = '[{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/asia-de-cuba-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/cafe-des-amis-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/oxo-tower-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/tuttons-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/cafe-des-amis-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/asia-de-cuba-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/cafe-des-amis-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/oxo-tower-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/the-ritz-restaurant-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/tuttons-london-1.jpg"}]';
+    var obj = $.parseJSON(data);
+    $.each(obj, function(index,item) {
+       $('#imagewrap').append('<img class="lazy images" src="'+item.image+'" />');         
+    });
+});
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+<!--file:///C:/Users/alexs/Documents/DigiTek/AjaxResponses/render-ext-data/loading-images-2.html-->
+<h1>Friends @  MANDS</h1>
+  <div id="imagewrap"></div>
+</body>
+
+
+</html>
+

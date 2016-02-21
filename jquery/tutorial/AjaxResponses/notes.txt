@@ -1,0 +1,3 @@
+notes;
+
+http://www.jquery4u.com/demos/ajax/

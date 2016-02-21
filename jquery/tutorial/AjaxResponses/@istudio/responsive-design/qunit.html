@@ -1,0 +1,494 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>QUnit</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="viewport" content="Responsive Design, Flexible Grid, Media Queries, Media Query Listeners, HTML5" />
+    <!--<link rel="stylesheet" href="css/wide.css" media="tv and (min-width: 1024px)" />--> 
+    <style type="text/css">
+        @import url("css/wide.css") tv and (min-width: 1024px); 
+    </style>
+    <link href="css/responsive-design-1.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <section>
+        <div id="page">
+            <div class="blog section">
+                <h1 class="lede">iStudio <span>Alexander Adu-Sarkodie - 
+MSc Telematics (Telecommunication  & Informatics)</span></h1>
+                    <article>
+                        <div class="main">
+                           <h2>What is QUnit?</h2>   
+                            <p>QUnit is a powerful, easy-to-use, JavaScript test suite. It's used by jQuery projects to test its code and plugins but is capable of 
+                            testing any generic JavaScript code (and even capable of testing JavaScript code on the server-side). QUnit is especially useful for regression testing.
+                            </p>
+
+                            <p><strong>Regression tests</strong>: <br />
+                            With regression tests, whenever a bug is reported, a test is written that asserts the existence of that particular bug. This is fixed and then commited.</p> 
+
+                            <p>Every time you work on the code again, run the tests. If the bug comes up again - a regression - you'll spot it immediately and know how to fix it, because you know what code you just changed.
+                            Having good unit test coverage makes safe refactoring easy and cheap.</p> 
+                            
+                            
+                            <p>You can run the tests after each small refactoring step and always know what change broke something.
+                            QUnit is similar to other unit testing frameworks like JUnit, but makes use of the features JavaScript provides and helps with testing code in the browser, eg. with its stop/start facilities for testing asynchronous code.
+                            </p> 
+                           
+                            <h3>Setting up a QUnit test environment</h3>                          
+
+                            <ul>
+                                <li>Setup your directories</li>
+                                <li>Download QUnit (and any other testing utilities you will use)</li>
+                                <li>Create a test runner html file</li>
+                                <li>Create a JavaScript test file</li> 
+                                <li>Start writing your tests</li>              
+                            </ul>
+
+                            <h3>File organisation</h3> 
+                            
+                            <p><strong><small>What is SUT?</small></strong> <br /> One of the most important points to keep in mind is that you want to keep your test code and supporting files
+                             physically and logically separate from the code you’re actually trying to write. This actual code is refered to as the System Under Test - SUT. 
+                            So it’s important that you create a separate root folder to house all your test code and supporting libraries.</p>
+                              
+                            <p> The library will include:
+                            
+                                <ul>
+                                    <li>The QUnit Library</li>
+                                    <li>other testing-specific libraries</li>
+                                    <li>your test runner html files</li>
+                                    <li>and the JavaScript files that contain your actual test code</li>                               
+                                </ul>
+                              </p>
+
+                             <p> Other  libraries that are used by the SUT don’t need to be copied over,  they can just be referenced at their original locations, 
+                             along with the SUT itself. A sample directory setup might be as follows:</p>
+
+                             <ul>
+                                <li>
+                                    Project
+                                    <ul>
+                                        <li>Tests
+                                            <ul>
+                                            <li>Libs</li> 
+                                                <li>[Test Code Folders]</li>                                           
+                                            </ul>                                     
+                                        </li>                    
+                                        <li>Source
+                                            <ul>
+                                                <li>[Source Code]</li>                                           
+                                            </ul>                                       
+                                        </li>
+                                        <li>Libs</li>                                 
+                                    </ul>
+                                   </li>  
+                             </ul>
+                     
+                             <p>
+                            In the above sample structure, Projects/Tests/Libs would contain QUnit etc., and Project/Tests/[Test Code Folders] would 
+                            have a structure mimicking that of your JavaScript source code. So if you have a Users directory in your source code that had some javascript in it, 
+                            you would have the same directory in your tests folder to contain tests for that code.</p>
+
+                            <h3>Download QUnit : <a href="https://github.com/jquery/qunit/download"><small>https://github.com/jquery/qunit/download</small></a></h3> 
+
+                            <p>The download file actually has quite a few files in it besides the qunit.js file itself. Amongst them, themed files that can be used in addition to QUnit itself.</p>
+
+                            <h3>Create a test runner html file</h3>
+                            <p><a href="file:///Z:/DROPBOX/ALEXANDER ADU-SARKODIE/snippets/QUnit/index.html"> test i</a></p>
+
+                            <p>As examples, the html could look like any of these  two files; <br />
+            <pre>
+                  i <br />              
+                &lt;!DOCTYPE html&gt;
+                &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+                &lt;head&gt;
+                    &lt;title&gt;QUnit tests&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;QUnit Tests&lt;/h1&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="qu-1.html"&gt;Example 1 - String test&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="sample.html"&gt;sample&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="setupandteardown"&gt;setup and teardown&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+
+                &lt;/body&gt;
+                &lt;/html&gt;
+                               
+            <br />
+                ii<br />
+                &lt;!DOCTYPE html&gt;
+                    &lt;html&gt;
+                        &lt;head&gt;
+                            &lt;meta charset="UTF-8" /&gt;
+                            &lt;title&gt;QUnit Test Suite&lt;/title&gt;
+                            &lt;link rel="stylesheet" href="../qunit/qunit.css"&gt;
+                            &lt;script src="../qunit/qunit.js"&gt;&lt;/script&gt;
+                            &lt;script src="test.js"&gt;&lt;/script&gt;
+                            &lt;script src="deepEqual.js"&gt;&lt;/script&gt;
+                            &lt;script src="swarminject.js"&gt;&lt;/script&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;div id="qunit"&gt;&lt;/div&gt;
+                            &lt;div id="qunit-fixture"&gt;test markup&lt;/div&gt;
+                        &lt;/body&gt;
+                    &lt;/html&gt;                         
+            </pre>                   
+                            </p>  
+
+
+                            <h3> Create a JavaScript test file</h3>
+
+                            <p>The next step is to create a JavaScript test file to contain your tests.  Once this file has been created, add a script tag in your HTML test runner file that points to it. 
+                            Again some forethought here will be to your benefit. Ultimately how many test files will you create? You could just create one, and include all your tests in it, no matter how many tests you author.
+                             That option is probably a bit shortsighted.  As soon as you have a few hundred tests that single html file is going to get a bit unwieldy.  Finding tests within a file that large will be quite difficult.  </p>
+                             
+                            <p> So multiple JavaScript test files is probably a good idea.
+                            Of course you’ll only start with one, but you’ll want to have a logical plan for splitting up your tests into multiple test files.  By far the most common method is to have 1 test file for every source file in your SUT.  In most cases this works well.
+
+                            </p>
+
+                            <p>So as you create more test files, the simple answer is to just add another script tag in your HTML test runner file to point at the new test file.  Although for the first few files this works fine, 
+                            soon you’ll realize that there are some problems with doing this.One of the unfortunate drawbacks of QUnit is that by default it only has three options for choosing which tests to run. </p>
+
+                            <p>You run tests by opening your HTML test runner file in a browser.  It will then run all the tests in all the JavaScript test files that you have included in that test runner file. 
+                             Then next to each test is a little “rerun” link. Clicking that will run only that single test. 
+                             This lets you focus on getting a single test to pass before checking agasint all the other tests in your suite. </p>
+
+                             <p>The only other option is to manually add a URL parameter in the format of ?filter=[module]. Note Chrome is known to take very long to run even 100 tests.</p>
+
+                             <h3>Writing QUnit tests</h3>                          
+
+                                 <ul>
+                                    <li>The test function</li>
+                                    <li>Asserts</li>
+                                    <li>Modules</li>
+                                    <li>Setup & Teardown</li>                   
+                                 </ul>
+
+                                 <h3>The test function</h3>
+                                 <p>The test fuction:<br />
+                                    Writing a test in QUnit always starts with the test function. The test function looks like this:</p>                            
+            <pre>
+
+	            test('test name', function() {
+ 		            // code
+ 	            });
+            </pre>                    
+                                    <h3>Asserts</h3>
+                                    <p>It can call some code, but until we assert the correctness of that code, the only thing we have done is make sure that the code executes. 
+                                    Its correctness is still in question. That is where asserts come in.</p>
+                                  
+                                    <p>The asserts in QUnit aren’t like JUnit’s or NUnit’s asserts. Here is a quick list of the built in asserts 
+                                    provided with QUnit</p>
+
+                                     <p><strong><small>States</small></strong><br /></p>
+                                        <ul>
+                                            <li>ok(state)</li>
+                                            <li>notEqual(actual, expected)</li>
+                                            <li>deepEqual(actual, expected)</li>
+                                            <li>notDeepEqual(actual, expected)</li>
+                                            <li>strictEqual(actual, expected)</li>                                   
+                                        </ul>
+
+                                        <p>
+                                            One thing to note is that the parameter order of actual first and expected second is different from a lot of other unit testing frameworks, so if your usual unit testing framework is different,
+                                             it may take some getting used to.</p>
+
+<p>Another thing to note is that this is a pretty short list. Compared to lots of testing frameworks, there are very few asserts.</p>
+
+ 
+ <p>You’ll notice there’s no comparison asserts like greater than etc. In fact this list would be even shorter if it weren’t for the strict and deep variations on the equal assert.</p>
+ 
+ 
+<p> The good thing about this is that it’s not a very long list to memorize. The bad thing is that you’ll have to put any comparisons into the ok assert, where the output on a failed isn’t as useful as if it were a more specific assert.</p>
+
+
+<p>With each of these asserts there is an additional optional parameter , which is a message to output when the assert fails. </p>
+
+
+
+
+
+                                        <p> We can extend the last example above and add assertions</p>
+
+    <pre>
+        test('test name', function() {
+	        strictEqual(myFunctionUnderTest(), "expected return value");
+        });                                                                              
+    </pre>
+
+                              <p> And this is test.js</p>
+
+    <pre>
+	    test( "hello test", function() {
+	        ok(1 == "1", "Passed!");
+	        //ok( 1 != "", "passed!" );
+	    });                            
+    </pre>
+                            <h3>Modules</h3>
+
+
+                            <p>Modules are sometimes called fixtures in other testing frameworks. Modules give you a way to organize your tests into related groups. 
+                            Besides grouping within the HTML test runner page, modules also share a common setup and teardown.</p>
+
+                            <p>Adding modules to your tests is extremely simple. Just add a call to the module function, and pass in a string for the name of the module.</p>
+
+                           <pre>
+                            module('module name');
+                           </pre>
+
+                           <p>One big piece of advice here is to get in the habit of using strictEqual right from the start. 
+                           Then use the equal assert only when needed. It’s far more likely that you want a component to return the number 3 and returning the string “3? would be incorrect, but equal won’t catch that problem.<br />
+                           notStrictEqual(actual, expected)</p>
+
+                           <p>The previous sample code can be adjusted with the inclusion of a module. See below</p>
+
+    <pre>
+        module('my first module');
+        test('test name', function() {
+	        strictEqual(myFunctionUnderTest(), "expected return value");
+        });                  
+    </pre>
+                        <h3>Setup and Teardown</h3>
+
+                            <p>In addition to grouping tests, the other purpose of the module is to group related setup and teardown functionality. When you specify a setup or teardown function, those functions will run for every test within the module.</p>
+
+
+                        <p> So you can use a module as a way to take tests which require a common setup and only have to specify that setup in one place. </p>
+
+                        <p><strong>Case study:</strong><br />
+                        Imagine you are testing a component that validates some javascript object which represents a user, but that user object has about 15 properties.
+                        Using your setup function, you can create a basic user with some reasonable defaults for the properties, and then within each test, customize the user object to put it into the state specific for that test.</p>
+
+                      <p>The need for teardown code is a little less common, but by far the most common use is to <strong>clean up the DOM</strong> after you have manipulated it in a test.</p>
+
+                      <p>To add a setup function, you simply pass an object in as the second parameter of the module function, and that object has 2 optional properties: 
+                    a property named <strong>“setup”</strong> and a property named <strong>“teardown”</strong>. See example below:</p>
+
+    <pre>
+        module('my first module', {
+	        setup: function() {
+		        // setup code
+	        },
+	        teardown: function() {
+		        // teardown code
+	        }
+        });
+                        
+    </pre>
+
+                    <p>In the code above, the module method has two parameters . The first is</p>
+                    <ul>
+                        <li> The name of the module: <strong>my first module</strong></li>
+    
+                    </ul>
+                    <p>The second parameter is an <strong>object</strong></p>
+    <pre>
+        {
+	        setup: function() {
+		        // setup code
+	        },
+	        teardown: function() {
+		        // teardown code
+	        }
+        }
+                            
+    </pre>
+                <p>Inside the object, there are two optional properties: </p>
+                <ul>
+                    <li>setup</li>
+                    <li>teardown</li>
+                </ul>
+
+                <p>Now we can integrate the module with the test code for completion. See below:</p>
+                        
+    <pre>
+        module('my first module', {
+	        setup: function() {
+		        // setup code
+	        },
+	        teardown: function() {
+		        // teardown code
+	        }
+        });
+
+        test(‘test name’, function() {
+	        strictEqual(myFunctionUnderTest(), “expected return value”);
+        });
+</pre>
+
+         <p>Note, both setup and teardown are optional, so you can just have the setup function, or just the teardown function.</p>   
+         
+         <h3>Avoiding global polution</h3>
+         <p>In order to create variables in your setup that are shared with your tests, you’ll have to create them outside of the module function as global.</p>    
+         
+         <p>The code below will not cause much polution as it is simple</p>      
+<pre>
+        var user;
+
+        module("my module ", {
+	    setup: function() {
+		    user = // code to create a user
+	    }
+    );
+
+    test("a test", function() {
+	    // test code on the user object
+	    // asserts
+    });
+</pre>                      
+                    <p>In cases where variables are being referenced or hoisted, there can be confusion with unexpected issues. See below:</p> 
+<pre>    
+    module("user creation");
+    test("test 1", function() {
+	    var user = // code to create a user
+	    // asserts
+    });
+
+    var user;
+
+    module("user validation", {
+	    setup: function() {
+		    user = // code to create a user
+	    }
+    );
+
+    test("module with setup/teardown", function() {
+	    // test code on the user object
+	    // asserts
+    });      
+</pre> 
+                    <p>Here you can see that we have a "global scope pollution problem". 
+                        The code doesn’t have to get too much more complex before it becomes easy to end up with some bugs and stopping to work. 
+                        Giving thoughts why it is not working but instead it’s the test code that’s broken. The solution to this is simple. 
+                        Put a closure around every module in your code.
+                    </p>
+                    
+                    <h3>Fixing with closures</h3> 
+                    <p>To resolve the accidental or incorrect referencing of variables during scoping, just add a closure to the code.</p>
+                    <p>                   
+                        A closure is a function together with a referencing environment for the non-local variables of that function. <br />
+                        The referencing environment binds the non-local names to the corresponding variables in scope at the time the closure is created. <br />
+                        This additionally extend their lifetime to at least as long as the lifetime of the closure itself.                
+                    </p>
+
+                    <p>Syntactically, this is how a closure looks like wrapping a function: </p>
+<pre>
+        (
+	        function(){
+                //code goes here
+	        }
+
+        )();  
+</pre>
+                        <p>Below is the fixed code using closure</p>
+
+<pre>                          
+        (function() {
+
+	        module("user creation");
+
+	        test("test 1", function() {
+		        var user = // code to create a user
+		        // asserts
+	        });
+
+        })();
+
+        (function() {
+
+	        var user;
+
+	        module("user validation", {
+		        setup: function() {
+			        user = // code to create a user
+		        }
+	        );
+
+	        test("module with setup/teardown", function() {
+		        // test code on the user object
+		        // asserts
+	        });
+
+        })();                      
+</pre>
+                             <h3>Conclusion</h3>
+                             <p> Now that closures have been added, we are free to add all the variable we want and we never have to worry about potential any side effects with tests in other modules.</p>
+ 
+                            <p>It may seem  obvious like this is manageable without closures just by having a little bit of discipline, 
+                            but remember that in the above examples, even if those two modules were in different files, they share the same "global scope" as long as they are included in the same HTML test runner file. 
+                            So any variables one of them introduces will be present in the other. This is really problematic with having modules in different files.</p>         
+                        
+                             <figure>
+                                <img src="images/robot-1.jpg" alt="Robot Attack 1" />
+                                <figcaption><b>Lo! the BIO robot attacks!</b></figcaption>                
+                            </figure>                                                                                  
+
+                      </div><!-- /end .main -->
+                </article>
+                <article>
+                    <aside>                    
+                        <div class="other"> 
+                             <h2>Profile</h2>
+                             <ul>
+                                 <li class="rnd"><a href="http://www.blogger.com/profile/14800490193632788559">Blog</a></li>
+			     </ul>
+
+                             <h2>Research & Development</h2>
+                             <ul>
+                                <li class="rnd"><a href="responsive-design-1.html">Responsive Design &amp; Mobile First</a></li>
+                                <li class="rnd"><a href="responsive-design-1.html">LESS CSS</a></li>
+                                <li class="rnd">QUnit</li>
+                                <li class="rnd"><a href="../photobox/1.html">Bar graphs</a></li>
+                             </ul>
+                                                                                     
+                            <h2>Tests</h2>
+                              <ul>
+                                <li> &raquo; <a href="../QUnit/index.html">Hello test</a></li>
+                                <li> &raquo; <a href="../QUnit/qu-2.html">Module tests</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/2.html">Modules without setup/teardown(default)</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/3.html">Expect in test i</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/4.html">Expect in test ii</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/5.html">Assertion helpers</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/6.html">Setup test</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/7.html">Setup / teardown :test 1</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/8.html">Setup / teardown :test 2</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/9.html">Date test</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/10.html">Teardown and stop</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/11.html">Async set up test</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/12.html">Async tear down test</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/13.html">Async tests</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/14.html">Save scope</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/15.html">Test environments</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/16.html">Make URL</a></li>
+                                 <li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/17.html">test environment with URL settings</a></li>
+
+           
+
+                                
+                                <!--<li> &raquo; <a href="../QUnit/jquery-qunit-v1.9.0-13-gdfc27bb/jquery-qunit-dfc27bb/test/index.html"">More test solutions</a></li>-->                                                                                                                                                       
+                            </ul> 
+                            
+                            <!--<h2>Resources</h2>
+                              <ul>                        
+                                <li> &raquo; <a href="http://docs.jquery.com/QUnit">http://docs.jquery.com/QUnit</a></li>                                                                                                                             
+                            </ul>-->
+                                                                        
+                        </div><!-- /end .other -->
+                    </aside>
+                </article>
+            </div>
+        </div>      
+    </section>
+    <section>
+        <article class="site-foot">
+            <div class="site-foot-inner">
+                <ul>
+                    <li><a href="#">Privacy</a></li> 
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Cookies</a></li>               
+                </ul>
+        </article>      
+    </section>
+</body>
+</html>

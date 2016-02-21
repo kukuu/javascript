@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="keywords" content="jquery plugin,graphs,bar graphs,charts,jquery bar graph" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jqBarGraph.js"></script>
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <title>jqBarGraph: jQuery Bar Graph Plugin</title>
+</head>
+<body> 
+
+    <div id="head">
+        <h1>Bar Graph</h1>
+        <p class="headText">This jQuery Bar Graph is compatible with Safari 2+, Internet Explorer 6+, Firefox 2+, Google Chrome 3+, Opera 9+.</p>
+    </div>
+
+
+    <div id="examples">
+	    <!--This bit of code is for updating the graph:sorting and showing properties that can be shown and hidden-->
+	    <div class="exampleMenu">
+		    <a href="javascript:void(0);" id="simpleSortAsc">sort ascending</a>
+		    <a href="javascript:void(0);" id="simpleSortDesc">sort descending</a> 
+		    <a href="javascript:void(0);" id="simpleLegend">show legend</a> 
+		    <a href="javascript:void(0);" id="simpleColors">set colors</a>
+		    <a href="javascript:void(0);" id="simpleColorsLegend">colors and legends</a>
+		    <a href="javascript:void(0);" id="simplePositionTop">top position</a>		
+		    <a href="javascript:void(0);" id="simpleClear">clear</a>
+            <p><a href="documentation.html" class="docs">Documentation</a></p>
+	    </div>
+
+	    <div id="exampleSimple"></div><!--This is the container for the graph-->
+	
+        <!--code that generates attributes of the  bar chart-->
+	    <code>
+		    arrayOfData = new Array(<br />
+			    &nbsp;&nbsp;		[10.3,'Jan'<span class='exampleSimpleColors'>,'#222222'</span>],<br />
+			    &nbsp;&nbsp;		[15.2,'Feb'<span class='exampleSimpleColors'>,'#7D252B'</span>],<br />
+			    &nbsp;&nbsp;		[13.1,'Mar'<span class='exampleSimpleColors'>,'#EB9781'</span>],<br />
+			    &nbsp;&nbsp;		[16.3,'Apr'<span class='exampleSimpleColors'>,'#FFD2B5'</span>],<br />
+			    &nbsp;&nbsp;		[14.5,'May'<span class='exampleSimpleColors'>,'#4A4147'</span>]<br />
+				    );<br />
+			    <br />
+			    $('#exampleSimple').jqbargraph({<br /> 
+				    &nbsp;&nbsp;		data: arrayOfData 
+				    <span id="simpleDyn" class="dyn"></span><br />					
+			    });	
+	    </code>
+	    <!--//end-->
+
+	
+	    <script>
+	        arrayOfData = new Array(
+		    [10.3, 'Jan', '#222222'],
+		    [15.2, 'Feb', '#7D252B'],
+		    [13.1, 'Mar', '#EB9781'],
+		    [16.3, 'Apr', '#FFD2B5'],
+		    [14.5, 'May', '#4A4147']
+	    );
+
+	        arrayOfDataForSort = new Array(
+			    [10.3, 'Jan', '#222222'],
+			    [15.2, 'Feb', '#7D252B'],
+			    [13.1, 'Mar', '#EB9781'],
+			    [16.3, 'Apr', '#FFD2B5'],
+			    [14.5, 'May', '#4A4147']
+	    );
+
+	        arrayOfDataNoColors = new Array(
+			    [10.3, 'Jan'],
+			    [15.2, 'Feb'],
+			    [13.1, 'Mar'],
+			    [16.3, 'Apr'],
+			    [14.5, 'May']
+	    );
+
+	        $('#exampleSimple').jqbargraph({ data: arrayOfData });//This piece of code binds all the properties of the graph and passes it on to the div that displays it.
+
+
+	        //The script below updates different properties of the bar chart. Sorting, adding and removing (Using hide() and show())
+
+	        $('#simpleSortAsc').click(function () {
+	            $('.exampleSimpleColors').show();
+	            $('#exampleSimple').html('');
+	            $('#exampleSimple').jqbargraph({ data: arrayOfDataForSort, sort: 'asc' });
+	            $('#simpleDyn').html(",<br />&nbsp;&nbsp; sort: 'asc'");
+	        });
+
+	        $('#simpleSortDesc').click(function () {
+	            $('.exampleSimpleColors').show();
+	            $('#exampleSimple').html('');
+	            $('#exampleSimple').jqbargraph({ data: arrayOfDataForSort, sort: 'desc' });
+	            $('#simpleDyn').html(",<br />&nbsp;&nbsp; sort: 'desc'");
+	        });
+
+	        $('#simpleLegend').click(function () {
+	            $('.exampleSimpleColors').show();
+	            $('#exampleSimple').html('');
+	            $('#exampleSimple').jqbargraph({ data: arrayOfData, legend: true });
+	            $('#simpleDyn').html(",<br />&nbsp;&nbsp; legend: true");
+	        });
+
+	        $('#simpleClear').click(function () {
+	            $('.exampleSimpleColors').show();
+	            $('#exampleSimple').html('');
+	            $('#exampleSimple').jqbargraph({ data: arrayOfData });
+	            $('#simpleDyn').html("");
+	        });
+
+	        $('#simpleColors').click(function () {
+	            $('#exampleSimple').html('');
+	            $('.exampleSimpleColors').hide();
+	            $('#exampleSimple').jqbargraph({ data: arrayOfDataNoColors, colors: ['#666', '#000'] });
+	            $('#simpleDyn').html(",<br />&nbsp;&nbsp; colors: ['#666','#000']");
+	        });
+
+	        $('#simpleColorsLegend').click(function () {
+	            $('#exampleSimple').html('');
+	            $('.exampleSimpleColors').hide();
+	            $('#exampleSimple').jqbargraph({ data: arrayOfDataNoColors, colors: ['#666', '#000'], legends: ['gray', 'black'], legend: true });
+	            $('#simpleDyn').html(",<br />&nbsp;&nbsp; colors: ['#666','#000'],<br />&nbsp;&nbsp; legends: ['gray','black'],<br />&nbsp;&nbsp; legend: true");
+	        });
+
+	        $('#simplePositionTop').click(function () {
+	            $('.exampleSimpleColors').show();
+	            $('#exampleSimple').html('');
+	            $('#exampleSimple').jqbargraph({ data: arrayOfData, position: 'top' });
+	            $('#simpleDyn').html(",<br />&nbsp;&nbsp; position: 'top'");
+	        });		
+	
+	    </script>
+	
+    </div>
+</body>
+</html>

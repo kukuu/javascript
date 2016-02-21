@@ -1,0 +1,17 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("button").click(function(){
+  $.ajax({
+  	url:"ajax-test.txt", 
+  	success:function(result){
+    $("div").html(result);
+  }});
+});});
+</script>
+</head>
+<body>
+	<div></div>
+</body>

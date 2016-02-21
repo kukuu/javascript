@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Form validation</title>
+    <script type="text/javascript">
+        // only for demo purposes
+        $.validator.setDefaults({
+            submitHandler: function () {
+                alert("submitted!");
+            }
+        });
+
+        $.metadata.setType("attr", "validate");
+
+        $(document).ready(function () {
+            $("#form1").validate({
+                rules: {
+                    password: "required",
+                    password_again: {
+                        equalTo: "#password",
+                    },
+                    email: "required",
+                    email_again: {
+                        equalTo: "#email"
+                    },
+                    phone: {
+                        number: true, // as space is not a number it will return an error
+                        minlength: 6, // will count space 
+                        maxlength: 9
+                    },
+                    beforeValidation: function (element) { //Removing extra white spaces before validation
+                        // strip value of whitespaces
+                        if (typeof $(element).val() === "string") {
+                            $(element).val($(element).val().trim());
+                        }
+                    }
+                }
+            });
+            //$("#selecttest").validate();
+        });
+
+
+        //Function to validate just email:
+        function validateEmail($email) {
+            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            if (!emailReg.test($email)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>    <style type="text/css">
+        .block { display: block; }
+        form.cmxform label.error { display: none; }	
+    </style>
+</head>
+<body>
+<div id="main">
+
+<form class="cmxform" id="form1" method="get" action="">
+	<fieldset>
+		<legend>Validating a form with a radio and checkbox buttons</legend>
+		<fieldset>
+			<legend>Gender</legend>
+			<label for="gender_male">
+				<input  type="radio" id="gender_male" value="m" name="gender" validate="required:true" />
+				Male
+			</label>
+			<label for="gender_female">
+				<input  type="radio" id="gender_female" value="f" name="gender"/>
+				Female
+			</label>
+			<label for="gender" class="error">Please select your gender</label>
+		</fieldset>
+		<fieldset>
+			<legend>Family</legend>
+			<label for="family_single">
+				<input  type="radio" id="family_single" value="s" name="family" validate="required:true" />
+				Single
+			</label>
+			<label for="family_married">
+				<input  type="radio" id="family_married" value="m" name="family" />
+				Married
+			</label>
+			<label for="family_other">
+				<input  type="radio" id="family_other" value="o" name="family" />
+				Other
+			</label>
+			<label for="family" class="error">Please select your family status.</label>
+		</fieldset>
+		<p>
+			<label for="agree">Please agree to our policy</label>
+			<input type="checkbox" class="checkbox" id="agree" name="agree" validate="required:true" />
+			<br/>
+			<label for="agree" class="error block">Please agree to our policy!</label>
+		</p>
+		<p>
+
+            <label for="email">Please agree to our policy</label>
+			<input type="text"  id="email" name="e-mail" required validate="required:true" />
+			<br/>
+			<label for="agree" class="error block">Please agree to our policy!</label>
+		</p>
+		<p>
+			<input class="submit" type="submit" value="Submit"/>
+		</p>
+	</fieldset>
+</form>
+
+</div>
+
+
+</body>
+</html>

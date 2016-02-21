@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Untitled</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("ul li:last").addClass(function(index) {
+ 			 return "item-". + index;
+	});
+
+	
+	
+	});
+	</script>
+</head>
+
+<body>
+	<ul>
+		<li class="item">1</li>
+		<li class="item">2</li>
+		<li class="item">item  .index++</li>
+	</ul>
+
+
+</body>
+</html>

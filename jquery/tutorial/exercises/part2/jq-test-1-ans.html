@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>jQuery test</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		
+		//click to change background color pf <p class="intro"> togold
+		  $("p.intro").click(function(){
+		    $(this).css("background-color","yellow");		
+		  });
+			
+			//click to change background color of list items to red
+		   $("#choose").click(function(){
+		    $(this).css("background-color","red");		
+		  });
+		  
+		  //Make the first un-ordered element by default blue
+		  $("ul li:first").css("background-color","#0000ff");
+		  
+		});
+</script>
+
+</head>
+
+<body>
+
+<strong>Class Test</strong>: <br />Write the jQuery  script that, when upon clicking the first  paragraph after the heading "Welcome to My Homepage" the colour changes to gold <br />then secondly on clicking the unordered list it changes to red colour, then finally make the contents of the first list element blue
+	<h1>Welcome to My Homepage</h1>
+	<p class="intro">My name is Donald</p>
+	<p>My best friend is Mickey</p>
+	Who is your favourite:
+	<ul id="choose">
+		<li>Goofy</li>
+		<li>Mickey</li>
+		<li>Pluto</li>
+	</ul>
+</body>
+</html>

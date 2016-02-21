@@ -1,0 +1,271 @@
+/*
+
+Purpose : CSS for Responsive Design 
+Owner : Alexander Adu-Sarkodie
+Date : March 2012
+
+*/
+
+
+/* 1. THE FLEXIBLE GRID : 
+
+Formula: target / context = result
+
+The ingredients:
+So what does it take to create a responsive design? Speaking purely in terms of front-end layout, it takes three core ingredients:
+
+1. A flexible, grid-based layout,
+2. Flexible images and media, and
+3. Media queries, a module from the CSS3 specification.
+
+I have written this document for tutorial purposes, so some  properties of some CLASSES and IDs may be defined to overide previous set values.
+
+
+*/
+
+#page {
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+body {
+	background-color: #DCDBD9; /*light gray background color*/
+	color: #2C2C2C; /* fairly dark text color*/
+	font: normal 100% Cambria, Georgia, serif; /*serif-heavy font stack: Set our base type size to the browser’s default,which in most cases is 16 pixels.*/
+}
+
+
+h1 {
+	font-size: 24px;
+	font-style: italic;
+	font-weight: normal;
+}
+
+h1 a {
+	color: #747474;
+	font: bold 11px Calibri, Optima, Arial, sans-serif;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+/* 2. Contextual healing:
+To do so, we’ll need to do a teensy bit of math: we’ll simply
+take the target font size from our comp, and divide it by the font-size of its containing element—in other words, its context. 
+The result is our desired font-size expressed in relative, oh-so-flexible ems.
+In other words, relative type sizes can be calculated with this simple formula:
+
+target ÷ context = result
+
+*/
+
+/* And there we are: 24px is 1.5 times greater than 16px, so our font-size is 1.5em:*/
+h1 {
+	font-size: 1.5em; /* 24px / 16px */
+	font-style: italic;
+	font-weight: normal;
+}
+
+/* So to set the font-size of our link in ems, we’ll divide our target of 11px not by 16px, the value set on the body, but by 24px—the font size of the headline, our new context:
+11 ÷ 24 = 0.458333333333333
+*/
+h1 a {
+	font: bold 0.458333333333333em Calibri, Optima, »
+	Arial, sans-serif; /* 11px / 24px */
+	color: #747474;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+/* 3. Creating a Flexible Grid :
+
+Taken together, the gutters give us a total width of 960 pixels. However, the blog itself is only 900 pixels wide, 
+centered horizontally within that 960px-wide canvas.
+So those are the high-level details. And if we take a closer look at the two columns inside of the blog , 
+we can see that the left-hand content column (.main in our markup) is 566 pixels wide, while the right-hand, secondary column (.other) is only 331 pixels across.
+
+
+
+HTML Snippet:
+<div id="page">
+	<div class="blog section">
+		<h1 class="lede">Recently in Achieve sentience with Skynet! <a href="#">Read More &raquo;</a>
+		 </h1>
+		 <div class="main">
+              …
+		 </div><!-- /end .main -->
+		 <div class="other">
+			…
+		 </div><!-- /end .other -->
+	 </div><!-- /end .blog.section -->
+  </div><!-- /end #page -->
+*/
+
+
+
+#page {
+	margin: 36px auto;
+	width: 960px;
+}
+
+.blog {
+	margin: 0 auto 53px;
+	width: 900px;
+}
+
+.blog .main {
+	float: left;
+	width: 566px;
+}
+
+.blog .other {
+	float: right;
+	width: 331px;
+}
+
+
+/* 4. From PIXELS to PERCENTAGES:
+Instead of pasting the pixel values directly into our CSS, we need to express those widths in 
+relative, proportional terms. Once we’ve done so, we’ll have a grid that can resize itself as the viewport does, 
+but without compromising the design’s original proportions.*/
+
+/*From:
+#page {
+margin: 36px auto;
+width: 960px;
+}
+To
+*/
+
+#page {
+	margin: 36px auto;
+	width: 90%;/*with trial and errors in the browser to see what looks best */
+}
+
+
+/*
+From:
+.blog {
+	margin: 0 auto 53px;
+	width: 900px;
+}
+To
+*/
+
+.blog {
+	margin: 0 auto 53px;
+	width: 93.75%; /* 900px / 960px */
+	border:1px solid #ffcc33;
+}
+
+/* TWO content columns
+From:
+
+.blog .main {
+	float: left;
+	width: 566px;
+}
+.blog .other {
+	float: right;
+	width: 331px;
+}
+
+566 ÷ 900 = .628888889
+331 ÷ 900 = .367777778
+
+Once we move our decimal points we’re left with 62.8888889% and 36.7777778%, the proportional widths of .main and .other:
+
+To:
+*/
+.blog .main {
+	float: left;
+	width: 62.8888889%; /* 566px / 900px */
+	border:1px solid #ff0000;
+}
+
+.blog .other {
+	float: right;
+	width: 36.7777778%; /* 331px / 900px */
+	border:1px solid #00ff00;
+}
+
+/* 5. FLEXIBLE MARGINS AND PADDING:
+
+Hugging with no VENTILATION!
+Assuming the title of our blog is flushed left within its container , and our two columns currently abut each other, with no margins or gutters in sight.
+ We definitely have some cleanup to do.
+
+So let’s begin with that headline. Supposing there’s 48 pixels of space between our headline and the left edge of its container
+
+.lede {
+padding: 0.8em 48px;
+}
+
+a fixed value for that padding-left would create a gutter that doesn’t line up with the rest of our fluid grid. As our flexible columns expand or contract, 
+that gutter would simply ignore the rest of our design’s proportions, sitting stubbornly at 48px no matter how small or wide the design became. So we need to MOT! Using our formular:
+
+target ÷ context = result
+
+NOTE!:
+1. When setting flexible margins on an element, your context is the width of the element’s container.
+2. When setting flexible padding on an element, your context is the width of the element itself. Which makes sense, if you think about the box model:
+ we’re describing the padding in relation to the width of the box itself. So,
+
+From;
+.lede {
+padding: 0.8em 48px;
+}
+
+To;
+Note, since the headline doesnt have a declared width, its width (and the context we need for our formular) is the width of the blog module, or 900px. so the outcome of the calculator is
+*/
+.lede {
+	padding: 0.8em 5.33333333%; /* 48px / 900px */
+}
+
+.recent-entries {
+	margin: 0 auto;
+	width: 69.7885196%; /* 231px / 331px */
+}
+
+/*Now, we could take the same approach with our article. But instead, let’s make it a bit more interesting. 
+Remember the 48px padding we set on our headline? Well, our article falls along the same column . 
+So rather than just centering our article within its container, let’s create another proportional gutter.
+Our target value is 48px. And since we’re working with relative padding, our context should be the width of the article itself.
+ But once again, since there’s no explicit width set on .article, we can simply use 566px, the width of its parent (.blog), for our context:
+
+Padding
+*/
+.article {
+	padding: 40px 8.48056537%; /* 48px / 566px */
+}
+
+
+
+.date {
+    float: left;
+    width: 14.556962%; /* 69px / 474px */
+}
+
+.figure {
+    /*float: right;*/
+    margin-bottom: 0.5em;
+    margin-left: 2.53164557%; /* 12px / 474px */
+    width: 48.7341772%;/*  231px / 474px */
+
+}
+
+
+
+img,
+embed,
+object,
+video {
+    max-width: 100%;
+}
+
+
+    
+    .level-2 {color:#000;}

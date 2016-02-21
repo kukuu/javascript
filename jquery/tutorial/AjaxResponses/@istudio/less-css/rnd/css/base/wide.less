@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+// **
+//		LESS 'base' for wide.css
+//    ------------------------
+//		@version		1.0
+//		@date			2012-08-08
+//		@author			Alexander Adu-Sarkodie <alex.adu-sarkodie@thebioagency.com>
+//		@note			this LESS file imports, compiles, strips comments and 
+//						flattens all LESS styles into a single CSS for desktop browsers; 
+//						- modern browsers that pass 'cut the mustard' 
+//						- support media queries
+//						- screen is wider than 1200px, browser window is more 
+//						  than 1056px wide
+//		@link			/css/wide.css
+// **
+
+
+
+
+// **
+//		@section		mixins for this 'base'
+// **
+
+@gutter: 16px;
+
+
+
+
+// **
+//		@section		import styleguide styles
+// **
+
+@import "/css/styleguide/colors.less";
+@import "/css/styleguide/typography.less";
+@import "/css/styleguide/ui.less";
+@import "/css/styleguide/icons.less";
+
+
+
+
+// **
+//		@section		import page layout/grid styles
+// **
+
+@import "/css/views/wide.less";
+
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+	<title>Lesson 21: Easy AJAX Calls with jQuery</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+	
+  </head>
+  <body>
+<!--html.net/tutorials/javascript/lesson21_ex2.html-->
+    <h1>Lesson 21: Easy AJAX Calls with $.get()</h1>
+		
+		<p><a href="#">Click here to fetch XML.</a></p>
+		
+		<div id="result"></div>
+	
+	<script type="text/javascript">
+	  
+	
+	  $(document).ready(function()
+		{
+		  var url = "lesson21_test.xml";
+			
+			
+			function processData(data)
+		  {
+		    var resultStr = "";
+			  var items = $(data).find('language');
+		    $(items).each(function(i)
+			  {
+				  resultStr += $(this).text() + '<br />';
+				  $('#result').html(resultStr);
+			  });//end of each
+			  
+		  }
+				
+		  $('a').click(function()
+	    {
+		    $.get(url, processData);
+			});//end of click
+			
+	});//end of ready
+	
+	</script>
+	
+  </body>
+ </html>

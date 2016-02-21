@@ -1,0 +1,4 @@
+Resources:
+* http://www.w3schools.com/jquery/default.asp
+* http://www.w3schools.com/jquery/jquery_examples.asp
+*http://net.tutsplus.com/tutorials/javascript-ajax/submit-a-form-without-page-refresh-using-jquery/

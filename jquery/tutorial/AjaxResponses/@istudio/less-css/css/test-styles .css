@@ -1,0 +1,107 @@
+   /* =============================================================================
+	LESS CSS
+	========================================================================== */
+/*un-Compiled CSS 
+@color: #ff0000;
+
+#header {
+  color: @color;
+}
+
+h1 {
+  color: @color;
+}
+*/
+ 
+
+#header {
+  color: #4D926F;
+}
+h1 {
+  color: #4D926F;
+}
+
+
+/* Compiled CSS 
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+#header {
+  .rounded-corners;
+}
+
+#footer {
+  .rounded-corners(10px);
+}
+
+*/
+
+#header {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+#footer {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+
+
+
+/*#header {
+  h1 {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  p { font-size: 12px;
+    a { text-decoration: none;
+      &:hover { border-width: 1px }
+    }
+  }
+}
+
+*/
+
+#header h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color:#ffcc33;
+}
+
+#header p {
+  font-size: 12px;
+}
+
+#header p a {
+  text-decoration: none;
+}
+
+#header p a:hover {
+  border-width: 1px;
+}
+
+
+/* Compiled CSS
+@the-border: 1px;
+@base-color: #111;
+@red:        #842210;
+
+#header {
+  color: @base-color * 3;
+  border-left: @the-border;
+  border-right: @the-border * 2;
+}
+#footer { 
+  color: @base-color + #003300;
+  border-color: desaturate(@red, 10%);
+}
+
+
+ */
+

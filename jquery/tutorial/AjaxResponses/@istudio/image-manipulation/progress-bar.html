@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Progress bar</title>
+
+    <script language="javascript" type="text/javascript">
+        function progress() {
+            if (document.images["bar"].width < 200) {
+                document.images["bar"].width += 5;
+                document.images["bar"].height = 5;
+            }
+            else {
+                clearInterval(ID);
+            }
+        }
+
+        var ID;
+        window.onload = function () {
+            ID = setInterval("progress();", 500);
+        }
+    </script>
+      <img src="images/purple.gif" name="bar" />
+</head>
+ <body
+  
+
+</body>
+            
+</html>
+
+
+
+   

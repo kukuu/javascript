@@ -1,0 +1,17 @@
+Jquery last week
+.................
+ * * Mands - using json - slides gallery file:///C:/Users/alexs/Documents/DigiTek/AjaxResponses/render-ext-data/mands.html
+
+* Local Storage - http://www.goldhawk-college.com/istudio/local-storage.html
+
+* Geolocation - http://www.goldhawk-college.com/istudio/geolocation.html
+
+* Flex Slider - Buiild html and  object JQuery at bottom
+http://www.goldhawk-college.com/istudio/type-1/touch-carousel.html
+
+* Reuters - data list -http://www.goldhawk-college.com/istudio/parse-jason-4.html
+
+
+* Lazyload - http://www.goldhawk-college.com/istudio/type-1/lazyload.html
+
+* Bootstrap - Layitout.com -http://www.layoutit.com/build

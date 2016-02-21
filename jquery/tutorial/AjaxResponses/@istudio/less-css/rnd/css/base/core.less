@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+// **
+//		LESS 'base' for core.css
+//    ------------------------
+//		@version		1.0
+//		@date			2012-08-08
+//		@author			Alexander Adu-Sarkodie <alex.adu-sarkodie@thebioagency.com>
+//		@note			this LESS file imports, compiles, strips comments and 
+//						flattens all LESS styles into a single CSS for core devices; 
+//						- feature phones
+//						- non-js
+//						- older browsers
+//		@link			core.css
+
+
+// **
+//		@section		mixins for this 'base'
+// **
+		@gutter: 8px;
+
+
+
+// **
+//		@section		import CSS reset styles
+// **
+
+@import "/css/styleguide/reset.less";
+
+@import "/css/styleguide/colors.less";
+@import "/css/styleguide/typography.less";
+@import "/css/styleguide/ui.less";
+
+
+// **
+//		@section		import page layout/grid styles
+// **
+
+@import "/css/views/core.less";
+
+
+// **
+//		@section		import component styles
+// **
+
+@import "/css/components/articles/core.less";
+@import "/css/components/aside/core.less";
+@import "/css/components/banner/core.less";
+@import "/css/components/carousel/core.less";
+
+body {
+	background-color: #DCDBD9; 
+	color: #2C2C2C; 
+	#page {
+		width: 960px;
+		margin: 0 auto;
+	}	
+}
+
+
+.site-foot-inner {
+	border:1px  solid #ffcc33;
+}
+

@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Responsive Design & Mobile First</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="viewport" content="Responsive Design, Flexible Grid, Media Queries, Media Query Listeners, HTML5" />
+    <!--<link rel="stylesheet" href="css/wide.css" media="tv and (min-width: 1024px)" />--> 
+    <style type="text/css">
+        @import url("css/wide.css") tv and (min-width: 1024px); 
+    </style>
+    <link href="css/responsive-design-1.css" type="text/css" rel="stylesheet"/>
+ 
+</head>
+<body>
+    <section>
+        <div id="page">
+            <div class="blog section">
+                <h1 class="lede">iStudio <span>Alexander Adu-Sarkodie - 
+MSc Telematics (Telecommunication  & Informatics)</span></h1>
+                    <article>
+                        <div class="main">
+                           <h2>Preloading Simple Image</h2> 
+                           
+                             
+                           <p>In order to achieve preloading images, the JavaScript object will have to be <strong>instantiated</strong>  and set its <strong>src</strong> property. This loads the image in the background, without displaying it.</p>
+                           
+                           <p>The preloading must be executed when the html page has been fully loading. See the snippet below:</p>
+        <pre>
+        &lt;script language="javascript" type="text/javascript"&gt;
+            function preloadImages(url){
+                var i = new Image();
+                i.src = url;
+            }
+        &lt;/script&gt;
+
+        &lt;body onload="preloadImages('1.gif')"&gt;   
+        &lt;/body&gt;
+    </pre> 
+
+                                                       
+                 <h2>Preloading  Multiple Images</h2>
+                 <p>If several images have to be preloaded at once, for example hover for  a navigation or gallery, a more generic function accepting an array with images is needed. See snippet below:</p> 
+                 
+                 <pre>
+                 
+    &lt;script language="javascript" type="text/javascript"&gt;
+     function preloadImages(urls){
+
+      var img =  new Array();
+      for(var i=0; i&lt;urls.length;i++) {
+       img[img.length] = new Image();
+       img[img.length - 1].src = urls[i];
+      }
+
+     }
+
+
+     window.onload = function(){
+      var img = new Array (
+       "1.gif","2.gif","3.gif");
+      preloadImages(var);
+     }
+  &lt;/script&gt;
+         
+         
+                 </pre>   
+                  
+                 <h2>Loading JavaScript Dynamically</h2>
+                 <p>Sometimes it is necessary to load JavaScript code on demand, while the site is running. For instance,
+                  depending on user input or request, a specific external JavaScript file must be loaded.</p>
+                <pre>
+            
+&lt;html&gt;
+&lt;head&gt;
+   &lt;meta http-equiv="Content-Type" content="text/html; <br />charset=utf-8"&gt;
+
+   &lt;title&gt;Loading JavaScript dynamically&lt;/title&gt;
+
+   &lt;script src="js/jquery-1.5.min.js"<br /> type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+
+   &lt;script src="1.js" type="text/javascript"<br /> charset="utf-8"&gt;&lt;/script&gt;
+
+   &lt;link rel="stylesheet" href="1.css" type="text/css"<br /> media="screen" charset="utf-8"&gt;
+
+   &lt;link rel="stylesheet" href="2.css" type="text/css"<br /> media="screen" charset="utf-8"&gt;
+
+   &lt;script type="text/javascript"&gt;
+
+       (function () {
+           var lib = document.createElement('script');
+           lib.type = 'text/javascript';
+           lib.async = true;
+lib.src = ('https:' == document.location.protocol ? <br />'https://ssl' : 'http://www') + '.mylib.com/lib.js';
+           var s = document.getElementsByTagName('script')[0];
+           //var s = document.getElementsByTagName('head')[0].<br />appendChild(s);
+           s.parentNode.insertBefore(lib, s);
+       })();
+
+   &lt;/script&gt;   
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;      
+              
+                 
+                 
+                 </pre>   
+
+                 <h2>Preventing Caching</h2>
+
+                 <p>Server side headers can be used to prevent caching of dynamic content-like images and html pages. 
+                 This is not a bullet proof technique as some proxy-servers and some browsers can ignore the settings.</p>
+
+                 <p>A dependable technique that will always work is appending a <strong>meaningless</strong> query string paramenter to the URL.
+                  Using Math.random() function, which will return any number between 0 and 1. Decimals inclusive.</p>
+
+                  <p>Appending this to an image will not change the data requested from the server, but will make any request a new one for the browser. Thereby not caching the data (image).</p>
+
+                  <pre>
+    &lt;script language="javascript" type="text/javascript"&gt;
+	    document.write("&lt;img src=\"1.png?" <br />+ Math.random() + "\" /&gt; ");
+    &lt;/script&gt;     
+                            
+                  </pre>
+
+                  <h2>Animating Graphics</h2>
+                  <p>JavaScript supports multiple image format animation. This is achieved with the help of setInterval() or setTimeOut methods</p>
+
+                  <p>The prototype code below iterates through an array of images, and moves to the next image after 500 milliseconds (half a second) has elapsed:</p>
+
+                  <p>The animate() function expects one parameter: the position of the next image to show.
+                   The list of image to iterate through are saved in the global variable, since setTimeOut() cannot use local variables that are not available in the global scope.<a href="../image-manipulation/animating-graphics.html">click</a></p>
+                   
+                  <pre>
+  &lt;script language="javascript" type="text/javascript"&gt;
+	var urls;
+
+	function animate(pos){
+		pos %= urls.length;
+		document.images["animation"].src= urls[pos];
+  windows.setTimeOut("animate(" +(pos + 1)");",500);
+
+	}
+
+	window.onload = function() {
+  urls = new Array ("0.png","1.png","2.png","3","4");
+		animate(0);
+	}
+ &lt;/script&gt;
+
+ &lt;body&gt;
+	&lt;img src="0.png" name="animation" /&gt;
+ &lt;/body&gt;
+                  
+                  
+                  </pre>
+
+                  <p>The <strong>pos %= urls.length</strong> pointer generates an infinite loop for the animation. 
+                  To stop the animation after the last image, a condition is set to substitute it to return false. See below: </p>
+
+                  <pre>
+                    if(pos == urls.length){
+		            return false;
+	            } 
+                  </pre>
+
+                  <h2>Progress bar</h2>
+                  <p>The width and height of an image can be accessed from JavaScript using the width and height properties, both readable and writable. 
+                  The following code snippet below moves the progress bar, using a simple 1x1 pixel graphic (purple.gif) <a href="../image-manipulation/progress-bar.html">click</a></p>
+
+                  <pre>
+    &lt;script language="javascript" type="text/javascript"&gt;
+	    function progress() {
+		    if(document.images["bar"].width &lt; 200){		
+			    document.images["bar"].width += 5;
+			    document.images["bar"].height = 5;
+		    }
+		    else {
+			    clearInterval(ID);
+		    }
+	    }
+
+	    var ID;
+	    window.onload = function() {
+		    ID = setInterval("progress();",500);
+	    }
+    &lt;/script&gt;
+
+    &lt;body
+        &lt;img src="purple.gif" name="bar" /&gt;
+
+    &lt;/body&gt;
+                  
+                  </pre>
+
+                  <p>The progress function is called every 500 milliseconds by the setInterval() method.
+                  When the bar progresses to a width of 200px the animation stops. Courtesy of clearInterval().</p>
+
+                  <p>Note, if the height of the bar is not explicitly set as above. Stretching the width also streches the height.</p>
+
+                      </div><!-- /end .main -->
+                </article>
+                <article>
+                    <aside>                    
+                        <div class="other">
+ 			     <h2>Profile</h2>
+                             <ul>
+                                 <li class="rnd"><a href="http://www.blogger.com/profile/14800490193632788559">Blog</a></li>
+			     </ul>
+
+                             <h2>Research & Development</h2>
+                             <ul>
+                                <li class="rnd"><a href="responsive-design-1.html"> Design &amp; Mobile First</a></li>
+                                <li class="rnd"><a href="responsive-design-1.html">LESS CSS</a></li>
+                                <li class="rnd"><a href="qunit.html">QUnit</a></li>
+                                <li class="rnd"><a href="../photobox/1.html">Bar graphs</a></li>
+                                <li class="rnd"><a href="page-optimisation.html">Page optimization</a></li>
+
+                                <li class="rnd">
+                                    Optimizing Images<br />                               
+                                       &nbsp;&nbsp;&nbsp;&nbsp;<span class="level-2">Preloading images</span><br />
+                                       &nbsp;&nbsp;&nbsp;&nbsp;<span class="level-2">JavaScript on demand</span><br />
+                                       &nbsp;&nbsp;&nbsp;&nbsp;<span class="level-2">Preventing Caching</span><br />
+                                       &nbsp;&nbsp;&nbsp;&nbsp;<span class="level-2">Animate Graphics</span><br /> 
+                                       &nbsp;&nbsp;&nbsp;&nbsp;<span class="level-2">Stretching graphics (<small>Progress bar</small>)</span>     
+                                </li>
+                             </ul>
+                                                                    
+                             <h2>Recent work</h2>
+                              <ul>
+                                <li>&raquo; <i>e-Commerce</i>   <br />&nbsp;US :  <a href="http://hibubusinessstore.com/">hibubusinessstore.com</a> <br />&nbsp;UK : <a href="http://hibubusinessstore.co.uk/">http://hibubusinessstore.co.uk/</a></li> 
+
+                           <li>&raquo;<i>News</i><br />&nbsp;&nbsp;<a href="http://m.bbc.co.uk/news">BBC Mobile Platform</a> </li>
+
+
+
+                           <li>&raquo;<i>Learning</i><br />&nbsp;<a href="http://www.bbc.co.uk/schoolradio">The National Curriculum (Great Britain)</a> </li>             
+                            </ul>
+
+                             <h2>WIP</h2>
+                              <ul>
+                                <li>&raquo; <a href="http://hotel-chocolat-brand-re-design.biostaging.com/templates/hub.html">Hotel Chocolat</a></li>                      
+                            </ul>
+                                                                                    
+                             <h2>Featuress</h2>
+                              <ul>
+                                <li> &raquo; <a href="http://hotel-chocolat-brand-re-design.biostaging.com/templates/checkout-delivery-d.html">Character counter</a></li>
+                                <li>&raquo; <a href="http://hotel-chocolat-brand-re-design.biostaging.com/templates/checkout-register.html">Password metre</a></li>                      
+                            </ul> 
+                                                                                                    
+                        </div><!-- /end .other -->
+                    </aside>
+                </article>
+            </div>
+        </div>      
+    </section>
+    <section>
+        <article class="site-foot">
+            <div class="site-foot-inner">
+                <!--<ul>
+                    <li><a href="#">Privacy</a></li> 
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Cookies</a></li>               
+                </ul>-->
+        </article>      
+    </section>
+</body>
+</html>
