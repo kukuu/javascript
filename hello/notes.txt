@@ -1,0 +1,29 @@
+Individual Downloads
+React 0.14.2 (development)
+The uncompressed, development version of react.js and react-dom.js with inline documentation (you need both files).
+
+<script src="https://fb.me/react-0.14.2.js"></script>
+<script src="https://fb.me/react-dom-0.14.2.js"></script>
+React 0.14.2 (production)
+The compressed, production version of react.js and react-dom.js (you need both).
+
+<script src="https://fb.me/react-0.14.2.min.js"></script>
+<script src="https://fb.me/react-dom-0.14.2.min.js"></script>
+React with Add-Ons 0.14.2 (development)
+The uncompressed, development version of React with optional add-ons.
+
+<script src="https://fb.me/react-with-addons-0.14.2.js"></script>
+<script src="https://fb.me/react-dom-0.14.2.js"></script>
+React with Add-Ons 0.14.2 (production)
+The compressed, production version of React with optional add-ons.
+
+<script src="https://fb.me/react-with-addons-0.14.2.min.js"></script>
+<script src="https://fb.me/react-dom-0.14.2.min.js"></script>
+All scripts are also available via CDNJS.
+
+npm
+We recommend using React from npm with a bundler like browserify or webpack. You can use the react and react-dom packages. After installing it using npm install --save react react-dom, you can use:
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+ReactDOM.render(<App />, ...);

@@ -1,0 +1,27 @@
+
+1. Folder Structure
+
+css/
+---- app.css
+img/
+---- scotch-beer.png
+js/
+---- actions/
+-------- FluxCartActions.js     // Our app's action creators
+---- components/
+-------- FluxCart.react.js      // Cart Component
+-------- FluxCartApp.react.js   // Main Controller View
+-------- FluxProduct.react.js   // Product Component
+---- constants/
+-------- FluxCartConstants.js   // Our app's action constants
+---- dispatcher/
+-------- AppDispatcher.js       // Our app's dispatcher
+---- stores/
+-------- CartStore.js           // Cart Store
+-------- ProductStore.js            // Product Store
+---- utils/
+-------- CartAPI.js             // Mock API
+---- app.js                     // Main app.js file
+---- ProductData.js             // Mock Data
+index.html
+package.json

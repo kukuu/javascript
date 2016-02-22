@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>React Base Fiddle (JSX) - jsFiddle demo by reactjs</title>
+    
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
+      
+    <script type='text/javascript' src="https://fb.me/react-with-addons-0.14.0.js"></script>
+    <script type='text/javascript' src="https://fb.me/react-dom-0.14.0.js"></script>
+    <script type="application/javascript;version=1.7" language="JavaScript 1.7">//<![CDATA[
+
+        var FilteredList = React.createClass({
+          filterList: function(event){
+            var updatedList = this.state.initialItems;
+            updatedList = updatedList.filter(function(item){
+              return item.toLowerCase().search(
+                event.target.value.toLowerCase()) !== -1;
+            });
+            this.setState({items: updatedList});
+          },
+          getInitialState: function(){
+             return {
+               initialItems: [
+                 "Luca",
+                 "Tahir",
+                 "Anthony",
+                 "Dan",
+                 "Adam",
+                 "Graham",
+                 "Kymme"
+               ],
+               items: []
+             }
+          },
+          componentWillMount: function(){
+            this.setState({items: this.state.initialItems})
+          },
+
+
+          //render sub-component- list item
+          render: function(){
+            return (
+              <div className="filter-list">
+                <input type="text" placeholder="Search Results" onChange={this.filterList}/>
+              <List items={this.state.items}/>
+              </div>
+            );
+          }
+        });
+
+        var List = React.createClass({
+          render: function(){
+            return (
+              <ul>
+              {
+                this.props.items.map(function(item) {
+                  return <li key={item}>{item}</li>
+                })
+               }
+              </ul>
+            )  
+          }
+        });
+
+        ReactDOM.render(
+          <FilteredList/>, document.getElementById('mount-point')
+        );
+
+  //]]> 
+  </script>
+  <style type="text/css">
+            * {
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 20px;
+        background: #2c3e50;
+      }
+
+      .filter-list {
+        margin: auto;
+        width: 300px;
+        background: #3498db;
+        border-radius: 5px;
+        border: 1px solid #196090;
+      }
+      .filter-list input {
+        width: 100%;
+        display: block;
+        padding: 10px;
+        border-radius: 5px 5px 0px 0px;
+        border: 0;
+        font-size: 24px;
+      }
+      .filter-list input:focus {
+        outline: none;
+      }
+      .filter-list ul {
+        margin: 0;
+        padding: 0;
+      }
+      .filter-list ul li {
+        list-style-type: none;
+        margin: 0;
+        color: white;
+        padding: 10px 20px;
+        border-top: 1px solid #196090;
+      }
+      .filter-list ul li:hover {
+        background: #2980b9;
+      }
+  </style>
+
+  </head>
+  <body>
+    <script src="https://facebook.github.io/react/js/jsfiddle-integration-babel.js"></script>
+
+    <div id="mount-point">
+        <!-- This element's contents will be replaced with your component. -->
+    </div>
+  </body>
+</html>
+
