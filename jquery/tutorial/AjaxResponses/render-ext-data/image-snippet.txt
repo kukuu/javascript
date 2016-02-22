@@ -1,0 +1,36 @@
+<ul class="slides">
+                        <li>
+  	    	                <img class="lazy" src="images/thumbnails/asia-de-cuba-london-1.jpg"  />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/cafe-des-amis-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/oxo-tower-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/the-ritz-restaurant-london-1.jpg" />
+  	    		        </li>
+                        <li><img class="lazy" src="images/thumbnails/tuttons-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/cafe-des-amis-london-1.jpg" />
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/asia-de-cuba-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/cafe-des-amis-london-1.jpg" />
+  	    		        </li>
+                        <li>
+  	    	                <img class="lazy" src="images/thumbnails/oxo-tower-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/the-ritz-restaurant-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/the-ritz-restaurant-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img  class="lazy" src="images/thumbnails/tuttons-london-1.jpg" />
+  	    		        </li>
+                      </ul>

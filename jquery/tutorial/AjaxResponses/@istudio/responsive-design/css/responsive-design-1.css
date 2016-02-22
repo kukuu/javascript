@@ -1,0 +1,875 @@
+/*
+
+Title     : Responsive Design & Mobile First
+Author    : Alexander Adu-Sarkodie
+Job Title : Developer FE - BIO
+Date      : August 2012
+
+Introduction:
+.............
+Responsive Design and Mobile First approach to web, mobile and wide screen developmemnt (including smart TVs)
+allows you to future proof your API in the changing market. In short growing business without "tears". A flexible layout is better prepared for devices that haven’t yet launched. 
+
+Not long ago ago, mentioning “tablet” would conjure up images of the iPad in the listener’s mind. But now, seven inch tablets like Samsung’s Galaxy Tab are in use, 
+and devices like the Kindle and Nook are also carrying fantastic little browsers. More are yet to come.
+We simply can’t keep up with the different resolutions entering the marketplace.
+
+A flexible foundation allows us to step back from targeting individual resolutions, and better prepare our designs for devices that haven’t even been imagined yet.
+*/
+
+
+/********** Responsive Design : Ingredients ********
+**************************************************** 
+
+Using a simple relationship between objects and elements of the design in question, we can implement responsive design.
+
+Formula: target / context = result
+
+where:
+
+target: Element or object  being targeted
+
+context: Parent element or object of the targeted element
+
+
+It takes three core ingredients to create a responsive design:
+
+1. A flexible, grid-based layout,
+2. Flexible images and media, and
+3. Media queries & Media Query Listeners, a module from the CSS3 specification.
+
+I have written this document for tutorial purposes, so some  properties of some Classes and IDs may be re-defined to overide previous set values.
+
+Note, whiles developing you can simply resize the browser window to a few different widths. However, this is no substitute 
+for actually testing your work on separate devices. But it allows to quickly assess how the design handles several different resolution ranges, 
+and simulate how users on capable phones, tablets, or other devices might experience our design. 
+It is recommended to have a test suite to cope with the development cycle.
+
+
+*/
+
+#page {
+    width: 960px;
+    margin: 0 auto;
+    /*  Note :
+        1. If you specify 1 value, it will be used for all four sides. 
+        2. If you specify two, the first will be the top/bottom padding and the second will be left/right.
+        3.  When specifying three, it goes top, left/right, bottom, echoing the usage for when only two values are provided.
+    */
+}
+
+
+body {
+	background-color: #DCDBD9; /*light gray background color*/
+	color: #2C2C2C; /* fairly dark text color*/
+	font: normal 100% Cambria, Georgia, serif; /*serif-heavy font stack: Set our base type size to the browser’s default,which in most cases is 16 pixels.*/
+}
+
+
+h1 {
+	font-size: 24px;
+	font-style: italic;
+	font-weight: normal;
+}
+
+h1 a {
+	color: #747474;
+	font: bold 11px Calibri, Optima, Arial, sans-serif;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+/***********Flexible Fonts******************
+********************************************
+
+To do so, we’ll need to do a little bit of math: we’ll simply
+take the target font size from our computer, and divide it by the font-size of its containing element—in other words, its context. 
+The result is our desired font-size expressed in relative, oh-so-flexible ems.
+In other words, relative type sizes can be calculated with this simple formula:
+
+target ÷ context = result
+
+*/
+
+/* And there we are: 24px is 1.5 times greater than 16px, so our font-size is 1.5em:16px is our context and 24px is our target*/
+h1 {
+	font-size: 1.5em; /* 24px / 16px */
+	font-style: italic;
+	font-weight: normal;
+}
+
+/* Font size of the link from our design is 11px. 
+So to set the font-size of our link in ems, we’ll divide our target of 11px not by 16px, the value set on the body, 
+but by 24px which is the font size of the headline, our new context:
+11 ÷ 24 = 0.458333333333333
+*/
+h1 a {
+	font: bold 0.458333333333333em Calibri, Optima, Arial, sans-serif; /* 11px / 24px */
+	color: #747474;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+h1.lede span {
+  font-size:0.55em;
+  float:right;
+  margin-top:1%;
+}
+
+h2,h3  {
+    font-family:georgia, serif;
+    font-weight:bold;
+    
+}
+
+h2 {
+    font-size:1.0em;
+    color:#747474;
+    margin-left:1%;
+}
+
+/*
+.other h2:nth-last-child(1) {
+    border:1px solid #ffcc33;
+}
+*/
+
+h3  {
+    color:#000;
+    font-size:0.80em;
+    margin:3% 0 1% 2%;
+}
+
+/****** Creating a Flexible Grid******
+*************************************
+
+Taken together, the gutters give us a total width of 960 pixels. However, the blog itself is only 900 pixels wide, 
+centered horizontally within that 960px-wide canvas.
+So those are the high-level details. And if we take a closer look at the two columns inside of the blog , 
+we can see that the left-hand content column (.main in our markup) is 566 pixels wide, while the right-hand, secondary column (.other) is only 331 pixels across.
+
+
+
+HTML Snippet:
+<section>
+    <div id="page">
+	    <div class="blog section">
+		    <h1 class="lede">Recently in The BIO Tek Blog!</a></h1>
+               <article>
+		             <div class="main">
+                          …
+		             </div><!-- /end .main -->
+                </article>
+                <article>
+		             <div class="other">
+			            …
+		             </div><!-- /end .other -->
+                </article>
+	     </div><!-- /end .blog.section -->
+      </div><!-- /end #page -->
+   </section>
+*/
+
+
+
+#page {
+	margin: 36px auto;
+	width: 960px;
+}
+
+.blog {
+	margin: 0 auto 53px;
+	width: 900px;
+	background: #F8F5F2 url("blog-bg.png") repeat-y 50% 0;/* the background graphic is simply centered at the top of the content area and then tiled vertically*/
+}
+
+.blog .main {
+	float: left;
+	width: 566px;
+}
+
+.blog .other {
+	float: right;
+	width: 331px;
+	background-color:#fff;
+}
+
+
+/******* From PIXELS to PERCENTAGES******
+******************************************
+
+
+Instead of pasting the pixel values directly into our CSS, we need to express those widths in 
+relative, proportional terms. Once we’ve done so, we’ll have a grid that can resize itself as the viewport does, 
+but without compromising the design’s original proportions.*/
+
+/*From:
+#page {
+margin: 36px auto;
+width: 960px;
+}
+To
+*/
+
+#page {
+	margin: 36px auto;
+	width: 90%;/*with trial and errors in the browser to see what looks best */
+}
+
+
+/*
+From:
+.blog {
+	margin: 0 auto 53px;
+	width: 900px;
+}
+To
+*/
+
+.blog {
+	margin: 0 auto 53px;
+	width: 93.75%; /* 900px / 960px */
+	background: #F8F5F2 url("images/blog-bg.png") repeat-y 63.1111111111111%;
+}
+
+/* TWO content columns
+From:
+
+.blog .main {
+	float: left;
+	width: 566px;
+}
+.blog .other {
+	float: right;
+	width: 331px;
+}
+
+566 ÷ 900 = .628888889
+331 ÷ 900 = .367777778
+
+Once we move our decimal points we’re left with 62.8888889% and 36.7777778%, the proportional widths of .main and .other:
+
+To:
+*/
+.blog .main {
+	float: left;
+	width: 62.8888889%; /* 566px / 900px */
+	background-color:#fff;	
+}
+
+
+.blog .main p {
+	padding:0 10px 0 10px;	
+}
+
+.blog .other {
+	float: right;
+	width: 36.7777778%; /* 331px / 900px */
+}
+
+
+
+
+/******  FLEXIBLE MARGINS AND PADDING:**********
+************************************************
+
+Hugging with no VENTILATION!
+Assuming the title of our blog is flushed left within its container , and our two columns currently abut each other, with no margins or gutters in sight.
+ We definitely have some cleanup to do.
+
+So let’s begin with that headline. Supposing there’s 48 pixels of space between our headline and the left edge of its container
+
+.lede {
+padding: 0.8em 10px;
+}
+
+a fixed value for that padding-left would create a gutter that doesn’t line up with the rest of our fluid grid. As our flexible columns expand or contract, 
+that gutter would simply ignore the rest of our design’s proportions, sitting stubbornly at 48px no matter how small or wide the design became. So we need to MOT! Using our formular:
+
+target ÷ context = result
+
+NOTE!:
+1. When setting flexible margins on an element, your context is the width of the element’s container.
+2. When setting flexible padding on an element, your context is the width of the element itself. Which makes sense, if you think about the box model:
+ we’re describing the padding in relation to the width of the box itself. So,
+
+From;
+.lede {
+padding: 0.8em 10px;
+}
+
+To;
+Note, since the headline doesnt have a declared width, its width (and the context we need for our formular) is the width of the blog module, or 900px. so the outcome of the calculator is
+*/
+.lede {
+	padding: 0.8em 1.1111111111111111%; /* 10px / 900px  */
+	
+}
+
+.recent-entries {
+	margin: 0 auto;
+	width: 69.7885196%; /* 231px / 331px */
+}
+
+/*Now, we could take the same approach with our article. But instead, let’s make it a bit more interesting. 
+Remember the 48px padding we set on our headline? Well, our article falls along the same column . 
+So rather than just centering our article within its container, let’s create another proportional gutter.
+Our target value is 48px. And since we’re working with relative padding, our context should be the width of the article itself.
+ But once again, since there’s no explicit width set on .article, we can simply use 566px, the width of its parent (.blog), for our context:
+
+Padding
+*/
+.article {
+	padding: 40px 8.48056537%; /* 48px / 566px */
+}
+
+
+
+.date {
+    float: left;
+    width: 14.556962%; /* 69px / 474px */
+}
+
+figure {
+    float: right;
+    margin-bottom: 0.5em;
+    margin-left: 2.53164557%; /* 12px / 474px */
+    /*width: 48.7341772%;  231px / 474px */
+}
+
+
+.date {
+    float: left;
+    width: 14.556962%; /* 69px / 474px */
+}
+
+figure {
+    /*float: right;*/
+    margin-bottom: 0.5em;
+    margin-left: 2.53164557%; /* 12px / 474px */
+   /*  width: 48.7341772%; 231px / 474px */
+ 
+}
+
+
+figcaption b {
+  font-family:Georgia;  
+  color:#ff0000;
+  font-size:0.66em;
+  padding-left:7%;
+  
+}
+
+
+/**************** Flexible Images*************
+**********************************************/
+
+img,
+embed,
+object,
+video {
+    max-width: 100%;
+}
+
+/*   
+In order not to avert a blanket rule for all images, I have added some specificity below, which could be useful:
+
+
+img.full,
+embed.full,
+object.full,
+video.full {
+    max-width: 100%;
+}
+
+*/
+
+/*Also, if you had a PNG attached to an element’s background, you could drop the following rule into an IE-specific stylesheet.
+This AlphaImageLoader patch does a few things. First, it removes the background image
+ from the element, then inserts it into an AlphaImageLoader object that sits “between” 
+ the proper background layer and the element’s content. But the sizingMethod property is the clever bit, 
+ dictating whether the AlphaImageLoader object should crop any parts of the image that overflow its container, 
+ treat it like a regular image, or scale it to fit it within its containing.*/
+ 
+.logo {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft. AlphaImageLoader(src="/path/to/logo.png", sizingMethod="scale");
+}
+
+
+/*Using Faux technique to tile background images: The flexible background is constructed to span accross 2 columns.
+In this example the other column has a grey background which is 568px wide and 160px high. 
+This is part of the blog section (900px). So using our formula target/context = result,
+we obtain 568 / 900 = 0.631111111111111
+
+To create the columns themselves, we’ll need to apply the transition point percentage (63.1111111111111%) 
+to our new, wider canvas. So if we’re working with a graphic that’s 3000px across, we simply need to multiply that width by the percentage, like so:
+
+We’re left with 1893.333333333333 as our result. And since Photoshop doesn’t deal in anything less than whole pixels, let’s round that down to 1893 pixels. 
+Armed with that number, we’ll recreate our textures in our blank image, switching from white to gray at the 1893rd pixel .
+
+*/
+
+
+/* ***** Media Queries**********
+********************************:
+
+Media Types:
+............
+    all 
+    braille 
+    embossed 
+    handheld 
+    print 
+    projection 
+    screen 
+    speech 
+    tty 
+    tv.
+
+Using the above media types you can customize the media attribute of a link as below :
+    <link rel="stylesheet" href="global.css" media="all" />
+    <link rel="stylesheet" href="main.css" media="screen" />
+    <link rel="stylesheet" href="paper.css" media="print" />
+Where:
+i) global.css is a global stylesheet used by the whole application
+ii) main.css is a style sheet applicable to main sectors of the application
+iii) paper.css is a stylesheet for print media.
+
+You can also use the @media block in your stylesheet, and associate it with a particular media type. 
+I prefer this as it consolidates the code in the page and  minimises the number of http request to server.
+
+*/
+
+
+@media screen {
+    body {
+    font-size: 100%;
+    }
+}
+
+@media print {
+    body {
+        font-size: 15pt;
+    }
+    
+    h1 {
+        text-transform:uppercase;
+    }
+}
+
+/*
+ Media queries has mechanisms for not only identifying media types but can also sniff and 
+identify physical characteristics like the viewport of the devices and browsers that renders the content.
+We write a can query after the "and" keyword in parenthesis. In the can, we will have physical characteristics 
+and values for the characteristics as name value pairs.
+*/
+
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 100%;
+    }
+}
+
+/*
+    Note you can insert media queries on link elements by inserting them into the media attribute. 
+For a wide screen with minimum width of 1024px, I can dynamically load the wide.css file:
+
+<link rel="stylesheet" href="wide.css" media="screen and (min-width: 1024px)" />
+
+Or attach it using @import:
+
+@import url("wide.css") screen and (min-width: 1024px);
+
+Note @import rules must always be first in a document.
+
+
+
+A list of the device features we can test in our media queries:
+.....................................................................................................................................
+Feature Name        |        Definition                                                     |         Has "min-" AND "max-" Prefixes
+......................................................................................................................................
+width               |       The width of the display area                                   |           Yes
+
+height              |       The height of the display area                                  |           Yes
+
+device-width        |       The width of the device's rendering surface                     |           Yes  
+
+device-height       |       The height of the device rendering surface                      |           Yes   
+
+monochrome          |       Similar to color. This feature lets you test 
+                            the number of bits per pixel in a monochrome device             |           Yes
+
+resolution          |       Tests the density of the pixel in the device.
+                            i.e resolution 720dpi or screen and (max-resolution:300dpi)     |           Yes
+
+scan                |       For tv browsing. Measures whether progressive or simple scan    |           No
+
+grid                |       Tests whether the device is grid based, like feature phones     |           No
+                            with one fixed-width font. Expressed simply as grid         
+
+*/
+
+
+/* Chaining multiple queries */
+
+@media screen and (min-device-width: 480px) and (orientation: landscape)  {
+   a {
+      font-size:0.85em;
+      color:#EC7731;/*bright orange color*/
+      padding:2px;
+      cursor:pointer;
+      text-decoration:none;
+   }     
+ }
+ 
+ a:hover {
+    text-decoration:underline;
+ }
+ 
+ 
+ /****Setting s resolution-agnostic approach. Scaling in smaller device** 
+*************************************************************************
+    In the head of our HTML we drop this:
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+    The initial-scale property sets the zoom level of the page to 1.0, or 100%, and helps ensure some 
+    consistency across small-screen, viewport-aware browsers.
+
+    The media query below sets smaller font size for smaller screens with maximum width of 768px.
+*/
+
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font: normal 1.25em Calibri, Arial Helvetica, sans-serif; /* 20px / 16px */
+    }
+}
+
+/* Below 768px, we instruct the #page element to occupy the full width of the browser window, saving 
+a fixed 20px-wide margin around its edges.
+The second rule below selects the blog (.blog), and disables its horizontal margins, making it occupy the full width of #page. */
+
+@media screen and (max-width: 768px) {
+    #page {
+    margin: 20px;
+    width: auto;
+   }
+}
+
+/* Below 768px, we instruct the #page element to occupy the full width of the browser window,
+and disables its horizontal margins, making it occupy the full width of #page. Leaving a bottom margin of 30px */
+
+
+@media screen and (max-width: 768px) {
+    .blog {
+        margin: 0 0 30px;
+        width: auto;
+        border:1px solid #ffcc33;/*test for max-width for browsers on all devices:phones,tablets and desktop*/
+    }
+}
+
+/*  SLIDE*/
+
+@media screen and (max-width: 768px) {
+    .slides .figure b {
+        width: auto;
+    }
+    
+    .slides .figure b img {
+        max-width: 100%;
+    }
+}
+
+
+/***************** Misc *********************
+*******************************************/
+
+ ul {
+    list-style-type:none;
+    margin-left:1%;
+    margin-top:-2.5%;
+}
+
+.main ul {
+    list-style-type:circle;
+    margin-top:0;
+}
+
+.main h3 {
+    margin-left:1%;
+}
+
+
+.main h2 {
+    margin-bottom:-1%;
+}
+
+.dev-projects .out-there,
+ .dev-projects .wip {
+    float:left; 
+}
+
+.dev-projects .out-there ul,
+ .dev-projects .wip ul {
+   margin-left:-18%; 
+}
+
+.dev-projects .out-there {
+    margin-right:20%; 
+    width:20%; 
+}
+
+.dev-projects  {
+    margin-left:2%;
+    margin-bottom:2%;
+    width:100%;
+}
+
+.clear-left,
+.site-foot-inner {
+    clear:left;
+}
+
+.site-foot-inner {
+   margin:0 16% 0;
+   
+  
+}
+
+.site-foot-inner ul {
+   list-style-type:none;
+   clear:left;
+   padding:15px 0 0;
+}
+
+.site-foot-inner ul li {
+   display:inline-block;
+}
+
+.site-foot-inner ul li {
+   padding-right:17%;
+}
+
+.site-foot-inner ul li:last-child {
+   padding-right:0;
+}
+
+
+
+.logo {
+    margin-top:0;
+    /*background: #C52618 url("images/logo-bg.jpg");*/
+    width: 5.208%; /* 50px / 960px */
+ }
+
+.masterhead {
+    width:99%;
+    margin:0  0 0 3%;
+}
+
+.masterhead .logo,
+.masterhead .nav.nav-primary {
+    float:left;
+}
+
+
+.masterhead ul.nav-primary  {  
+    margin-left:5%;
+    margin-top:-4%;
+    background-color:#fff;
+    padding:5px 0;
+    width:90%;
+}
+
+
+.masterhead ul.nav-primary li {
+    display:inline-block;
+    padding-right:3%;
+    width:240px;
+
+
+}
+
+.masterhead ul.nav-primary li:last-child {
+    padding-right:0;
+}
+
+.masterhead ul.nav-primary li:first-child {
+    padding-left:10px;
+}
+
+ .blog.section {
+    clear:left;
+}
+
+.other ul li.rnd {
+   color:#FF00FF; 
+}
+
+/*More responsive with smaller screens**
+*************************
+ What we’ve done is to disable the float we’d initially set on our .logo,
+ and instead centered it horizontally above our menu. And .nav-primary has 
+been set to text-align: center, which centers our navigation items within it.
+
+
+Maximum width:  max-width: 768px
+
+*/
+
+@media screen and (max-width: 768px) {
+    .masterhead .logo {
+    float: none;
+    margin: 0 auto 20px;
+    position: relative;
+    }
+    
+    .nav-primary {
+    margin-bottom: 20px;
+    text-align: center;
+    }
+}
+
+/*
+Maximum width:Viewport  max-width: 520px. This will overide any common features from that above
+
+For even smaller screens—specifically, those narrower than 520 pixels we float each li inside of 
+.nav-primary, choosing to float: right the second and fourth menu items. 
+The end result is a two-by-two grid of our navigation items, 
+one that’s more resilient to changes in viewport size than our display: inline
+*/
+
+@media screen and (max-width: 520px) {
+    .nav-primary {
+        float: left;
+        width: 100%;
+    }
+
+    .nav-primary li {
+        clear: left;
+        float: left;
+        width: 48%;
+    }
+
+    li#nav-rated,
+    li#nav-contact {
+        clear: right;
+        float: right;
+    }
+    
+    .nav-primary a {
+        display: block;
+        padding: 0.45em;
+    }
+}
+
+/*  
+Wider screens including smart TVs:
+
+@media screen and (min-width: 1200px) {
+    .welcome,
+    .blog,
+    .gallery {
+    width: 49.375%;
+    }
+    .welcome,
+    .gallery {
+        float: right;
+        margin: 0 0 40px;
+    }
+    .blog {
+        float: left;
+        margin: 0 0 20px;
+    }
+}
+
+*/
+
+/*MEDIA QUERY LISTENERS  
+*****************************
+MQL provides the ability to evaluate a media query at runtime in script. It is used on page load to decide which image resources to use initially. 
+
+
+eg:To evaluate a media query at run time (On page Load), an MediaQueryList object is created using the new window method, matchMedia
+
+var mediaQueryList = window.msMatchMedia("(min-width:950px)");
+isLargeScreen = mediaQueryList.matches;
+
+Additionally, you can register for callbacks ("media query listeners") whenever the evaluation of the media query changes. 
+In the demo, this is used to update which image resources to use whenever the media's dimensions crosses the width threshold of 950px. 
+
+ex ......
+var mediaQueryList = window.msMatchMedia("(min-width:950px)");// You create the object
+isLargeScreen = mediaQueryList.matches;
+mediaQueryList.addListener(mediaSizeChange);
+function mediaSizeChange(mediaQueryList) {
+    //Executed whenever the media query changes from true to false or vice versa
+    if(mediaQueryList.matches) {
+        showLargeScreen();
+    }else{
+        showSmallScreen();
+    }
+}
+
+
+ex 3.
+..........
+
+mql = window.msMatchMedia("(min-width:450px)");
+if (mql.matches) {
+  // Window is fine. 
+} else {
+  // Window is too narrow.       
+}
+
+
+Subscribing media query listeners
+..................................
+
+To detect media query changes, you can subscribe a listener to a MediaQueryList object. 
+The addListener method takes a callback function, and invokes it when the media query changes evaluation. 
+Using the previous media query, the following example subscribes to changes in the media query.
+
+
+mql = window.msMatchMedia("(min-width:450px)");
+mql.addListener(sizeChange); // Size change is the callback function.
+
+function sizeChange(mql) {
+  if (mql.matches) {
+    // The window is big enough for content.
+  } 
+  else {
+    // The window has gotten too small for content.
+  }
+}
+
+Support for older browsers
+.............................
+
+Support for older browsers (IE 8 and below,) can be achieved using respond.js. Courtesy  of Scott Jehl.
+Note IE8 and below does not provide native support for Media queries. Use the hack below in addition with respond.js
+Add the specially formatted CSS comment at the end of every media query. See below:
+
+
+*/
+
+@media screen and (max-width: 768px) and @media screen and (min-width: 480px) {
+    p:first-child {
+        color:#EC7731; 
+    }
+}/*/mediaquery*/
+
+
+/********* WORKING WITH JavaScript
+**************************************
+JavaScript is used for progressive enhancement
+
+Progressive enhancement builds documents for the least capable or differently capable devices first, 
+then moves on to enhance those documents with separate logic for presentation, in ways that don’t place an undue burden
+on baseline devices but which allow a richer experience for those users with modern graphical browser software.
+
+***********/
+

@@ -1,0 +1,49 @@
+
+A
+...
+In the example above, you came across jQuery .find() and jQuery .each().
+
+$.find() is used to find a DOM element's descendants or children. In the example above, you used it to find all children called language of the root XML element contained in the variable called data. Further details on $.find() can be accessed on http://api.jquery.com/find/.
+
+$.each(index) is a for ... loop done the jQuery way. It's extremely concise and efficient. Notice the use of $(this) inside the $.each() function block. This is a snappy way of referring to the item the loop is currently processing: in our example above $(this) refers to one of the language items in the items array.
+
+More details on $.each() can be found on http://api.jquery.com/each/.
+
+
+More details on $.each() can be found on http://api.jquery.com/each/.
+
+B
+...
+How do I use $.post()?
+
+If you want to use POST instead of GET in your AJAX calls, you can use $.post().
+
+Unlike GET requests, POST requests don't use a query string to send data. If you intend to send more than a few bits of data to the sever, or if you intend to send sensitive data, it's recommended you use an HTTP POST request.
+
+The way you implement $.post() is very similar to the way you implemented $.get() in the previous example. I invite you to experiment with it on your own and to visit http://api.jquery.com/jQuery.post/ for more code samples and useful details.
+
+C
+..
+How do I use $.ajax()?
+
+If you need greater flexibility, the full-blown $.ajax() function offers a great number of settings.
+
+For instance, let's say you want to retrieve a list of programming languages from the XML document you used in the previous example. You might want to specify the following options:
+
+    the request must be an HTTP GET;
+    the page from which the result is returned must not be in the browser's cache;
+    the response returned by the server is of data-type XML;
+    the request is made in html;
+    there must be a function that handles the returned result if all goes well;
+    and, finally, there must be a function that handles errors in case the request is not successful.
+
+
+D
+...
+/*Save your work and preview it in a browser. The result should be similar to the previous example. If an error occurs, you'll be presented with an alert box. The errorAlert() function has an e argument that represents the type of error, and an jqxhr argument that represents the request as a jQuery object.
+
+In case an error occurs, details about the error are automatically contained in the arguments provided and will be displayed in the alert box.
+
+Do you want to test the error catching function? Simply replace dataType: "xml" in the $.ajax() function with dataType: "text/xml". Save all your files and run the HTML page. Now, when you click the link, an alert box should pop up displaying a parser error message.
+
+More on $.ajax() can be found on http://api.jquery.com/jQuery.ajax/*/

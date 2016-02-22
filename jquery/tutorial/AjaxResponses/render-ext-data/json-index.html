@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Responsive Design & Mobile Firs -  Prototype4 v.02</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="data" content="Responsive Design, Flexible Grid, Media Queries, Media Query Listeners, HTML5" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/plugin/slides/standard/slide.css">
+
+    <!-- AMD /Require JS -->
+    <script data-main="scripts/main" src="scripts/require-jquery.js"></script>
+    <script type="text/javascript">
+         if('querySelector' in document && 'localStorage' in window && 'addEventListener' in window) {
+                 var w = screen.width,
+                     t;
+                 switch (true){
+                     case (w > 1200):
+                         t = '@import url("css/wide.css") (min-width: 1056px);' + t;
+                     case ((w > 640) || (screen.height > 800)):
+                         t = '@import url("css/tablet.css") (min-width: 641px);' + t;
+                     default:
+                         t = '@import url("css/compact.css") (max-width: 640px);' + t;
+                 }
+                 document.write('<style type="text/css">'+t+'</style>');
+        }
+    </script>
+	  
+  <style type='text/css'>
+  	#imagewrap {padding:0 10px 10px 0;}
+  </style>
+  
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+$(document).ready(function(){
+    var data = '[{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/asia-de-cuba-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/cafe-des-amis-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/oxo-tower-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/tuttons-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/cafe-des-amis-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/asia-de-cuba-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/cafe-des-amis-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/oxo-tower-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/the-ritz-restaurant-london-1.jpg"},{"image":"http:\/\/www.goldhawk-college.com\/istudio\/type-1\/images\/thumbnails\/tuttons-london-1.jpg"}]';
+    var obj = $.parseJSON(data);
+    $.each(obj, function(index,item) {
+       $('#imagewrap').append('<img class="lazy images" src="'+item.image+'" />');         
+    });
+});
+});//]]>  
+
+</script>
+    <script src="scripts/plugin/lazyload/jquery.lazyload.js" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $("img").lazyload({
+                event: "scrollstop"
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: 'http://restfulapi.alastair.lb-bat-dev-01.livebookings.lan/cuisine',
+                dataType: 'jsonp',
+                data: {
+                    max: 4
+                },
+                jsonp: 'jsoncallback',
+                success: function (data) {
+                    for (var i = 0; i < data.length; i += 1) {
+                        $('#restaurantList').append('<li><a href="#">' + data[i].name + '</a></li>');
+                    }
+                }
+            });
+        });
+
+    </script>
+  
+    <!-- Flexslider -->
+	<link href="css/plugin/slides/flexslider/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="css/plugin/slides/flexslider/shThemeDefault.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/plugin/slides/flexslider/demo.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/plugin/slides/flexslider/flexslider.css" type="text/css" media="screen" />
+    <script src="scripts/plugin/slides/flexslider/modernizr.js"></script>
+    <script  src="scripts/plugin/slides/flexslider/jquery.flexslider.js"></script>
+    <script src="scripts/feature/feature.js" charset="utf-8"></script>
+     
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".btn-slide").click(function () {
+                $("#panel").slideToggle("slow");
+                $(this).toggleClass("active"); return false;
+            });
+
+
+        });
+</script>
+
+   
+
+</head>
+<body>
+    <div id="one" data-role="page">
+        <div class="masterhead">
+            <header>
+                <hgroup>
+                    <h1>Mobile Prototype4 v.02</h1>
+                    <nav>
+                        <div class="nav-primary">
+                                 <!--global nav / fly out at  breakpoint-->
+		                 </div><!-- /end main .global-nav -->
+                    </nav>
+                </hgroup>
+            </header>
+        </div>
+        <section>
+	         <div id="intro"  class="box box-aside">
+	                <h2>User Profile</h2>
+                    <div id="user-profile"></div>
+                    <div id="geo-loc"></div>
+	         </div><!-- /end introduction -->
+            
+			 <div id="adaptive-content"  class="box box-large no-margin">
+                  <section class="slider">
+                    <h2>Carousel</h2>
+                    <div class="flexslider carousel">
+                      <ul class="slides">
+                        <li>
+  	    	                <img class="lazy" src="images/thumbnails/asia-de-cuba-london-1.jpg"  />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/cafe-des-amis-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/oxo-tower-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/the-ritz-restaurant-london-1.jpg" />
+  	    		        </li>
+                        <li><img class="lazy" src="images/thumbnails/tuttons-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/cafe-des-amis-london-1.jpg" />
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/asia-de-cuba-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/cafe-des-amis-london-1.jpg" />
+  	    		        </li>
+                        <li>
+  	    	                <img class="lazy" src="images/thumbnails/oxo-tower-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/the-ritz-restaurant-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img class="lazy" src="images/thumbnails/the-ritz-restaurant-london-1.jpg" />
+  	    		        </li>
+  	    		        <li>
+  	    	                <img  class="lazy" src="images/thumbnails/tuttons-london-1.jpg" />
+  	    		        </li>
+                      </ul>
+                    </div>
+
+                  </section>     
+	         </div><!-- /end lazy load -->
+			 <div id="offers"  class="box width-common margin-common margin-offset">
+                <h4 class="dod">Offers of the day!</h4>    
+                    <img class="lazy" src="images/thumbnails/jamies-italian-guildford-1.jpg" width="80%" /><br /><br />
+                <img class="lazy" src="images/thumbnails/jamies-italian-kingston-1.jpg"  width="80%" height="110"/>            
+	         </div>
+            <!-- /end profile -->
+			 <div id="geo-location"  class="box width-common">
+	         
+                <div class="location-results">  
+	                <button id="btnInit" class="cuisine-buttons button button-5" value="Get my location">Get my location</button>
+                    
+                     <section>
+                        <div id="panel">
+                        <!--Handlebars-->
+                            
+                        <script type="text/x-handlebars">
+                            <div class="editor">
+                                <div class="invite">
+                                    <h4 class="third-party">Third party promotions</h4>
+                                    <p>If you would like to receive information about tourist attractions,
+                                    theatre or sports events around your restaurant please fill in the form.</p>
+                                </div>
+                                <p>
+                                    <strong>First Name:</strong> {{view SC.TextField valueBinding="App.personController.firstName"}}
+                                <br /><br />
+                                    <strong>Phone number:</strong> {{view SC.TextField valueBinding="App.personController.phoneNumber"}}
+                               <br />
+
+                                    {{#view SC.Checkbox valueBinding="App.personController.didConfirm"}}
+                                        <input type="checkbox"><small>Please click to receive confirmation</small>.
+                                    {{/view}}
+                                    </p>
+                            </div>
+
+                            <div class="viewer">
+                            <p><strong>Confirmation List</strong></p>
+                            <p>
+                                {{#with App.personController}}
+                                    {{#if didConfirm}}
+                                    {{profile}}
+                                    {{else}}
+                                    You have not confirmed yet.
+                                    {{/if}}
+                                {{/with}}
+                            </p>
+                            </div>
+                    </script>
+                    <!--end Handlebars-->
+                        </div>
+                    </section>                
+                </div>  
+	                                  
+	         </div><!-- /end geo location -->
+			 <div id="cuisine"  class="box width-common margin-common margin-offset">
+	                        <h4>What's your favourite cuisine</h4>
+							<div class="cuisine-menu"> 
+							<input type="button"  id="nav-menu-1" class="cuisine-buttons button button-1"  value="Indian" />
+                            <input type="button" id="nav-menu-2" class="cuisine-buttons button button-2" value="Chinese" />
+                            <input type="button" id="nav-menu-3" class="cuisine-buttons button button-3" value="Italian" />
+                            <input type="button" id="nav-menu-4"  class="cuisine-buttons button button-4" value="Thai" />
+						</div>
+	         </div><!-- /end vafourite cuisine -->
+			 <div id="restaurant"  class="box width-common">
+	                        <h4>Restaurants</h4>
+	         </div><!-- /end mustard check -->
+
+            <div id="lazy-load"  class="box width-common lazyload">
+                
+	                        <h4>Lazy load</h4>
+                            <div class="media-content">
+                                  <p>
+                                  Images below the fold (the ones lower than window bottom) are not loaded. When scrolling down
+                                  they are loaded when needed. Empty cache and shift-reload to test again.
+                                </p>
+                               <div id="imagewrap"></div>
+                            </div>
+                            
+	         </div><!-- /end mustard check -->
+
+        </section>
+        <section>
+
+            <!--device features-->
+            <div id="device-feature">
+                <h2>Device features</h2>
+            <p>The list of properties returned is not a complete list of what is available.
+		             Please see each respective technology for full information.</p>
+            </div>
+            <div id="feature-components">
+                <div class="feature-boxes">
+                    <h3>CSS media queries</h3>
+		        <p><strong>Note:</strong> Only one value should be visible for each feature below. 
+		        If more than one value is visible, this indicates that the corresponding feature is not supported.</p>
+		        <dl id="css-media-queries">
+			        <dt>media-type:</dt>
+			        <dd class="screen">screen</dd>
+			        <dd class="handheld">handheld</dd>
+			        <dt>device-width:</dt>
+			        <dd class="width-over">*OVER* 480 pixels</dd>
+			        <dd class="width-under">*UNDER* 480 pixels</dd>
+			        <dt>orientation:</dt>
+			        <dd class="portrait">portrait</dd>
+			        <dd class="landscape">landscape</dd>
+			        <dt>aspect-ratio:</dt>
+			        <dd class="ratio-320x480">320x480</dd>
+			        <dd class="ratio-360x640">360x640</dd>
+			        <dd class="ratio-800x600">800x600</dd>
+			        <dt>color:</dt>
+			        <dd class="color-8bit">8bit</dd>
+			        <dd class="color-16bit">16bit</dd>
+			        <dd class="color-24bit">24bit</dd>
+		        </dl>
+		
+                </div>
+                <div class="feature-boxes">
+                    <h3>Javascript feature detection (HTML 5)</h3>
+		            <p><strong>Reminder:</strong> You will not find support for 
+		            HTML 5 features on older browsers.</p>
+		            <dl id="js-features"></dl>
+		        </div>
+                <div class="feature-boxes">
+		            <h3>Javascript object detection</h3>
+		            <p><strong>Note:</strong> The following only includes a small subset of the available values.
+		             Only properties of the navigator and screen objects are being displayed.</p>
+		            <dl id="js-objects"></dl>
+		            
+                </div>
+	          </div>
+          </div>
+            <!--end device features-->
+        </section>
+    </div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/1.5.1/jquery.mockjax.js"></script>
+<script>
+    $.mockjax(function (settings) {
+
+    switch (settings.url) {
+        case 'scripts/mock/restaurant.json':
+            return {
+                proxy: 'http://restfulapi.alastair.lb-bat-dev-01.livebookings.lan/restaurant'
+            };
+        default: return false;
+    }
+});
+</script>
+  <script type="text/javascript" charset="utf-8">
+
+      //Lazyload
+      $(function () {
+          $("img").lazyload();
+      });
+	
+        // Device feature tests
+        window.onload = tests.run();
+       
+      //Flexslider
+      $(function () {
+         // SyntaxHighlighter.all();
+      });
+      $(window).load(function () {
+          $('.flexslider').flexslider({
+              animation: "slide",
+              animationLoop: false,
+              itemWidth: 210,
+              itemMargin: 5,
+              start: function (slider) {
+                  $('body').removeClass('loading');
+              }
+          });
+      });
+  </script>
+    <script type="text/javascript" src="scripts/lib/ember.min.js"></script>
+     <script type="text/javascript">
+         App = SC.Application.create();
+         App.personController = SC.Object.create({
+             firstName: null,//property first name
+             phoneNumber: null, // property email address
+             profile: function () {
+                 return 'Hi ' + this.get('firstName') + ' (phone number : ' + this.get('phoneNumber') + ')' +
+                     ' , thanks for confirming. We will send you SMS with more details shortly.';
+             }.property('firstName', 'phoneNumber'),
+
+             didConfirm: false
+         });
+    </script>
+  
+</body>
+</html>
+
+
+
+  

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <br clear="all" />
+<div id = "doc">
+
+<h1>Documentation for Graphs</h1>
+
+<p>
+	
+	There is two type of data array for jqBarGraph. First is for simple bar graph type, and second is for multi and stacked bar type.<br />
+	<br />
+	For <strong>simple bar graph type</strong> data for one bar should look like this: [value, label, color]. Label and color are optional.
+	This is example for simple bar graph type: <br /><br />
+	
+	<code>
+	arrayOfData = new Array(<br />
+&nbsp;&nbsp;&nbsp;			[10.3,'Jan','#f3f3f3'],<br />
+&nbsp;&nbsp;&nbsp;			[15.2,'Feb','#f4f4f4'],<br />
+&nbsp;&nbsp;&nbsp;			[13.1,'Mar','#cccccc'],<br />
+&nbsp;&nbsp;&nbsp;			[16.3,'Apr','#333333'],<br />
+&nbsp;&nbsp;&nbsp;			[14.5,'May','#666666']<br />
+	);
+	</code>
+	<br /><br />
+	For <strong>multi and stacked type of graph</strong> you should send data in next format: [[value1, value2, value3, ..., valueN], label].
+	It should look similar to this:<br /><br />
+	
+	<code>
+	arrayOfData = new Array(<br />
+&nbsp;&nbsp;&nbsp;			[[14,54,26],'2007'],<br />
+&nbsp;&nbsp;&nbsp;			[[8,48,38],'2008'],<br />
+&nbsp;&nbsp;&nbsp;			[[4,36,57],'2009']<br />
+	);
+	</code>
+	<br /><br />
+	
+	After you set your data array you just need to say in which div you want graph to be created. All you have to do is:<br /><br />
+	<code>
+	$('#divForGraph').jqBarGraph({ data: arrayOfData });
+	</code>
+	<br /><br />
+	
+	The code above is enough to display your data as bar graph. But if you want to made your graph prettier you can achieve that
+	with next set of parameters: <br /><br />
+	<code>
+		<b>data:</b> arrayOfData,
+		<span class="comment">// array of data for your graph</span><br />
+		<b>title:</b> false,
+		<span class="comment">// title of your graph, accept HTML</span><br />
+		<b>barSpace:</b> 10, 
+		<span class="comment">// this is default space between bars in pixels</span><br />
+		<b>width:</b> 400, 
+		<span class="comment">// default width of your graph</span><br />
+		<b>height:</b> 200, 
+		<span class="comment">//default height of your graph</span><br />
+		<b>color:</b> '#000000', 
+		<span class="comment">// if you don't send colors for your data this will be default bars color</span><br />
+		<b>colors:</b> false, 
+		<span class="comment">// array of colors that will be used for your bars and legends</span><br />
+		<b>lbl:</b> '', 
+		<span class="comment">// if there is no label in your array</span><br />
+		<b>sort:</b> false, 
+		<span class="comment">// sort your data before displaying graph, you can sort as 'asc' or 'desc'</span><br />
+		<b>position:</b> 'bottom', 
+		<span class="comment">// position of your bars, can be 'bottom' or 'top'. 'top' doesn't work for multi type</span><br />
+		<b>prefix:</b> '', 
+		<span class="comment">// text that will be shown before every label</span><br />
+		<b>postfix:</b> '', 
+		<span class="comment">// text that will be shown after every label</span><br />
+		<b>animate:</b> true, 
+		<span class="comment">// if you don't need animated appearance change to false</span><br />
+		<b>speed:</b> 2, 
+		<span class="comment">// speed of animation in seconds</span><br />
+		<b>legendWidth:</b> 100, 
+		<span class="comment">// width of your legend box</span><br />
+		<b>legend:</b> false, 
+		<span class="comment">// if you want legend change to true</span><br />
+		<b>legends:</b> false, 
+		<span class="comment">// array for legend. for simple graph type legend will be extracted from labels if you don't set this</span><br />
+		<b>type:</b> false, 
+		<span class="comment">// for multi array data default graph type is stacked, you can change to 'multi' for multi bar type</span><br />
+		<b>showValues:</b> true, 
+		<span class="comment">// you can use this for multi and stacked type and it will show values of every bar part</span><br />
+		<b>showValuesColor:</b> '#fff'
+		<span class="comment">// color of font for values</span>
+	</code>
+</p>
+
+</div>
+</body>
+</html>

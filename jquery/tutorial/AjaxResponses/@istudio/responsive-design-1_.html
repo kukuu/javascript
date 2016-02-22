@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Responsive Design & Mobile First</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="viewport" content="Responsive Design, Flexible Grid, Media Queries, Media Query Listeners, HTML5" />
+    <!--<link rel="stylesheet" href="css/wide.css" media="tv and (min-width: 1024px)" />--> 
+    <style type="text/css">
+        @import url("css/wide.css") tv and (min-width: 1024px); 
+    </style>
+    <link href="css/responsive-design-1.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <section>
+        <div id="page">
+            <div class="blog section">
+                <h1 class="lede">iStudio <span>Alexander Adu-Sarkodie - 
+MSc Telematics (Telecommunication  & Informatics)</span></h1>
+                    <article>
+                        <div class="main">
+                           <h2>Responsive Design &amp; Mobile First</h2>   
+                           <p><a href="http://www.goldhawk-college.com/responsive.html">Responsive design</a> and Mobile First approach to web, mobile and wide screen program development (including smart TVs)
+                            allows you to future proof your API in the fast changing market. In short, growing business without "tears".
+                             A flexible layout is better prepared for devices that haven’t even launched yet.</p> 
+
+                            <p>Not long ago ago, mentioning “tablet” would conjure up images of the iPad in the listener’s mind.
+                             But now, seven inch tablets like Samsung’s Galaxy Tab are in use, and devices like the Kindle and Nook are also carrying fantastic little browsers. More are yet to come.
+                            As developers, We simply can’t keep up coding the different resolutions entering the marketplace each time. We need a Design Pattern. 
+                            One for resolving common occurrent issues, including the future. That means "assault proofing" your code!</p>
+
+                            <p>A flexible foundation allows us to step back from targeting individual resolutions, and better prepare our designs for devices that haven’t even been imagined yet.</p>
+
+                            <h3>Ingredients for Reponsive Design &amp; Mobile First</h3>
+
+                            <p>Using a simple relationship between objects and elements of the design in question, we can implement responsive design.</p>
+
+                            <p>Formula: <i>target / context = result</i><br />
+                                where:<br />
+                                <i>target</i>: Element or object  being targeted<br />
+                                <i>context</i>: Parent element or object of the targeted element
+                            </p>
+
+                            <p>It takes three core ingredients to create a responsive design:</p>
+
+                            <ul>
+                                <li>A flexible, grid-based layout</li>
+                                <li>Flexible images and media</li>
+                                <li>Media queries & Media Query Listeners (A module from the CSS3 specification).</li>                 
+                            </ul>
+
+                            <p>Click this <a href="css/responsive-design-1.CSS">  link</a> to see the responsive stylesheet for this work.
+                            This document has been written in tutorial format. So some  properties of certain Classes and IDs (previously defined) may be re-defined to overide previous set values.</p>
+
+                            <p>Note whiles developing, you can simply resize the browser window to a few different widths. However, this is no substitute 
+                            for actually testing your work on separate devices. But it allows to quickly assess how the design handles several different resolution ranges, 
+                            and simulate how users on capable phones, tablets, or other devices might experience our design. 
+                            It is recommended to have a test suite to cope with the development cycle.</p>
+
+                             <figure>
+                                <img src="images/robot-1.jpg" alt="Robot Attack 1" />
+                                <figcaption><b>Lo! the Mars robot attacks!</b></figcaption>                
+                            </figure>                 
+                            
+                            <h2  class="clear-left">Less CSS</h2>  
+                            <p> LESS CSS is a  preprocessor language that allows you to write less CSS code. It extends CSS with dynamic behavior such as variables,
+                                mixins, operations and functions. </p>
+
+                            <p>During translation, the values of the variables, mixins, operations and functions are inserted into the output CSS document.</p>
+
+                            <p>This work on  LESS CSS looks at high level, organisational structure and dependencies  between the stylesheet that aggregate to produce the page.</p>
+
+                            <p><strong>Directory where files are stored</strong>:<br /> /less-css/rnd/css</p>
+
+                            <p>In the parent CSS folder, there is this organisation of folders:</p>
+                            <ul>
+                                <li>base</li>
+                                <li>components</li>
+                                <li>styleguide</li>   
+                                <li>views</li>              
+                            </ul>
+
+                            <p>And in the base folder for example, there are these less files:</p>
+
+                            <ul>
+                                <li>compact.less</li>
+                                <li>core.less</li>
+                                <li>tablet.less</li>   
+                                <li>wide.less</li>              
+                            </ul>
+
+                            <p>For example, core.less imports style from:</p>
+
+                            <ul>
+                                <li>styleguide folder (i.e. reset.less and typography.less)</li>
+                                <li>layout grid styles from the view folder (views/core.less)</li>
+                                <li>Individual components less files, in the three main sections of the page
+                                    <ul>
+                                        <li>Banner</li>
+                                        <li>Articles (left and right sections of main content area)</li>
+                                        <li>Aside (right section of main content area)</li>                                
+                                    </ul>                                 
+                                </li>                                                
+                            </ul>
+
+                            <p>There is some computation in the following files</p>
+
+                            <ul>
+                                <li>/less-css/rnd/css/base/core.less (<a href="../less-css/rnd/css/base/core.less">core.less</a>)<br />
+                                    This LESS file will import, compile, strip comments and flattens all LESS styles into a single CSS for core devices; 
+                                    <ul>
+                                        <li>feature phones</li>
+                                        <li>non-js</li>
+                                        <li>older browsers</li>
+                                    </ul>                                  
+                                </li>
+                                <li>/less-css/rnd/css/base/wide.less (<a href="../less-css/rnd/css/base/wide.less">wide.less</a>)<br />
+                                    Flattens all LESS styles into a single CSS for desktop browsers; 
+                                    <ul>
+                                        <li>modern browsers that  'cut the mustard' </li>
+                                        <li>support media queries and media query listeners</li>
+                                        <li>screen is wider than 1200px, browser window is more than 1056px wide (Including support for smart TVs)</li>
+                                    </ul>                           
+                                </li>
+                                <li>/less-css/rnd/css/styleguide/reset.less (<a href="../less-css/rnd/css/styleguide/reset.less">reset.less</a>)<br />
+                                    Based on Eric Meyer's reset.
+                                </li>
+                                <li>/less-css/rnd/css/styleguide/typography.less (<a href="../less-css/rnd/css/styleguide/typography.less">typography.less</a>)<br /></li>                             
+                            </ul>
+
+                      </div><!-- /end .main -->
+                </article>
+                <article>
+                    <aside>                    
+                        <div class="other">
+ 			     <h2>Profile</h2>
+                             <ul>
+                                 <li class="rnd"><a href="http://www.blogger.com/profile/14800490193632788559">Blog</a></li>
+			     </ul>
+
+                             <h2>Research & Development</h2>
+                             <ul>
+                                <li class="rnd">Responsive Design &amp; Mobile First</li>
+                                <li class="rnd">LESS CSS</li>
+                                <li class="rnd"><a href="qunit.html">QUnit</a></li>
+
+                                <li class="rnd"><a href="../photobox/1.html">Bar graphs</a></li>
+
+
+
+
+                                
+                             </ul>
+                                                                    
+                             <h2>Recent work</h2>
+                              <ul>
+                                <li>&raquo; <i>e-Commerce</i>   <br />&nbsp;US :  <a href="http://hibubusinessstore.com/">hibubusinessstore.com</a> <br />&nbsp;UK : <a href="http://hibubusinessstore.co.uk/">http://hibubusinessstore.co.uk/</a></li> 
+
+                           <li>&raquo;<i>News</i><br />&nbsp;&nbsp;<a href="http://m.bbc.co.uk/news">BBC Mobile Platform</a> </li>
+
+
+
+                           <li>&raquo;<i>Learning</i><br />&nbsp;<a href="http://www.bbc.co.uk/schoolradio">The National Curriculum (Great Britain)</a> </li>             
+                            </ul>
+
+                             <h2>WIP</h2>
+                              <ul>
+                                <li>&raquo; <a href="http://hotel-chocolat-brand-re-design.biostaging.com/templates/hub.html">Hotel Chocolat</a></li>                      
+                            </ul>
+                                                                                    
+                             <h2>Featuress</h2>
+                              <ul>
+                                <li> &raquo; <a href="http://hotel-chocolat-brand-re-design.biostaging.com/templates/checkout-delivery-d.html">Character counter</a></li>
+                                <li>&raquo; <a href="http://hotel-chocolat-brand-re-design.biostaging.com/templates/checkout-register.html">Password metre</a></li>                      
+                            </ul> 
+                                                                                                    
+                        </div><!-- /end .other -->
+                    </aside>
+                </article>
+            </div>
+        </div>      
+    </section>
+    <section>
+        <article class="site-foot">
+            <div class="site-foot-inner">
+                <!--<ul>
+                    <li><a href="#">Privacy</a></li> 
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Cookies</a></li>               
+                </ul>-->
+        </article>      
+    </section>
+</body>
+</html>

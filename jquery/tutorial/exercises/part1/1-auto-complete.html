@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Auto suggest</title>
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script language="javascript" type="text/javascript">
+	var source = [ { value: "http:www.google.com",
+                 label: "google"
+               },
+               { value: "http://www.bbc.co.uk",
+                 label: "BBC"
+               }
+             ];
+			 
+	$(document).ready(function() {
+    $("input#autocomplete").autocomplete({
+        source: source,
+        select: function( event, ui ) { 
+            window.location.href = ui.item.value;
+        }
+    });
+});
+	</script>
+</head>
+
+<body>
+	<div class="suggestBox">
+        <input type="text" id="autocomplete" placeholder="Search...">
+    </div>
+
+
+</body>
+</html>

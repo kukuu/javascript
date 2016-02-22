@@ -1,0 +1,32 @@
+
+* { 
+	font-family: Georgia, Serif;
+}
+
+#chunk {
+	width: 700px;
+}
+
+ul {
+	margin-left: 0;
+	padding-left: 20px;
+}
+
+.dynamic ul {
+	display:none;
+	margin:0pt 1em;
+}
+#collapse_one, #collapse_two {
+	float:left;
+	width:40%;
+}
+
+hr { clear: both; }
+
+input[type=button] { cursor: pointer; }
+
+body.debug { cursor:pointer; }
+
+body.debug #header, body.debug p {
+	margin: 0;
+}

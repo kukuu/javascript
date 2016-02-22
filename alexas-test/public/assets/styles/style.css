@@ -1,0 +1,114 @@
+		/*******************************8
+		Autor: Alexander Adu-Sarkodie
+		Name of file: style.css;
+		Date created: 26/01/20016;
+
+		*********************************/	
+
+			.header {
+	  			margin-bottom: 2em;
+				text-align: right;
+			}
+			.f-nav {
+				border-top: 1px solid #808080;
+				margin: 0;
+			}
+			.f-nav li a {
+				display: block;
+				padding: 0.8em 1em;
+				border-bottom: 1px solid #808080;
+				font-size: 0.75em;
+			}
+			.f-nav li a.active {
+				color: #b2d650;
+				font-weight: bold;
+			}
+			.content img {
+				float: right;
+			}
+			div.panel, p.flip {
+				margin: 0px;
+				padding: 5px;
+				text-align: center;
+			}
+			p.flip {
+				width: 10%;
+				text-align: center;
+				margin-left: 45%;background: #e5eecc;
+				background: #e5eecc;
+			}
+			div.panel {
+				height:120px;
+				display:none;
+			}
+			.pattern {
+			    background: none;
+			    border-bottom: none;
+			    overflow: visible;
+			}
+			table {
+				width: 100%;
+			}
+			.content h2 {
+				text-align: center;
+				background-image:url('/assets/images/test-bg.jpg');
+    			background-repeat:no-repeat;
+    			background-position:center center;
+			}
+			.commentAuthor {
+				color: #ffcc33;
+				font-weight: bold;
+				padding-top: 5px;
+				margin-bottom: 0px;
+			}
+			input[type=submit] {
+				margin-top: -1px;
+			}
+			@media screen and (min-width: 40em) {
+				.f-nav-link {
+					display: none;
+				}
+				.f-nav {
+					position: absolute;
+					top: 15px;
+					left: 0;
+					border: 0;
+				}
+				.f-nav li {
+					display: inline-block;
+					margin-right: 0.25em;
+				}
+				.f-nav li a {
+					border: 0;
+				}
+
+				ul.f-nav {
+				margin-left: 32%;
+				}
+			}
+			@media only screen and (max-width: 768px) {
+				.f-nav li a {
+					text-align: center;
+					font-size: 0.66em;
+				}	
+				.f-nav {
+				    margin: 0px;
+				}
+				.header {
+				    margin: -60px 0 0 0;
+				    text-align: right;
+				}
+				p.flip {
+				    width: 17%;	    
+				}
+				.content {
+					padding-top: 20px;
+				}
+				.csv,
+				p.flip {
+				 	font-size: 0.80em;
+				}
+				img {
+					padding-bottom: 20px;
+				}
+			}

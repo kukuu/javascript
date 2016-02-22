@@ -1,0 +1,5 @@
+1. file:///C:/Users/alexs/Documents/DigiTek/jquery/tutorial/exercises/part1/4-image-gallery.html
+
+2. file:///C:/Users/alexs/Documents/DigiTek/jquery/tutorial/exercises/part2/1-app-slideshowContainer.html 
+
+3. file:///C:/Users/alexs/Documents/DigiTek/jquery/tutorial/exercises/part1/1.html

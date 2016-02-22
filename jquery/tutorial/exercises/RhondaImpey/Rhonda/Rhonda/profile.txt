@@ -1,0 +1,33 @@
+
+Tutor: Alexander Adu-Sarkodie
+
+Profile :
+...... 
+
+Biopic :  http://www.goldhawk-college.com/istudio/
+......
+
+Blog   :  http://www.blogger.com/profile/14800490193632788559
+...
+
+Software: XAMPP
+........
+Login:
+		Username	Password
+
+ Apache:  	xampp		c00ff33c0p
+
+PHPMyAdmin:      root		c00k1e1
+
+
+
+Installation: 
+...........
+Documentation : http://www.apachefriends.org/en/xampp-windows.html#1173   
+
+
+XAMPP homepage http://localhost/xampp/index.php 
+
+
+
+

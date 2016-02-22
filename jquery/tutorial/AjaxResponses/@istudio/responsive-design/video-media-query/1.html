@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>media query for video and legacy systems to use flash-</title>
+</head>
+
+<body>
+
+<video control>
+	<source src="hi-kitkat.ogv" media="(min-device-width:800px)" type='video/ogg;codecs="theora,vorbis"'>
+	<source src="lo-kitkat.ogv">
+	<source src="hi-kitkat.mp4" media="(min-device-width:800px)" type='video/mp4;codecs="avc1.42E01E,MP4A.40.2"'>
+<source src="lo-kitkat.mp4">
+	<embed src="http://www.youtube.com/v/cmtcc94tv3A&h1=en_GB&fs=1&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfulscreen="true" width="45" height="344">
+</video>
+
+<pre>
+	<h1>Video for legacy browsers </h1>
+&lt;video control&gt;
+	&lt;source src="hi-kitkat.ogv" media="(min-device-width:800px)" type='video/ogg;codecs="theora,vorbis"'&gt;
+	&lt;source src="lo-kitkat.ogv"&gt;
+	&lt;source src="hi-kitkat.mp4" media="(min-device-width:800px)" type='video/mp4;codecs="avc1.42E01E,MP4A.40.2"'&gt;
+	&lt;source src="lo-kitkat.mp4"&gt;
+	&lt;embed src="http://www.youtube.com/v/cmtcc94tv3A&h1=en_GB&fs=1&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfulscreen="true" width="45" height="344"&gt;
+&lt;/video&gt;
+</pre>
+
+</body>
+</html>

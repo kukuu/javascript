@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>jQM - Dynamically Populate Listview from JSON - jsFiddle demo by Gajotres</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <meta name="viewport" content="width=device-width"/>
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+     
+  
+  <style type='text/css'>
+    li span {
+		font-weight: normal;
+	}
+
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+$(function(){
+    $(document).on('pagebeforeshow', '#home', function(){      
+        $.ajax({url: "http://api.themoviedb.org/2.1/Movie.search/en/json/23afca60ebf72f8d88cdcae2c4f31866/The Goonies",
+            dataType: "jsonp",
+            async: true,
+            success: function (result) {
+                ajax.parseJSONP(result);
+            },
+            error: function (request,error) {
+                alert('Network error has occurred please try again!');
+            }
+        });         
+    });
+    
+    
+    var ajax = {  
+        parseJSONP:function(result){
+		//$.each( result.items, function(i, item) {
+		//<h3>' + item.original_name+ '</h3><p>' + item.overview+ '</p>
+            $.each( result, function(i, row) {
+                $('#movie-data').append('<li><a href="#headline"><img src="http://www.incine.fr/media/photos_films/original/1285_4bc92529017a3c57fe00ee84_1293130970.jpg" class="ui-li-has-thumb"/><h3>' + row.original_name+ '</h3><p>' + row.overview+ '</p></a></li>');
+            });
+            $('#movie-data').listview('refresh');
+        }
+    }
+
+});//]]>  
+
+</script>
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script> 
+</head>
+<body>
+
+    <div data-role="page" id="home">
+        <div data-theme="a" data-role="header">
+            <h3>
+                Movie Info
+            </h3>
+        </div>        
+        <div data-role="content">
+            <ul data-role="listview"  id="movie-data" data-theme="a">
+
+            </ul>
+        </div>
+    </div>
+</body>
+</html>    
+
+

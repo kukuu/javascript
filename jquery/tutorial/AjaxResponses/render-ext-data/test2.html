@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Processing JSON</title>
+	<script src="google.api/...."></script>
+		<script>
+			$(document).ready(function(){
+				$(':submit').live('click',function(){
+					var button = $(this).val();
+					$.ajax({
+					data:"button=" +this.val(),
+					dataType: 'json',
+					url: 'drinks.php',
+					success: function(data){
+						$('#wineList').html('');
+						if(button=="all"){
+							for(var i in data.red){
+								$('#wineList').append("List of red wine" + data[i]);
+							}
+							for(var i in data.white){
+								$('#wineList').append("List of white wine" + data[i]);
+							}
+						}
+						
+						else if(button=="red"){
+							for(var i in data){
+								$('#wineList').append("List of red  wine" + data[i]);
+							}
+						}
+					
+						else if(button=="white"){
+							for(var i in data){
+								$('#wineList').append("List of red  white" + data[i]);
+							}
+						}
+					}
+					
+					});
+					return false;
+				});
+			
+			});
+		
+		
+		
+		
+		</script>
+</head>
+
+<body>
+	<form action="#" method="post">
+		<button value="red">Red wine</button>
+		<button value="white">White wine</button>
+		<button value="all">White wine</button>
+	</form>
+
+	<div id="wineList">Loading.....</div>
+</body>
+</html>

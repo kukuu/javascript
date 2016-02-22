@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Progress bar</title>
+
+    <script language="javascript" type="text/javascript">
+        var urls;
+
+	    function animate(pos){
+	        //pos %= urls.length;//This is an infinite loop
+
+	        if (pos == urls.length) {
+	            return false;//the animation will  stop after the final image
+	        } 
+
+		    document.images["animation"].src= urls[pos];
+		    window.setTimeout("animate(" + (pos + 1) + ");",500);
+
+	    }
+
+	    window.onload = function() {
+            urls = new Array ("images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg");
+		    animate(0);
+	    }
+    </script>
+      <img src="images/1.jpg" name="animation" />
+      
+</head>
+ <body>
+ <br clear="all" />
+    <a href="" onclick="animate();">start</a>
+</body>
+            
+</html>
+
+
+
+   

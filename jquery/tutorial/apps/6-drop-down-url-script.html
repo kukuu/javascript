@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Untitled</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script language ="javascript" type="text/javascript">
+	
+	$(document).ready(function(){
+		$("#courseid").change(function() { 
+			window.location.href = "http://www.goldhawk-college.com/" + $(this).val() + ".html"; 
+		})
+		
+		});
+	</script>
+</head>
+
+<body>
+<form>
+	<select id="courseid">    
+		<option value="">Choose course... 
+		<option value="csng/index">CSNG</option>     
+		<option value="short-courses">Short Courses</option>     
+		<option value="mobile-computing">Data Networks (Mobile Computing)</option> 
+		<option value="oil-petroleum">Petroleum Engineering</option> 
+	</select>  
+</form>
+</body>
+</html>

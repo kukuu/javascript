@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Browser properties</title>
+
+<script type="text/javascript">
+  document.write("<h2>Navigator properties</h2>");
+
+  for (prop in navigator) {
+    document.write(prop + ": " + navigator[prop] + "<br />");
+  }
+
+  document.write("<br />");
+  document.write("<h2>History items</h2>");
+
+  for (var i = 0; i < history.length; i++){
+    document.write("Index " + i + ": " + history[i] + "<br />");
+  }
+
+  //history.each(function(item_value, item_index, arr_name) {
+  //  document.write("Index " + item_index + ": " + item_value + "<br />");
+  //})
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

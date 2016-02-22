@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Using JQuery AJAX, PHP and MySQL</title>
+</head>
+
+<body>
+
+<h1>Using JQuery AJAX and PHP to fetch data from a MySQL database</h1>
+
+<p>
+	This is a brief example for fetching data from a mysql database using JQuery AJAX and PHP. AJAX allows us to update a page's content without reloading the page:
+</p>
+<h2>How it works</h2>
+<ul>
+	<li>
+		First you access a content file on the server here I have called the file client.php.
+	</li>
+	<li>
+		This file is downloaded to your computer and the html is displayed by your browser.
+	</li>
+	<li>
+		Client.php contains javascript which is also downloaded to your computer.
+	</li>
+	<li>
+		The jquery javascript then executes and creates its own request to a script on the server that has access to the mysql database. It does this using AJAX. This script in this example is php and is called api.php
+	</li>
+	<li>
+		api.php executes and gets the data from the mysql database and returns it via a json string to the listening client.php script.
+	</li>
+	<li>
+		The client.php script recieves this data and finally updates the html content on the page dynamically!
+You will need
+	</li>
+</ul>
+	
+	<p>A LAMP (Linux-Apache-MYSQL-PHP) server or XAMP server to work with. There's loads of tutorials out there on installing LAMP on Ubuntu.</p>
+
+<p>The jquery library is inserted in the same directory as the scripts below</p>
+
+<h3>Create a database to store variable data</h3>
+
+<ul>
+	<li>
+		Create a mysql database called sudokuajax01
+	</li>
+	
+	<li>
+			Create a table called sudoku with 3 fields: pos1 to pos3
+	</li>
+	
+	<li>
+		Insert an example variable:
+	</li>
+
+</ul>
+<table cellspacing="2" cellpadding="2" border="1" style="width:200px;margin:0 auto;">
+	<tr><td valign="top">pos1</td><td valign="top">pos1</td><td valign="top">pos1</td></tr>
+	<tr><td valign="top">x0</td><td valign="top">x0x</td><td valign="top">0xx</td></tr>
+	<tr><td valign="top">x0</td><td valign="top">0xx</td><td valign="top">x0x</td></tr>
+	<tr><td valign="top">x0x</td><td valign="top">x0</td><td valign="top">0xx</td></tr>
+</table>
+
+<h3> Create a php script to receive http requests and fetch data from the database</h3>
+<ul>
+	<li>Create a php script called api.php on your server</li>
+	<li>Copy and paste the example below and save it:</li>
+</ul>
+<pre>	
+	&lt;?php 
+	
+	  <!--Example php script for fetching data from mysql database-->
+	  $host = "localhost";
+	  $user = "root";
+	  $pass = "root";
+	
+	  $databaseName = "sudokuajax01";
+	  $tableName = "sudoku";
+	
+	  <!-- Connect to mysql database-->
+	  include 'DB.php';
+	  $con = mysql_connect($host,$user,$pass);
+	  $dbs = mysql_select_db($databaseName, $con);
+	
+	  <!-- Query database for data-->
+	  $query = mysql_query("SELECT * FROM $tableName");        <!--query-->  
+	  $array = mysql_fetch_row($query);                        <!--fetch result-->    
+	
+	 <!--echo result as json--> 
+	  
+	  echo json_encode($array);
+
+	?&gt;
+
+</pre>
+
+<h3>Create a client script to fetch data from the API script using JQuery AJAX</h3>
+<p>Create a html script called client.php in the same directory with the following content in it:</p>
+<!---------------------------------------------------------------------------
+Example client script for JQUERY:AJAX -> PHP:MYSQL example
+------------------------------------------------------------------------->
+<pre>
+
+	
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script language="javascript" type="text/javascript" src="jquery.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+  &lt;!----------------------------------------------------------------------
+  1) Create some html content that can be accessed by jquery
+  ----------------------------------------------------------------------&gt;
+  &lt;h2&gt; Client example &lt;/h2&gt;
+  &lt;h3&gt;Output: &lt;/h3&gt;
+  &lt;div id="output"&gt;this element will be accessed by jquery and this text replaced&lt;/div&gt;
+
+  &lt;script id="source" language="javascript" type="text/javascript"&gt;
+
+  $(function () 
+  {
+    //-----------------------------------------------------------------------
+    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
+    //-----------------------------------------------------------------------
+    $.ajax({                                      
+      url: 'api.php',                  //the script to call to get data          
+      data: "",      //you can insert url argumnets here to pass to api.php
+                                       //for example "id=5&parent=6"
+      dataType: 'json',                //data format      
+      success: function(data)          //on recieve of reply
+      {
+        var pos0 = data[0];              //get possition 1 data
+        var pos1 = data[1]; 			 //get possition 2 data
+	var pos2 = data[2];           //get possition 3 data
+  
+        // Update html content
+		        <br />
+	 //Set output element html: 
+     $('#output').html("&lt;b&gt;pos1: &lt;/b&gt;"+pos1+"&lt;b&gt; pos2: &lt;/b&gt;"+pos2 +"&lt;b&gt; pos3: &lt;/b&gt;"+pos3); 
+      } 
+    });
+  }); 
+
+  &lt;/script&gt;
+
+
+
+</pre>
+
+
+</body>
+</html>

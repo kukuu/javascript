@@ -1,0 +1,5 @@
+ <ul>
+        <li><a href="http://www.facebook.com/">facebook</a><br /><a href="http://www.facebook.com/"><img src="http://www.goldhawk-college.com/facebookHomeIcon.jpg" width="28" height="28" alt="Facebook icon"  /></a></li>
+           <li><a href="http://www.twitter.com/">twitter</a><br /><a href="http://www.twitter.com/"><img src="http://www.goldhawk-college.com/twitterHomeIcon.jpg" width="28" height="28" alt="Twitter icon"  /></a></li>
+           <li><a href="http://www.youtube.com/">youtube</a><br /><a href="http://www.youtube.com/"><img src="http://www.goldhawk-college.com/youtubeHomeIcon.jpg" width="28" height="28" alt="YouTube icon" /></a></li>
+      </ul>

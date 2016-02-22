@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+    <title>Essensys Call Centre Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+    <link rel='stylesheet prefetch' href='lib/styles/base.css'>
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+    <script type="text/javascript" src="assets/scripts/custom-d3.js"  charset="utf-8"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>  
+     <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"></script>
+  </head>
+  <body>
+  <div id="pattern" class="pattern mod">
+  	<!--Begin Pattern HTML-->
+  	        <h1><img src="assets/images/logo.jpg"  alt="Essensys"></h1>
+			<header class="header">
+				<a href="#f-nav" class="f-nav-link">Menu</a>
+			</header>
+			<div class="content">
+				<h2>TEST</h2>
+				<p><img src="assets/images/workzone.jpg"  alt="Essensys Call Centre">Lorem ipsum dolor sit amet, consectetur adipiscing elit.   Integer iaculis dignissim orci viverra venenatis. Nulla sit amet quam at nisl sagittis adipiscing in a ligula. Nam in nisi neque. Ut in ipsum eget justo dignissim accumsan a sit amet neque. Nulla facilisi. Aliquam erat volutpat. Aliquam aliquet bibendum mollis. Aliquam erat volutpat. Sed commodo elit ac neque eleifend in commodo justo elementum. Curabitur tristique, odio id convallis aliquet, nibh augue sollicitudin lacus, at fermentum sem dolor eu lacus. Proin gravida dui in libero aliquet quis egestas odio dictum. Fusce in ligula vitae ante mollis viverra. Curabitur nibh felis, ornare ut tempor sed, lobortis id elit. Phasellus nec semper lorem. Pellentesque erat augue, tincidunt sed vulputate et, congue nec felis. Sed ligula metus, condimentum non commodo et, varius varius nisi.</p>
+
+				<p>nibh augue sollicitudin lacus, at fermentum sem dolor eu lacusProin gravida dui in libero aliquet quis egestas odio dictum. Fusce in ligula vitae ante mollis viverra. Curabitur nibh felis, ornare ut tempor sed, lobortis id elit. Phasellus nec semper lorem. Pellentesque erat augue, tincidunt sed vulputate et, congue nec felis. Sed ligula metus, condimentum non commodo et, varius varius nisi.</p>
+				
+				
+				<h3>Call Data Table</h3>
+				<p>The Table below shows an example of the call data we gather for each office  in use, to see more please click the button below.</p>
+
+				<p id="#pMsg" class="flip">Show Table</p>
+				<div class="panel">			
+						<a href="ncc.csv" class="csv">update table - csv</a>
+						<div id="result"></div><!--This is the container for CSV-->
+				</div>
+				<div id="chat"></div>
+
+			</div>
+			<footer>
+				<ul id="f-nav" class="f-nav" role="navigation">
+					<li><a href="#" class="active">ABOUT &bull;</a> </li>
+					<li><a href="#">TECH &bull;</a></li>
+					<li><a href="#">ECOSYSTEM &bull;</a></li>
+					<li><a href="#">FLEXIBLE WORKSPACE &bull;</a></li>
+					<li><a href="#">SMART BUILDINGS &bull;</a></li>
+					<li><a href="#">BLOG &bull;</a></li>
+					<li><a href="#">CONTACT &bull;</a></li>
+					<li><a href="#">JEFF LOGIN &bull;</a></li>
+					<li><a href="#">DEMO &bull;</a></li>
+				</ul>
+			</footer>
+	</div>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/babel" src="scripts/comment.js"></script>
+     <script type="text/javascript">
+	   $(document).ready(function(){
+            $(".flip").click(function(){
+                $(".panel").slideToggle("slow");
+            });
+            // Flip between Show Table and Hide Table Labels
+		    $(".flip").click(function () {
+		        var text = $(this).text();
+		        if (text === "Show Table") {
+		            $(this).text("Hide Table");
+		        } else {
+		            $(this).text("Show Table");
+		        }
+		    });
+		
+		}); 
+	</script>
+  </body>
+</html>

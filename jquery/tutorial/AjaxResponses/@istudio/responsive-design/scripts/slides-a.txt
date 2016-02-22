@@ -1,0 +1,48 @@
+<html><!--on p 133: lazily but intelligently loading graphics-->
+	<head>
+	<title>Responsive design - jQuery slides </title>
+		<script src="jquery.js"></script>
+		<script src="carousel.js"></script>
+		<!--core.js-->
+		<script>
+		    $(document).ready(function() {
+			 $(".welcome .slides").wrapInner('<div  					class="slidewrap"><div id="welcome-slides" class="slider"></div></div>') 
+			.find(".slidewrap")
+			 .carousel({ slide: '.figure' });
+		    });
+		</script>
+	<head>
+</html>
+<body>
+	<div class="slides"> 
+		<div class="figure"> 
+			<b><img src="img/slide-robot.jpg" alt="" /></b> 
+			<div class="figcaption">Robot</div> 
+		</div><!-- /end .figure --> 
+		<div class="figure">
+			 <b><img src="img/slide-tin.jpg" alt="" /></b> 
+			<div class="figcaption">Tin</div> 
+		</div><!-- /end .figure --> 
+			<div class="figure">
+			 <b><img src="img/slide-builder.jpg" alt="" /></b> 
+			<div class="figcaption">Builder</div> 
+		</div><!-- /end .figure -->
+			<div class="figure">
+			 <b><img src="img/rock-star.jpg" alt="" /></b> 
+			<div class="figcaption">Rock star</div> 
+		</div><!-- /end .figure -->
+			<div class="figure">
+			 <b><img src="img/barley-dancer.jpg" alt="" /></b> 
+			<div class="figcaption">Barley dancer</div> 
+		</div><!-- /end .figure -->
+			<div class="figure">
+			 <b><img src="img/artist.jpg" alt="" /></b> 
+			<div class="figcaption">Artist</div> 
+		</div><!-- /end .figure -->
+		<ul class="slide-nav"> 
+			<li><a class="prev" href="#">Previous</a></li> 
+			<li><a class="next" href="#">Next</a></li>
+		 </ul>
+	</div><!-- /end .slides -->
+</body>
+</html>

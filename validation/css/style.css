@@ -1,0 +1,19 @@
+.error{
+    display: none;
+}
+.not-valid input{
+    border:1px solid red;
+}
+.not-valid .error{
+    color:red;
+    display: block;
+}
+label.inline, input[type="text"]{
+    margin:0;
+}
+.not-valid label{
+    color:red;
+}
+#first-name-container, #email-container, #credit-card-container, #security-code{
+    margin-bottom:10px;
+}

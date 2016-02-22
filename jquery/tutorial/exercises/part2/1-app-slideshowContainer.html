@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>jQuery slideshow</title>
+</head>
+<link type="text/css" rel="stylesheet" href="slideshow.css" media="print" />
+<script language="javascript"  src="slideshow.js" type="text/javascript"></script>
+<body>
+<!-- Slideshow HTML -->
+<div id="slideshow">
+  <div id="slidesContainer">
+    <div class="slide">
+      <!-- Content for slide 1 goes here -->
+    </div>
+    <div class="slide">
+      <!-- Content for slide 2 goes here. -->
+    </div>
+    <div class="slide">
+      <!-- Content for slide 3 goes here. -->
+    </div>
+    <div class="slide">
+      <!-- Content for slide 4 goes here. -->
+    </div>
+  </div>
+</div>
+<!-- Slideshow HTML -->
+<!-- In example above, you’ll see how text-based browsers, and browsers incapable of rendering CSS and JavaScript, will see our slideshow. It’s important to note that all of our content is easily accessible; we’ve hidden nothing from the user – ensuring that everyone will have the ability to view our content.
+
+There is also no markup for the left and right arrow controls, which we will insert into the DOM later on using JavaScript. Having them in the content structure level would be confusing to individuals without CSS or JavaScript capabilities. -->
+<h2>Slideshow HTML</h2>
+
+For #slidesContainer, we set the overflow property to auto so that scroll bars appear when our content overflows over the set height of 263px (the height of our slides). This is a requirement
+<br />
+We have to reduce the width of the .slide div class by 20px to accommodate the right hand scroll bar that will appear when JavaScript is turned off.
+<br />
+Without JavaScript, our content is still accessible; users can scroll up and down using to view our slides.
+<br />
+Alternatively, you can give the .slide style rule a float:left; property so that instead of scrolling vertically, users can scroll horizontally when JavaScript is turned off.
+<br />
+Left and right arrow CSS :To save some JavaScript rendering resources, we’ll declare style rules for the left and arrow controls that we will insert in the DOM via jQuery.The elements will be span elements, so we declare a cursor property and assign it the value of pointer to change the mouse pointer when the user hovers over the controls. We use the text-indent property to hide the text out of sight, a CSS background image replacement method.
+
+<h2><The theory:/h2>
+The first thing we want to do is ‘undo’ the styles that we declared in CSS that deals with the JavaScript off scenario. This involves declaring CSS styles in JavaScript for #slidesContainer to remove its scroll bar. Additionally, we have to resize our .slide divs to 560px, which we reduced by 20px in to accommodate the scroll bar. We also want to float the divs to the left so that they are displayed side by side horizontally instead of stacked on top of each other vertically.
+
+Then, by DOM manipulation, we insert a div called #slideInner that wraps around all of our slides that has a width equal to the total width of all the .slide div.
+
+Finally, we insert left and right controls (with class names of .control) for user navigation; we do this in JavaScript so that browser clients that don’t have JavaScript enabled won’t see the controls.
+Now we insert the javascript in the head.
+
+<br />
+We insert the controls by manipulating the DOM; this way, users using JavaScript-disabled browsers and screen readers won’t have an invalid HTML structure with controls that take them nowhere which would be confusing because clicking on them would not work without JavaScript.
+
+We do this using the .prepend() and .append() method which inserts an HTML string inside the selected object/s (in this case, the #slideshow div is selected). The text inside the span elements don’t matter because they were hidden<br />
+
+To manage our controls, we create a function called manageControls that hides and shows the left and right arrow controls based on the current position of the slideshow.
+
+If it’s on the first slide, we hide the left control because there is no preceding slide. On the last slide, we hide the right control because the user has reached the end of the slideshow. We do this by using the .hide() and .show() jQuery methods that hides/shows the selected DOM element/s that precedes it.
+
+<br />
+Managing the current position using manageControls and positions as argument: Mind the use of tenary operators for the bind operation could be either +1 to the right when the control is clicked or -1 for the same operation but to the left.
+
+<br /> Finally finally, we move #slideInner to the left or right by animating it’s margin-left CSS property value. The left margin is the negative of the width of our slides multiplied by our current position. For example, if we’re moving to Slide 3, then our left margin is equal to -1120px (2 positions to the left [560*2]).
+
+
+<br />
+
+Please read this stuff for  understanding before attempting to code  
+</body>
+</html>

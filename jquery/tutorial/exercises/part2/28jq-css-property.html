@@ -1,0 +1,18 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("div").click(function(){
+    $("p").html($(this).css("background-color"));
+  });
+});
+</script>
+</head>
+
+<body>
+<div style="width:100px;height:100px;background:#ff0000"></div>
+<p>Click in the red box to return the background color.</p>
+</body>
+</html>
+

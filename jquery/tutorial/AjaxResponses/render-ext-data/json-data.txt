@@ -1,0 +1,14 @@
+http://www.lennu.net/demo/jqueryajax/serverside.php 
+
+{
+	"red":[
+		 "Chianti",
+		  "Barolo",
+		  "Pinot Noir"
+	],
+	"white":[
+			"Chardonnay",
+			"Cava",
+			"Chablis"
+	]
+}

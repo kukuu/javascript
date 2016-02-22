@@ -1,0 +1,9 @@
+<style>
+
+	 @media screen and (max-width: 400px) {
+	    .block-a,
+	    .block-b {
+	            float:none;
+	       }
+	    }
+</style>

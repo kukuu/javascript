@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+	<title>Lesson 18: Making AJAX Calls</title>
+  </head>
+  <body>
+<!--http://html.net/tutorials/javascript/lesson18_ex1.html-->
+    <h1>Lesson 18: Making AJAX Calls</h1>
+		
+		<div id="test">
+		
+		  <h2 id="myHeader">Click the button to call your data</h2>
+			
+			<input type="button" onclick="getText('lesson18_test.txt')" value="Click Me!" />
+			
+		</div>
+	
+	<script type="text/javascript">
+	  var myRequest;
+	  function getText(url)
+		{		  
+			if (window.XMLHttpRequest)
+			{
+			  myRequest = new XMLHttpRequest();
+			}
+			else
+			{
+			  myRequest = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			myRequest.open("GET", url, true);
+			myRequest.send(null);
+			myRequest.onreadystatechange = getData;			
+		}
+		
+		function getData()
+		{
+		  var myHeader = document.getElementById("myHeader");
+		  if (myRequest.readyState ===4)
+			{
+			  if (myRequest.status === 200)
+				{
+				  var text = myRequest.responseText;
+			
+			    myHeader.firstChild.nodeValue = text;
+				}
+			}
+		}
+	</script>
+	
+  </body>
+ </html>

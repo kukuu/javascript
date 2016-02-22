@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Web services and AJAX</title>
+<script language="javascript" type="text/javascript">
+  function createList(data) {
+     var list = document.createElement("ul");//single outer container ul tag
+     for (var i = 0; i < data.length; i++) { //loop to create list nodeditems for your data
+var newItem = document.createElement("li");//build number of list item nodes for the loop
+var newText = document.createTextNode(data[i]);//data to be appended to each li from the loop
+newItem.appendChild(newText);//Going up the DOM tree to to put container together
+list.appendChild(newItem);//up the DOM tree again to bind to the parent node - ul	
+            }
+            return list;// get your the container put together
+        }
+	
+window.onload = function(){ //now pass data(object) to the container and build your content
+	var list = createList (
+		["Name:Alex","2","3"]//object loaded
+	);
+	document.body.appendChild(list);	
+}
+
+	</script>
+</head>
+
+<body>
+
+
+
+</body>
+</html>
+
+<!--<html>
+	<head>
+	<script type="text/javascript">
+	
+	  function AddImage() {
+	     document.getElementById("cell").innerHTML =
+		  "<img src='images/2.jpg'>";
+	  }
+	</script>
+	</head>
+	
+	<body onLoad="AddImage();">
+	    <div id="cell">your image will appear hereReturn this function as a value in the array above</div>
+	</body>
+ </html>-->

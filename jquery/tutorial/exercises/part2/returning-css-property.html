@@ -1,0 +1,21 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("div").click(function(){
+    $("p").html($(this).css("background-color","width"));
+  });
+});
+</script>
+</head>
+
+<body>
+<div style="width:100px;height:100px;background:#000"></div>
+<div style="width:100px;height:100px;background:#ff00ff"></div>
+<p>
+	Click in the coloured boxes to return some CSS properties.
+</p>
+</body>
+</html>
+
