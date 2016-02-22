@@ -9,7 +9,7 @@ $(function() {
   });
 
   $(".button").click(function() {
-		// validate and process form
+		// validate and process form in the document
 		// first hide any error messages
     $('.error').hide();
 		
