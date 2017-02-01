@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var person1 = {name: 'Marvin', age: 42, size: '2xM'};
+      var person2 = {name: 'Zaphod', age: 420000000000, size: '1xS'};
+      var person3 = {name: 'Alex', age: 420000000000, size: '1xS'};
+
+      var say = function(greeting) {
+        alert(greeting + ', ' + this.name + ", au revoir");
+        console.log(greeting + ', ' + this.name + ", au revoir");
+
+      }
+      say.call(person1, 'Hello');
+      say.call(person2, 'Goodbye');
+      say.call(person3, 'Morning');
+    </script>
+  </body>
+</html>

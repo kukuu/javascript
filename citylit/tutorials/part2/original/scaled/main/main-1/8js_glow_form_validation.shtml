@@ -1,0 +1,35 @@
+
+<html>
+<head>
+	<title>Form Validation using Glow</title>
+	<script type="text/javascript" src="http://www.bbc.co.uk/glow/gloader.js"></script>
+	<script type="text/javascript">
+			 gloader.load(["glow", "1.1.0", "glow.forms"]); 
+	</script>
+</head>
+<body>
+<div style="margin:20px 20px 0 200px;padding:0 20px 0 20px;border:2px solid #ff0099;width:500px">
+	<h1>Form validation using Glow</h1>
+	<form id="underagepregnancy" name="underage+pregnant"  method="post" action="#">
+		<fieldset>
+			<legend class="jobtitle-prompt">
+			  	<p><strong>Job title</strong></p>
+			  </legend>
+			  	<p>
+			   		<input name="jobtitle" type="text" size="45" maxlength="60" style="margin-left:50px" />
+			  	</p>
+			  	<p><input type="submit" name="Submit" value="Submit" style="margin-left:350px" /></p>
+			</fieldset>
+	</form>
+</div>
+	<script language="javascript" type="text/javascript">	
+			var myForm = new glow.forms.Form("#underagepregnancy");
+			myForm.addTests(
+    			"jobtitle", ["required",{message: "This field is empty.Please fill in."}]		 
+			);		
+	</script>
+	<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+</html>
+
+

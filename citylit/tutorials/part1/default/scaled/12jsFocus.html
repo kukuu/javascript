@@ -1,0 +1,31 @@
+
+
+<html>
+<head>
+	<title>using onfocus event</title>
+
+	<script language="javascript" type="text/javascript">
+		<!--
+			function doclick(){
+				document.f.txt.value="";
+			}
+		//-->
+	</script>
+    <style>
+		form {
+			margin: 20px 0 20px 200px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<form name="f" action="#">
+		Name: <input name="firstname" type="text" value="" size="30"  /> <br />
+		Email: <input name="txt" type="text" value="Enter email here please" size="30" style="color:#ff0000;font-weight:bold;" onFocus="doclick()" />
+	</form>
+
+</body>
+</html>
+
+

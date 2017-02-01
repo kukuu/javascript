@@ -1,0 +1,43 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+JS Mutability - {\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=9M-r8p9ey8U&t=14s"}}{\fldrslt https://www.youtube.com/watch?v=9M-r8p9ey8U&t=14s}}\
+\
+Immutable - some data you do not want to change\
+\
+1. \
+var a = \{ name: \'93will\'94\};\
+a.name = \'93fred\'94\
+> a\
+mutation will be \
+object \{name: \'94Fred\'94\}\
+\
+\
+\
+Primitive and Reference\
+\
+Immutability\
+\
+Reference (objects and strings)\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 var a = \{ name: \'93will\'94, age\'94: 35\};\
+\
+var b = object.assign(\{\}, a, \{name\'94 \'93Fred\'94\});\
+> b\
+object \{name: \'93Fred\'94, age: 35\}\
+\
+> a\
+object\{ name: \'93will\'94, age\'94: 35\}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\
+\
+}

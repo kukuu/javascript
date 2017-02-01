@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>displayingSelectedValueWithselectedIndex</title>
+</head>
+
+<body>
+
+
+<script type = "text/javascript">
+<!--
+function  show()
+{
+var pick =document.f.s.selectedIndex ;
+document.f.txt1.value =document.f.s.options[pick].value;
+}
+// - ->
+</script>
+
+<form name ="f">
+<select name="s">
+<option value ="Apple"> Apple
+<option value ="Plum"> Plum
+<option value ="Orange"> Orange
+</select>
+<input type ="button"   value ="Show choice"
+onclick="show()">
+<br />
+<input type ="text" name ="txt1">
+<input type ="button" name ="btn" value="send">
+</form>
+
+
+</body>
+</html>

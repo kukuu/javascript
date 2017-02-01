@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>image url</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var image_list = "avocado_toast;fresh_baguette;mince_pie;noodle_soup;plantain_curry;tofu_salad";
+      var image_names = image_list.split(";");
+
+      for (var i = 0; i < image_names.length; i++) {
+        var para = document.createElement("p");
+        para.innerText = "This is image " + (i + 1) + " ";
+        document.body.appendChild(para);
+
+        var img = document.createElement("img");
+        img.setAttribute('src', './imgs/' + image_names[i] + '.jpg');
+        img.style.border = "thick solid #0000FF";
+        img.style.opacity="0." + (i + 4);
+        img.style.paddingLeft="50px";
+        para.appendChild(img);
+      }
+    </script>
+  </body>
+</html>

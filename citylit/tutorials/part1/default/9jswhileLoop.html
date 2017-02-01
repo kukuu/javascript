@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>whileLoop</title>
+</head>
+<body>
+<script  type= "text/javascript">
+var myname =""  //n empty variable is declared
+myname=prompt(" Enter your name here, please.",myname)/*myname wiil have a vlaue that which is passed to the variable using window.prompt*/
+
+//the value for the variable will be replaced by ..undefined..
+while(myname== "" || myname=="undefined") {
+	myname = prompt("Please try again typing your name.")//the user is then prompted to try again
+}
+document.write("Hello " +myname)//if successful then a passed string ..Hello..is concatenated with the entry into the variable.Do leave a white space in the quotes after ..Hello
+</script>
+</body>
+</html>

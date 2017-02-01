@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>mousedown mouseup multiple instances</title>
+	<script type="text/javascript">
+	<!--
+	function changeImage(n)
+	{
+	if(n == 1)
+	{
+	document.images.city.src="venice.jpg";
+	document.f.txt.value="You are right. This is Venice";
+	}
+	if(n == 0)
+	{
+	document.images.city.src="Venice.jpg";
+	document.f.txt.value="You are wrong. This is Venice";
+	}
+	}
+	//-->
+	</script>
+</head>
+
+<body>
+
+<!-- This is a challenge exercise for the cclass -->
+
+
+<div align="center">
+<strong>Guess which city is this? Venice?</strong><br /><br />
+<img name="city" src="Venice.jpg" width="72" height="72" alt="default state-off">
+<form name="f">
+Yes<input type="radio" name="city" value="1" onclick="changeImage(1)">
+No<input type="radio" name="city" value="0" onclick="changeImage(0)">
+<input type="text" name="txt" size="30">
+</form>
+<br />
+<a href="31cmouseNClickImagesNtextSwap.html">page 2</a>
+</div>
+</body>
+</html>

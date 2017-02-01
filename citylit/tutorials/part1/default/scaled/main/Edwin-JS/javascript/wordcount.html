@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>wordcount</title>
+    <script language="javascript" type="text/javascript">
+      function countIt() {
+        var content = document.wordcount.text.value;
+        content = content.split(/\s+/);
+        document.wordcount.result.value = content.length;
+      }
+    </script>
+  </head>
+  <body>
+    <form name="wordcount">
+      <fieldset>
+        <legend>Word Counter</legend>
+        <textarea name="text" rows="12" cols="38"></textarea><br />
+        <input type="button" value="Calculate words" onClick="countIt()"/>
+        <input type="text" name="result" size="20" />
+      </fieldset>
+    </form>
+  </body>
+</html>

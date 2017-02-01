@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>focus and blur</title>
+</head>
+
+<body>
+
+<form name="clipsSearchForm" class="searchform"  action="#" method="get">
+	<label for="terms" title="SEARCH CLIPS BY KEYWORD"><span>Search by keyword</span></label>
+
+	<input type="text" class="inputtext" id="terms" name="val_1_1" value="Type in a keyword" onfocus="this.value==this.defaultValue ? this.value='' : '';" onblur="this.value=='' ? this.value=this.defaultValue : '';"  />
+
+	<input type="submit" value="submit" />
+</form> 
+
+</body>
+</html>

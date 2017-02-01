@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Untitled</title>
+<script type="text/javascript">	
+<!-- 
+function poll() {
+	for (var i=0; i<document.f.rad1.length; i++) {
+		if (document.f.rad1[i].checked) {
+			document.bgColor = document.f.rad1[i].value;
+		}
+	}	
+}
+ //-->	
+</script>    
+</HEAD>
+<body>
+
+
+<br /><br />
+<div align="center"><h2>Changing background colour</h2></div>
+
+<p>
+The properties and methods of the window.document object enable a web page document to be changed at runtime.
+</p>
+
+
+<p>
+Using javascript to assign new values to properties of the window.document object causes the web browser to update the appearance of the web page in line with the new values. This can be simply illustrated by assigning new values to the document.bgColor and document.fgColor properties to change the background and foreground colours of a page.
+</p>
+<br /><br />
+<div align="center">
+<form name="f">
+<input type="radio" name="rad1" value="white">white
+<input type="radio" name="rad1" value="silver">silver
+<input type="radio" name="rad1" value="skyblue">skyblue
+<br />
+<button type="button" onclick="poll()">Change colours</buuton>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Demo Object Oriented Programming</title>
+	</head>
+	<body>
+		<p id="demo"></p>
+
+			<script language="JavaScript" type="text/javascript">
+			
+			function person(first,last,age,eye){
+				this.firstName=first;
+				this.lastName=last;
+				this.age=age;
+				this.eyeColor=eye;
+			}	
+			var myFather = new person("John","Doe",50,"Blue");
+			var myMother = new person("Sally","Rally",48,"Green");
+
+			document.getElementById("demo").innerHTML=
+			"My Father is "+myFather.age+". My Mother is "+myMother.age+"."
+			</script>
+
+	
+	</body>
+</html>

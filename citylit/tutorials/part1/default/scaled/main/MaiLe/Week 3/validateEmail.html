@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title> Validate Email </title>
+			<script language="JavaScript" type="text/javascript">
+			function validateEmail() {
+				if(document.form.email.value==""){
+					fail("Please enter a value");
+					return;
+				}
+				else if(document.form.email.value.indexOf("@")==-1){
+					fail ("Email address invalid (There is no @)");
+					return
+				}
+				else{
+					var addr=document.form.email.value.split("@");
+					if(addr[0].length<1){
+						fail("There is no character before @");
+					}
+					else if(addr[1].indexOf(".")==-1){
+						fail("There is no dot (.)");
+					}
+					else if(addr[1].length<3){
+						fail("Incorrect domain of Email");
+					}
+					else{
+						document.form.submit();
+						fail("Email Submitted")
+					}
+				}
+			}
+			function fail(msg){
+				alert("Email Validation: " + msg);
+			}
+
+			</script>
+	</head>
+	<body>
+		<h2> Booking Form </h2>
+		<form name="form" action="#">
+		<p> Email: <input type="input" name="email" value=""/>
+		<input type="button" value="submit" onclick="validateEmail()"/></p>
+		</form>
+	</body>
+</html>

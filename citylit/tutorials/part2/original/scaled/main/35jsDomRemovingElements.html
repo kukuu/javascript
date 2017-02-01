@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>DOM 3 - Removing elements</title>
+	<script language="JavaScript" type="text/javascript">
+		function removeItem() {
+			var list = document.getElementById("list");
+			if(list.childNodes.length > 0) {
+				list.removeChild(list.lastChild)
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+<div>The removeChild method that every node has can be used to eliminate a node from the DOM tree. Note you will have to call this method from the parent element of the node and provide the node a parameter.
+<br />
+<br />
+The code in this example shows a list and removes the last item each time the button is clicked.
+</div>
+<br /><br />
+<ul id="list">
+	<li><img src="4.jpg" width="46" height="46" alt="" border="0"></li>
+	<li><img src="5.jpg" width="46" height="46" alt="" border="0"></li>
+	<li><img src="venice.jpg" width="46" height="46" alt="" border="0"></li>
+</ul>
+<form><input type="button"  name="btn" value="click to remove item" onclick="removeItem()"></form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>disappearingContent-using tabbing</title>
+	<script language="javascript" type="text/javascript">
+		//Author :Alexander Adu-Sarkodie
+		//Use with acknowledgement
+		//Refrain from using absolute positioning as it may lead to subtle differences accross browsers
+		//A simple script that swaps content
+		
+		function showHide(show,hide){
+		//2 states: Hide and show
+		//TAB 1
+		//state 1 property showHide, value is tab1
+		//state 2 property hidHide, value is tab2
+		//Reverse for TAB 2
+			document.getElementById(show).style.display = "block";
+			document.getElementById(hide).style.display = "none";
+		}
+	
+	</script> 
+</head>
+
+<body>
+	<form>
+		<input type="button" value="top 3" onclick="showHide('tab1','tab2');" />
+		<input type="button" value="top 5" onclick="showHide('tab2','tab1');" />
+	</form>
+	<div id="tab1">
+		<p>Cold Play <br /><img src="pic0.jpg" width="86" height="130" alt="" border="0"></p>
+		<p>Ronan Keeton <br /><img src="pic1.jpg" width="86" height="130" alt="" border="0"></p>
+		<p>Elton John <br /><img src="pic2.jpg" width="86" height="130" alt="" border="0"></p>
+	</div>
+	<div id="tab2" style="display:none">
+		<p>Madonna <br /> <img src="pic3.jpg" width="86" height="130" alt="" border="0"></p>
+		<p>Jacko <br /> <img src="pic4.jpg" width="86" height="130" alt="" border="0"></p>
+		<p>Will Young <br /> <img src="pic5.jpg" width="86" height="130" alt="" border="0"></p>
+		<p>Simply Red <br /><img src="pic0.jpg" width="86" height="130" alt="" border="0"></p>
+		<p>Paul Simon <br /><img src="pic1.jpg" width="86" height="130" alt="" border="0"></p>
+	</div>
+	<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+</html>

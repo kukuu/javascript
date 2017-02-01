@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>jseh_with_Multi_SwapMO39.html</title>
+	
+	
+		<script type="text/javascript">
+<!--
+
+function domouseover(n)
+{
+with(document.f.txt)
+{
+if(n==2) value="This is Sydney";
+if(n==1) value="This is Venice";
+if(n==0) value="This is Hong Kong";
+if(n==4) value="";//this last bit is needed to empty the script on onmouseout
+}
+}
+//-->
+</script>
+</head>
+<body>
+<br/><br/><br/><br/>
+<table cellspacing="0" cellpadding="0" border="0" align="center"><form name="f"><tr><td valign="top"><a href="jsehFocus37.html" onmouseover="domouseover(2)" onmouseout="domouseover(4)"><img src="sydney.jpg" width="100" height="50" alt="Sydney" border="0"></a></td><td valign="top"><img src="tiny.gif" width="3" height="1" alt="" border="0"></td><td valign="top">
+<input type="text" name="txt" size="20" height="50">
+</td></tr>
+
+<tr><td valign="top" colspan="3" height="3"><img src="tiny.gif" width="3" height="1" alt="" border="0"></td></tr>
+
+<tr><td valign="top"><a href="jsehRating36.html" onmouseover="domouseover(1)" onmouseout="domouseover(4)"><img src="venice.jpg" width="100" height="50" alt="" border="0"></a></td><td valign="top" colspan="2"><img src="tiny.gif" width="3" height="1" alt="Venice" border="0"></td></tr>
+
+<tr><td valign="top" colspan="3" height="3"><img src="tiny.gif" width="3" height="1" alt="" border="0"></td></tr>
+
+<tr><td valign="top"><a href="js35_lastModified.html" onmouseover="domouseover(0)" onmouseout="domouseover(4)"><img src="hong_kong.jpg" width="100" height="50" alt="Accra" border="0"></a></td><td valign="top" colspan="2"><img src="tiny.gif" width="3" height="1" alt="" border="0"></td></tr>
+
+</form></table>
+
+</body>
+</html>

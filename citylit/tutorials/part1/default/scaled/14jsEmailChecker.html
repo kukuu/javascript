@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>email checker</title>
+	
+	<script language="javascript"  type ="text/javascript">
+	/*
+	User testing application
+	1. First have nothing in textfield
+	2. Then type the @ character n try and submit
+	3. Now type a name in front of the @character
+	4. Next type the (dot) . operator as has been requested and try and submit
+	5. The application will request for the domain to be added 
+	6. Now add and complete submission
+	
+	*/
+	<!--
+	   function send_if_valid() {
+	     if (document.f.email.value.indexOf( "@" )== -1 ){
+			fail( "No '@' in address");
+	     }
+	      else {
+		    var adr = document.f.email.value.split ("@") ;
+		    if (adr[0].length< 1 ) {
+			fail( "User address absent");
+		    }
+		    else if (adr[0].indexOf( "." ) == -1 ) {
+			fail ( "No dot");
+		    }
+		    else if ( adr[1].length <3) { 
+			fail ( "Domain incorrect" );
+		    }
+		    else {
+									document.f.submit();
+		    }
+	     }
+	  }
+
+	  function fail(msg) {
+	    alert ( "Email address Error :\n" +msg);
+			}
+		//-->
+	</script>
+</head>
+<body>
+	<form name = "f" method= "post" action= "#">
+		Enter email address.. <br>
+		<input name = "email" type = "text"  value = "">
+		<input type = "button"  value = "Submit form"  onclick = "send_if_valid( )">
+	</form>
+</body>
+</html>

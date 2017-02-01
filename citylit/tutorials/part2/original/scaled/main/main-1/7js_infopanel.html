@@ -1,0 +1,46 @@
+
+<html>
+<head>
+	<title>Info Panel</title>
+</head>
+<body>
+	<p id="explanationHere" class="infppanelbutton">
+		<a href="#" onClick="myInfoPanel.show();return false;">Madonna</a>
+	</p>	
+	<div id="simpleInfoPanel">
+	  <h3>Ready, Set, Vote! #10</h3>
+	  <p><img src="madonna.jpg" width="90" height="68" alt="" border="0" style="float:right;">Hampstead School is getting political! When school elections roll around, Nicole decides to run for class president, and Grace volunteers to be her campaign <span style="color:#ff0000"><strong>manager</strong></span> . The only problem is, Grace starts treating the election like one of her football matches, and instead of focusing on Nicole, Grace starts making the election all about beating opponents. Can the English Roses help draw Grace in before the final ballots are cast?</p>
+	</div>
+	
+	<p id="explanationHere2" class="infppanelbutton" style="margin-top:350px;">
+		<a href="#" onClick="myInfoPanel2.show();return false;">Wacko!</a>
+	</p>	
+	<div id="simpleInfoPanel2">
+	  <h3>King of Pop!</h3>
+	  <p><img src="wacko.jpg" width="90" height="68" alt="" border="0" style="float:right;">	(August 29, 1958 – June 25, 2009) was an American singer-songwriter, dancer, actor, choreographer, poet, businessman, philanthropist and record producer. Referred to as the <span style="color:#ff0000">King of Pop</strong></span>, he is recognized as the most successful entertainer of all time,[1]  as well as one of the most influential.[2][3]  His unrivaled contribution to music, dance and fashion,[4][5]  and a much-publicized personal life, made him a global figure in popular culture for over four decades.
+</p>
+	</div>
+							<!-- end info panel pane -->
+	<script type="text/javascript" src="http://www.bbc.co.uk/glow/gloader.js"></script>
+	
+	<script type="text/javascript" src="http://www.bbc.co.uk/glow/script/prettify.js"></script>
+	<script type="text/javascript">
+		gloader.load(["glow", "1", "glow.dom", "glow.widgets.InfoPanel"]);
+	</script>
+	<script type="text/javascript">
+		//create InfoPanel instance
+		var myInfoPanel = new glow.widgets.InfoPanel("#simpleInfoPanel", {
+		  context: "#explanationHere",
+		  pointerPosition : "t",
+		  offsetInContext: {x: "5%", y: "100%"}
+		});
+		
+		var myInfoPanel2 = new glow.widgets.InfoPanel("#simpleInfoPanel2", {
+		  context: "#explanationHere2",
+		  pointerPosition : "t",
+		  offsetInContext: {x: "5%", y: "100%"}
+		});
+	</script>
+	<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+</html>

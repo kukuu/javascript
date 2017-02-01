@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>mousedown mouseup</title>
+	<script type="text/javascript">
+	<!--
+	function light(n)
+	{
+	if(n == 1)
+	{
+	document.images.bulb.src="venice.jpg";
+	document.f.txt.value="Mouse button is down";
+	}
+	if(n == 0)
+	{
+	document.images.bulb.src="sydney.jpg";
+	document.f.txt.value="Mouse button is up";
+	}
+	}
+	//-->
+	</script>
+</head>
+
+<body>
+<br /><br /><br />
+<img name="bulb" src="sydney.jpg" width="72" height="72" alt="default state-off">
+<form name="f">
+<input type="text" name="txt" size="18">
+<input type="button" value="change image" onmousedown="light(1)" onmouseup="light(0)">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+JavaScript Frameworks and Libraries
+
+* Polling and pulling
+* URL with all Framework scriplets  from Jimmy - Friday 15/02/13
+* JQuery
+-Simple programs. See JQuery citylit ; Show and hide et al
+- Opening modal box. See multi-mobile page
+- validation : See blue one
+- Simple Ajax Request
+- Autocomplete. See Fantastic -final
+* AMD & Require JS
+* Ember JS 
+* Handlebars
+* 
+

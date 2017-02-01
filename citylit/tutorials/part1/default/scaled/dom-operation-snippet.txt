@@ -1,0 +1,62 @@
+
+//DOM OPERATIONS
+
+//accessing attributes
+var imageattributes=document.getElementById("myimage").attributes
+imageattributes[0].name //name of the first attribute of "myimage"
+imageattributes[0].value //value of the first attribute of "myimage"
+imageattributes.getNamedItem("src").value //value of the "src" property of "myimage"
+
+
+
+//access some <ul> element
+var mylist=document.getElementById("mylist")
+for (i=0; i<mylist.childNodes.length; i++) {
+       if (mylist.childNodes[i].nodeName=="LI") {
+           //do something
+      }
+}
+
+
+
+//accessing class names
+document.getElementById("test").className="class1" //Assign the class "class1" to element
+document.getElementById("test").className +=" class2" //Assign an additional "class2" class to element	
+
+//accessing client width
+var pagewidth=document.body.clientWidth
+
+
+
+//using innerHTML. Note this is a cross browser technique, but not a W3C Standard
+<p><b>Old paragraph text</b></p>
+<script type="text/javascript">
+   window.onload=function() {
+      document.getElementsByTagName("p")[0].innerHTML="<b>new paragraph text</b>";
+  }
+</script>
+
+
+//accessing nodes :using firstChild and nodeName
+if (document.getElementById("test").firstChild.nodeName=="DIV") {
+     alert("This is a DIV");
+}
+
+
+
+//accessing styles
+document.getElementById("test").style.backgroundColor="yellow";
+
+
+
+//accessing nodeValues 
+<body>
+<div id="test">Old text</div>
+
+<script type="text/javascript">
+       if (document.getElementById("test").firstChild.nodeName=="#text") {
+           document.getElementById("test").firstChild.nodeValue="New text";
+       }
+</script>
+
+	

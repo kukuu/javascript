@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Booking form with simple validation</title>
+
+<script type="text/javascript">
+function validate() {
+	if (document.BookingForm.fname.value==="") {
+		alert("Please enter your first name");
+		return;
+	}
+	
+	else if (document.BookingForm.lname.value==="") {
+		alert("Please enter your last name");
+		return;
+	}
+	
+	else if (document.BookingForm.email.value==="") {
+		alert("Please enter your email address");
+		return;
+	}
+	
+	var subNow = confirm("Please confirm that you want to submit");
+	
+	if (subNow) {
+		document.BookingForm.submit();
+		document.BookingForm.fname.value="";
+		document.BookingForm.lname.value="";
+		document.BookingForm.email.value="";
+	}
+	else {
+		return;
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<h2>Booking form</h2>
+<form name="BookingForm" action="#">
+	<p>First name: <input type="input" name="fname" value="" /></p>
+	<p>Last name: <input type="input" name="lname" value="" /></p>
+	<p>Email: <input type="input" name="email" value="" /></p>
+	<div style="margin-top:20px;">
+		<input type="button" value="submit" onclick="validate()" /></p>
+	</div>
+</form>
+</body>
+</html>

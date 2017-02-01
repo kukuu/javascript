@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>globalVariables</title>
+<script type="text/javascript">
+<!-- 
+var stored_num;       //this is a global variable. It has been declared outside the function
+function  call_alert(num){
+	stored_num = num;  //the global variable is retrieved and stored
+	make_triple();
+	alert ("the value is" +stored_num );
+}
+function  make_triple(){
+	stored_num = stored_num*3;   
+}
+//-->
+</script>
+</head>
+<body onload="call_alert(5)">
+</body>
+</html>

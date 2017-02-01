@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title> Preview widget</title>
+<script type="text/javascript" language="Javascript">
+<!--
+		var str,str2;
+		function textArea() {
+		var str = document.f.txt.value;
+		var str2 = document.f.txt2.value;
+		with(document.getElementById) {
+			textstring3.innerHTML = str;
+			textstring4.innerHTML = str2;
+		}
+	}
+	//-->
+</script>
+
+	<link rel="stylesheet" href="library.css" type="text/css" media="all" />
+<style>
+
+</style>
+</head>
+<body>
+		
+	<div class="formObject2">
+		<p><strong>Please fill in the form,  click to preview,confirm and then submit</strong></p>
+		<form name="f">
+			<div>
+				<div style="float:left">
+					Your Name: <input type="text" name="txt"  class="textFieldHeight" value=""><br />
+					email: <input type="text" name="txt2"  class="textFieldHeight2" value=""><br />	
+					<br /><br />
+					<input type="button" name="btn" class="buttonStyle2b" value="Preview" onclick="textArea()">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="btn2" value="submit">
+				</div>
+				<div style="float:left;margin:0 0 0 10px;border-left:1px solid #808080;height:300px;">
+					<span id="textstring3"></span> <br />
+					<span id="textstring4"></span><br />	
+				</div>
+			</div>
+		</form>
+	</div>
+
+</body>
+
+</html>

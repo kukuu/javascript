@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>messageboard/polling</title>
+<script language="javascript" type="text/javascript">
+	<!--
+		function doClick(){
+			var c = document.getElementsByTagName('input');
+			for (var i=0;i<c.length;i++) {
+				if(c[i].getAttribute('type') == 'radio') {
+					c[i].onclick = function() {
+					//using attributes as keys yo get their values
+						var str = this.getAttribute('title');
+						document.f.txt.value = str;
+						//document.getElementById.innerHTML = str;
+					}
+				}
+			}
+		}
+	//-->
+</script>
+</head>
+
+<body onload="doClick();">
+	<h1>A simple rating script</h1>
+	<h3>Which kitten do you like most. Click the animal to confirm your choice and give a star rating for cuteness.</h3>
+	<form name="f" action="#">
+		<div style="float:left;"><img src="http://farm4.static.flickr.com/3085/3131027759_720963aefd_m.jpg" alt="xmas kitten" title="xmas kitten" border="0"/>
+			<div>1 star<input type="radio" name="rate" value="1" title="Xmas kitten - 1 star"/>&nbsp;2 stars<input type="radio" name="rate" value="2" title="Xmas kitten - 2 stars"/>&nbsp;3 stars<input type="radio" name="rate" value="3" title="Xmas kitten - 3 stars"/></div>
+		</div>
+		<div style="float:left;"><img src="http://farm4.static.flickr.com/3085/3120500371_e0527ebb61_m.jpg" alt="photographer kitten" title="photographer kitten" border="0"/>
+			<div>1 star<input type="radio" name="rate" value="1" title="Photographer kitten - 1 star"/>&nbsp;2 stars<input type="radio" name="rate" value="2" title="Photographer kitten - 2 stars"/>&nbsp;3 stars<input type="radio" name="rate" value="3" title="Photographer kitten - 3 stars"/></div>
+		</div>
+		<div style="float:left;"><img src="http://farm4.static.flickr.com/3312/3204276425_ec0f72e8d4_m.jpg" alt="Tom and Jerry kitten" title="Tom and Jerry kitten" border="0"/>
+			<div>1 star<input type="radio" name="rate" value="1" title="&quot;Tom &amp; Jerry&quot; kitten - 1 star"/>&nbsp;2 stars<input type="radio" name="rate" value="2" title="&quot;Tom &amp; Jerry&quot; kitten - 2 stars"/>&nbsp;3 stars<input type="radio" name="rate" value="3" title="&quot;Tom &amp; Jerry&quot; kitten - 3 stars"/></div>
+		</div>
+		<div style="clear:both;">&nbsp;</div>
+		<div style="margin-top:10px;"><input style="width:200px;" type="text" name="txt" value=""/>&nbsp;<input type="button" value="Send" name="send" width="80" height="15" border="0"/></div>
+	</form>
+	<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+</html>

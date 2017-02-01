@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+    </head>
+  <body>
+    <h2>Image Gallery</h2>
+    <p>
+      <img id="largeImg" src="http://placehold.it/515x100/000/fff" alt="Large Image">
+    </p>
+    <p id="thumbs">
+      <a href="http://placehold.it/515x100/000/fff" title="image 2">
+        <img src="http://placehold.it/100/000/fff" alt="">
+      </a>
+      <a href="http://placehold.it/515x100/0cc031/fff" title="image 3">
+        <img src="http://placehold.it/100/0cc031/fff" alt="">
+      </a>
+      <a href="http://placehold.it/515x100/ff5512/fff" title="image 4">
+        <img src="http://placehold.it/100/ff5512/fff" alt="">
+      </a>
+      <a href="http://placehold.it/515x100/dd3881/fff" title="image 5">
+        <img src="http://placehold.it/100/dd3881/fff" alt="">
+      </a>
+    </p>
+    <script type="text/javascript">
+      var list = document.getElementById("thumbs");
+      var siblings = list.children;
+      for (var i=0; i < siblings.length; i++) {
+        siblings[i].addEventListener("click", showImage);
+      }
+
+      function showImage(e) {
+        e.preventDefault();
+        document.getElementById('largeImg').src = this.href;
+      }
+    </script>
+  </body>
+</html>

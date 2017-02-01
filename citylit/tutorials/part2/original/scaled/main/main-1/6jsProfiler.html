@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title> preview text field</title>
+<script type="text/javascript" language="Javascript">
+<!--
+		var str,str2;
+		function textArea() {
+			var str = document.f.txt.value;
+			var str2 = document.f.txt2.value;
+			var str3 = document.f.txt3.value;
+			with(document.getElementById){
+				textstring3.innerHTML = str;
+				textstring4.innerHTML = str2;
+				textstring5.innerHTML = str3;	
+			}
+		/*submitnow=confirm ("Do you want to submit now");
+			if(submitnow){
+				document.submit();
+			}
+			else {
+				with(document.f){
+					txt.value=str;
+					txt2.value=str2;
+					txt3.value=str3;
+				
+				}
+			}*/
+		}
+	//-->
+</script>
+
+<link rel="stylesheet" href="library.css" type="text/css" media="all" />
+<link rel="stylesheet" href="profiler.css">
+</head>
+<body>
+		
+	<div class="formObject2">
+		<p><strong>Please fill in the form. Click to preview, confirm and then submit</strong></p>
+		<form name="f">
+		<div>
+		<div style="float:left">
+		Your Name: <input type="text" name="txt"  class="textFieldHeight" value=""><br />
+		email: <input type="text" name="txt2"  class="textFieldHeight2" value=""><br />
+Comment: <br />
+<textarea rows="5" cols="25" name="txt3"></textarea>
+
+		
+<br /><br />
+<input type="button" name="btn" class="buttonStyle2b" value="Preview" onclick="textArea()">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="btn2" value="submit">
+		</div>
+		</form>
+		<div style="float:left;margin:0 0 0 10px;border-left:1px solid #808080;height:300px;">
+		<span id="textstring3"></span> <br />
+			<span id="textstring4"></span><br />
+	<span id="textstring5"></span><br />
+		
+			
+		</div>
+			</div>
+			
+			
+<br /> 
+
+	
+	</div>
+	<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+
+</html>

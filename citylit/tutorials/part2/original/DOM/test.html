@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>jseh_with_Multi_SwapMO39.html</title>
+	
+<!-- <script type="text/javascript" language="Javascript">	
+
+var vtr,vtr2,vtr3;
+	function radiobuttons(n) {
+		if(n==0){
+		 	var vtr = '<img src="sydney.jpg" width="100" height="50">';
+			var vtr2 = '';
+			var vtr3 = '';
+		 }
+		if(n==1){
+			var vtr ='';
+			var vtr2 ='<img src="venice.jpg" width="100" height="50">';
+			var vtr3 ='';
+		}
+		
+		if(n==2){
+			var vtr ='';
+			var vtr2 ='';
+			var vtr3 ='<img src="hong_kong.jpg" width="100" height="50">';
+		}
+		with(document.getElementById){
+			vextstring3.innerHTML = vtr;
+			vextstring4.innerHTML = vtr2;
+			vextstring5.innerHTML = vtr3;
+		}
+}
+
+</script>
+ -->
+
+<script type="text/javascript">	
+<!-- 
+var i = 1;
+function poll() {
+	var vtr = '<img src="sydney.jpg" width="100" height="50">';
+	var vtr2 = '<img src="venice.jpg" width="100" height="50">';
+	var vtr3 = '<img src="hong_kong.jpg" width="100" height="50">';
+	
+	
+	for (var i=0; i<document.f.rad1.length; i++) {
+		if(document.f.rad1[0].checked) {
+			document.getElementById('vextstring1').innerHTML = vtr;
+		
+		/*with(document.getElementById){
+			vextstring1.innerHTML = vtr;
+			vextstring2.innerHTML = vtr2;
+			vextstring3.innerHTML = vtr3;
+		
+		}*/
+
+		}
+		 if(document.f.rad1[1].checked) {
+			document.getElementById('vextstring2').innerHTML = vtr2;
+		}	
+	}
+}
+ //-->	
+</script>  
+
+<style>
+.radios  {
+
+}
+
+.previewZone {
+
+}
+
+.previewZone2 {
+
+	width:500px;
+	margin:00;
+}
+
+</style>
+</head>
+<body>
+
+<div><p><strong>Choose a picture  to preview</strong></p></div> 
+<form name="f">
+<img src="sydney.jpg" width="50" height="25" alt="Sydney" border="0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="venice.jpg" width="50" height="25" alt="" border="0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="hong_kong.jpg" width="50" height="25" alt="Accra" border="0"><br />
+	<input type="radio"  name="rad1"   value="Sydney">Sydney Opera House <input type="radio" name="rad1"   value="Venice">Venice Village &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="rad1"   value="Hong Kong"> Hong Kong City 
+
+<input type="button"  value="Change image"
+onclick="poll()">
+<div class="previewZone2">
+	<span id="vextstring1" class="radios"></span><span id="vextstring2" class="radios"></span><span id="vextstring3" class="radios"></span>
+</div>
+</form>
+
+</body>
+</html>

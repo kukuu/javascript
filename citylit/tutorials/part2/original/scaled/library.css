@@ -1,0 +1,109 @@
+#textstring {
+	position:absolute;
+	top:90;
+	left:10;
+	width:200;
+	height:20;
+	z-inde:10;
+	background-color:#000;
+	padding:5px;
+	color:#fff;
+	font-weight:bold;
+	width:220px;
+}
+
+* html #textstring {
+	width:240px;
+}
+
+#textstring2 {
+	position:absolute;
+	margin:20px 0 0 0;
+	top:90;
+	left:10;
+	/*width:200;
+	height:20;
+	padding:5px;
+	*/
+	z-inde:10;
+	color:#000;
+	font-weight:bold;
+	width:220px;
+	background-color:#ccc;
+}
+
+/* html #textstring2 {
+	width:240px;
+}
+*/
+
+.formObject {
+	float:left;
+	border:1px solid #ffcc33;
+	padding:10px;
+}
+
+.strapLine {
+	float:left;
+}
+
+#textstring3 {
+	height:20;
+	padding:5px;
+	color:#000;
+	font-weight:bold;
+	width:220px;
+	margin:0 0 0 10px;
+	padding:0 0 0 0;
+	
+}
+
+* html #textstring3 {
+	width:240px;
+}
+
+#textstring4 {
+	
+	/*width:200;*/
+	height:20;
+	z-inde:10;
+	padding:5px;
+	color:#000;
+	font-weight:bold;
+	/*float:left;*/
+	margin:10px 0 0 10px;
+	
+}
+
+
+
+.textFieldHeight {
+	height:29px;
+}
+
+.textFieldHeight2 {
+	height:29px;
+	margin:5px 0 0 41px;
+}
+
+
+.buttonStyle {
+	margin:10px 0 0 145px;
+}
+
+.buttonStyle2 {
+	margin:10px 0 0 80px;
+}
+
+.outputDispaly {
+	float:left;
+	paddding:130px 0 0 0;
+	margin:50px 0 0 0;
+}
+
+.outputDispaly2 {
+	float:left;
+	paddding:20px 0 0 0;
+	margin:50px 0 0 0;
+}
+

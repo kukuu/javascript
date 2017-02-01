@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>animation</title>
+	
+	
+	
+<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+<!--
+function openWindow(file) { popupWin = window.open(file, 'popup', 'status=0,menubar="no",resizable="yes",width=400,height=400');  }
+//number will be given a value of 
+var number=6;
+src = [];
+for (y=number; y>0; y--) {
+	src[y-1] = y + ".jpg";
+}
+
+//set duration for each image
+duration = 6;
+
+ads=[]; ct=0;
+
+function switchPic() {
+var n=(ct+1)%src.length;
+if (ads[n] && (ads[n].complete || ads[n].complete==null)) {
+document["pic"].src = ads[ct=n].src;{
+
+if (document.all)
+pic.filters.blendTrans.apply();
+pic.filters.blendTrans.play();}
+}
+ads[n=(ct+1)%src.length] = new Image;
+ads[n].src = 'images/' + src[n];
+setTimeout("switchPic()",duration*1000);
+}
+function slide(){
+if (document.images)
+switchPic();
+}
+//-->
+</SCRIPT>
+</head>
+
+<body onLoad="slide();">
+ <br /><br /> 
+ 
+ <div align="center">
+<table cellspacing="0" cellpadding="0" border="0" align="center" width="360"><tr><td valign="middle"><img name="pic" src="images/1.jpg" width="360" height="130" border="0" style="filter:blendTrans(duration=4)" alt="where is this" /></td></tr></table>
+</div>
+<br />
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo by janjarfalk</title>
+  <script type="text/javascript" src="http://jquery-accordion.googlecode.com/svn/trunk/jquery.accordion.js"></script>
+  <style type="text/css">
+	  ul { border: 1px solid #eee; border-bottom: 0; list-style-type:none;}
+	  li { background: #fff; border-bottom: 1px solid #eee; }
+	  li li { background: #eee; }
+	  a { padding: 0 10px; font: bold 13px/30px 'Arial', 'sans-serif'; color: #036; text-decoration: none; }
+	  div { background: #333; padding: 10px; color: #eee; font: 11px Arial; }
+  </style> 
+  <script type="text/javascript">
+  //<![CDATA[ 
+  $(window).load(function(){
+  $('#accordion').accordion();
+  });
+  //]]> 
+  </script>
+  
+</head><body>
+  <h1>
+    <a href="http://unwrongest.com/projects/accordion">Jquery Accordion</a>
+</h1> 
+<ul id="accordion">
+    <li class="">
+        <a href="#america">America</a>
+        <ul style="display: none;">
+            <li>
+                <a href="#america-newyork">New York</a>
+                <div style="display: none;">Information about New York</div>
+            </li> 
+            <li>
+                <a href="#america-sanfransisco">San Fransisco</a>
+                <div style="display: none;">Information about San Fransisco</div>
+            </li>
+        </ul>
+    </li>
+    <li class="">
+        <a href="#antarctica">Antarctica</a>
+        <div style="display: none;">Information about Antarctica</div>
+    </li>
+</ul>  
+<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+
+</html>
+ 
+ 
+ 
+ 

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>45jschange</title>
+		<script type="text/javascript">
+<!-- 
+function init()
+{
+document.f.s.options[2].selected= true;  //initial value set to i=1 which is green
+document.f.s.onchange= showselected;
+}
+
+function showselected()
+{
+document.f3.txt3.value=document.f.s.options[document.f.s.selectedIndex].value;
+}
+window.onload=init;
+//-->
+</script>
+
+
+
+
+		<script type="text/javascript">
+<!-- 
+function next()
+{
+document.f2.s2.options[2].selected= true;  //initial value set to i=1 which is green
+document.f2.s2.onchange= showselected2;
+}
+
+function showselected2()
+{
+document.f4.txt4.value=document.f2.s2.options[document.f2.s2.selectedIndex].value;
+}
+window.onload=next;
+//-->
+</script>
+</head>
+<body>
+<form name="f">
+Pepper
+
+<select name="s">
+<option value="Red Pepper">Red Pepper
+<option value="Green Pepper">Green Pepper
+<option value="Yellow Pepper">Yellow Pepper
+</select>
+</form>
+
+
+<br /><br />
+<form name="f3">
+<input type="text" name="txt3" value="">
+<input type="button" name="btn1" value="send">
+</form>
+
+
+<br /><br /><br />
+
+
+
+<form name="f2">
+Bread<br />
+<select name="s2">
+<option value="Plain Bread">Plain Bread
+<option value="Bun  Bread">Bun  Bread
+<option value="Yellow  Bread">Yellow  Bread
+</select>
+</form>
+
+<br /><br />
+<form name="f4">
+<input type="text" name="txt4" value="">
+<input type="button" name="btn1" value="send">
+</form>
+
+</body>
+</html>

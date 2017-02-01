@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>mousedown mouseup multiple instances</title>
+	<script type="text/javascript">
+	<!--
+	function changeImage(n)
+	{
+	if(n == 1)
+	{
+	document.images.city.src="venice.jpg";
+	document.f.txt.value="This is Venice";
+	}
+	if(n == 0)
+	{
+	document.images.city.src="sydney.jpg";
+	document.f.txt.value="This is Sydney";
+	}
+	}
+	//-->
+	</script>
+</head>
+
+<body>
+<br /><br /><br />
+<img name="city" src="sydney.jpg" width="72" height="72" alt="default state-off">
+<form name="f">
+<input type="radio" name="city" value="Venice" onclick="changeImage(1)">
+<input type="radio" name="city" value="Sydney" onclick="changeImage(0)">
+<input type="text" name="txt" size="18">
+</form>
+
+</body>
+</html>

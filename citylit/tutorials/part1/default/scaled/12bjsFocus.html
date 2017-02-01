@@ -1,0 +1,21 @@
+
+
+<html>
+<head>
+	<title>focus and blur</title>
+</head>
+
+<body>
+<!--textfield stores previous entries in dropdown menu.-->
+
+	<form name="clipsSearchForm" class="searchform"  action="#" method="get">
+		<label for="terms" title="search clips for key words">
+			<span>Search by keyword</span>
+		</label>
+		<input type="text" class="inputtext" id="terms" name="val_1_1" value="Type in a keyword" onFocus="this.value==this.defaultValue ? this.value='' : '';" onBlur="this.value=='' ? this.value=this.defaultValue : '';"  />
+
+		<input type="submit" value="submit" />
+	</form> 
+
+</body>
+</html>

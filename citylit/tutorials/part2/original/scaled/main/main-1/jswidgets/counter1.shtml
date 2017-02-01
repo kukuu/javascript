@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Counter</title>
+	<style>
+	
+
+
+#textAreaPadding {
+	padding:7px 0 7px 80px;
+}
+
+
+
+* html #textAreaPadding {
+	padding:7px 0 7px 70px;
+}
+
+
+.namePad {
+	psdding-top:10px;
+}
+
+#ffyournamef {
+	padding:0 0 10px 0;
+}
+.ffyournamefL {
+	float:left;
+	padding:3px 10px 0 0;
+}
+
+
+.ffyournamefR {
+	float:left;
+}
+
+
+#femailf {
+	padding:10px 0 10px 0;
+	clear:both;
+}
+
+.femailfL {
+	float:left;
+	padding:3px 10px 0 0;
+}
+
+
+.femailfR {
+	float:left;
+}
+
+
+
+
+
+
+#fyourcommentf {
+	clear:both;
+	padding:5px 0 0 0;
+}
+	</style>
+	
+<!--#set var="bbcjst_inc" value="forms" -->
+<!--#include virtual="/cs/jst/jst.sssi" -->
+
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+// validation:
+
+	bbcjs.forms.required.yourname = bbcjs.regex.not_empty;
+	bbcjs.forms.req_err.yourname = "You have not entered your name";
+
+	bbcjs.forms.required.EmailSender = bbcjs.regex.email;
+	bbcjs.forms.req_err.EmailSender = "You have not entered your e-mail address";
+	
+	bbcjs.forms.required.yourcomment = bbcjs.regex.not_empty;
+	bbcjs.forms.req_err.yourcomment = "You have not entered any comment";
+	
+	function keyup(ta){
+		charsCount = (ta.value).length;
+		document.getElementById('charCountMsg').innerHTML = charsCount;
+		if (charsCount > 160)
+		ta.value = (ta.value).substring(0, 160);
+	}
+//-->
+</script>
+</head>
+
+<body>
+
+<form action="/apps/ifl/lifestyle/sendemail/green/sendemail" name="competition" method="get" onsubmit="return bbcjs.forms.validate(this);">
+	<input type="hidden" value="Green - competition form" name="green_competition">
+		<div id="ffyournamef">
+				<div class="ffyournamefL"><label for="fyourname"><strong>Your name</strong></label></div>
+				<div class="ffyournamefR"><input type="text" class="text" id="fyourname" name="yourname" size="30" value="" tabindex="1"/><div></div>
+		</div>	  
+		<div id="femailf">
+				<div class="femailfL"><label for="femail"><strong>Your email</strong></label></div>
+				<div class="femailfR"><input type="text" class="text" id="femail" name="EmailSender" size="30"  value="" tabindex="2"/></div>	
+		</div>
+		<div id="fyourcommentf">
+			<label for="fyourcomment"><strong>Your comment</strong>:(<span id="charCountMsg">0</span> / 160 characters only)</label>&nbsp;&nbsp;
+			<br />
+			<div id="textAreaPadding"><textarea cols="40" rows="5" name="yourcomment" id="fyourcomment" class="text" tabindex="3" onkeyup="keyup(this);"></textarea></div>
+			<p align="right">
+			<input type="submit" name="submit" id="submit" value="Submit" alt="Submit" width="80" height="19" border="0" style="width:80px">
+			</p>
+		</div>
+  
+</form>
+
+</body>
+</html>

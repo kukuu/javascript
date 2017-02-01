@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title> Smarter Discount Script </title>
+			<script language="JavaScript" type="text/javascript">
+			
+			var discountRate=0.05;
+			var applePrice=2;
+			var quantity=prompt("How Many Apples Do You Want To Buy?", "Please enter the apple quantity.");
+			var discountTotal=0;
+			var total=quantity*applePrice;
+			
+			if(total>=20){
+				alert("You are entitled to a discount!");
+				discountTotal=total-(discountRate*total);
+				var infoText="You'll get your decicious apples at $"+discountTotal;
+				infoText+=" instead of at $"+total;
+				alert(infoText);
+			}
+			else if(total>14){
+				alert("Just add a couple more apples and get your discount!");
+				var infoText="Be a sport, buy a bit more and pay a bit less";
+				alert(infoText);
+			}
+			else{
+				alert("Sorry, number of apples are too low. You are not entitled to a discount");
+				var infoText="Your delicious apples cost $"+total;
+				alert(infoText);
+			}
+			</script>
+	</head>
+	<body>
+	</body>
+</html>

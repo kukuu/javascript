@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Cloning elements</title>
+	<script language="JavaScript" type="text/javascript">
+		var nr = 1;
+		function addItem(cloneMode) {
+			var list = document.getElementById("list");
+			var oldItem = list.firstChild;
+			var newItem = oldItem.cloneNode(cloneMode);
+			list.appendChild(newItem);
+			
+		
+		}
+	</script>
+</head>
+
+<body>
+<ul id="list">
+	<li><a href="http://www.codeunique.com">item 1</a></li>
+</ul>
+<p>For deep copy you set the function argument to true on call. False copies only the node itself</p>
+<form><input type="button"  name="btn" value="clone all" onclick="addItem(true)"> &nbsp; <input type="button"  name="btn" value="clone node only" onclick="addItem(false)"></form> 
+</body>
+</html>

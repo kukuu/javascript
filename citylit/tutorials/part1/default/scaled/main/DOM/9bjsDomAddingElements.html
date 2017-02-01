@@ -1,0 +1,24 @@
+
+<html>
+<head>
+	<title>DOM 3 - Removing elements</title>
+	<script language="JavaScript" type="text/javascript">
+		initAddItem: function addItem() {
+			var list = document.getElementById("list");
+			var newNode = document.createElement("li");
+			var newTextNode = document.createTextNode("Hey, appended this text to the dynamically created list. Isn't this great! I love DOM");
+				newNode.appendChild(newTextNode);
+		list.appendChild(newNode);	
+				list.insertBefore(newNode,list.firstChild);
+		}
+		window.onload=addItem;
+	</script>
+</head>
+
+<body>
+	<ul id="list">
+		<li>item</li>
+	</ul>
+	<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+</html>

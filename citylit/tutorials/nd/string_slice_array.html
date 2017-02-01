@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slicing strings.</title>
+<script language="javascript" type="text/javascript">
+<!--
+	var str = "123456789";
+	var split_str = str.split("5");
+	document.write("The first element is " + split_str[0] + "<br />");
+	document.write("The second element is " + split_str[1] + "<br />");
+	
+	var str_delim = "1;2;3;4;5;6;7;8;20";
+	var split_delim = str_delim.split(";");
+	
+	for (var i = 0; i < split_delim.length; i++) {
+		document.write("The element at position " + i + " is " + split_delim[i] + "<br />");
+	}
+	
+	document.write(split_delim[8] > +split_delim[2]);
+	
+//-->
+</script>
+</head>
+<body>
+</body>
+</html>

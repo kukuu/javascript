@@ -1,0 +1,42 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>mouse over text swap</title>
+		<script type="text/javascript">
+<!--
+
+function domouse(n)
+{
+with(document.f.txt)
+
+{
+if(n==0) value="This is Amsterdam";
+if(n==1) value="";
+}
+
+}
+
+//-->
+</script>
+</head>
+<body>
+
+<!-- 
+This is a further challenge exercise for the class. Further  development from the previous examples.
+Note (2) issues are covered here  differentiating this script from the original script as used in 29jsehMouseOverImageTextSwapField29.html
+FIRST:
+the use of WITH keyword.Used to access an object property without the use of an object name before the property name. 
+
+AND SECONDLY:
+The use of just a single function name instead of having multiple functions embeded within the script tag. This is the benefit of using the WITH Keyword.
+-->
+<table cellspacing="0" cellpadding="0" border="0"><form name="f"><tr><td valign="top"><a href="jsehFocus37.html" onmouseover="domouse(0)" onmouseout="domouse(1)"><img src="health_index_splodge.gif" width="100" height="50" alt="" border="0"></a></td><td valign="top"><img src="tiny.gif" width="3" height="1" alt="" border="0"></td><td valign="middle">
+<input type="text" name="txt" size="20" height="50">
+</td></tr></form></table>
+</body>
+</html>
+
+
+

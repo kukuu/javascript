@@ -1,0 +1,36 @@
+<html>
+<head>
+<title> using the if-else branching with alert confirmation</title>
+	<script language="javascript" type="text/javascript">
+		function validate (){
+			if(document.myform.firstname.value == "") {
+				alert ( "You must enter your first name" );
+				return ;////code execution terminates.
+			}
+			
+			//extra validation fields to run
+			else if(document.myform.surname.value == "") { 
+				alert("You must enter your surname.");
+				return;//code execution terminates
+		}
+		
+		/*else {
+			return;//code execution terminates
+	}*/
+	if (document.myform.firstname.value != "" || document.myform.surname.value != "") {
+		//document.write ("Thank you for filling the form.........");
+		window.location="thankyou.html";
+		return;
+	}
+}
+</script>
+</head>
+<body>
+<form  name ="myform" action="get">
+	<h1>booking form</h1>
+	first name : <input name = "firstname">
+	<p>surname : <input name ="surname">
+	<p><input type = "button"  value = "book now" onClick="validate()">
+</form>
+</body>
+</html>

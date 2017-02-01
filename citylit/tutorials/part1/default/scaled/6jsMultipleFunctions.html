@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>multipleFunction:Building Calculator Function</title>
+
+	<script language="javascript" type="text/javascript">
+		function addSquares(a,b) {
+		   function square(x) {
+		      return x * x;
+		   }
+		   return square(a) + square(b);
+		}
+		a = addSquares(2,3); // returns 13
+		b = addSquares(3,4); // returns 25
+		c = addSquares(4,5); // returns 41
+		document.write(addSquares(2,3));
+		
+	</script>
+</head>
+
+<body onload="addSquares(2,3)">
+</body>
+</html>

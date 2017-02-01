@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>innerHtml -changing complete HTML Fragments </title>
+	<script language="JavaScript" type="text/javascript">
+		var nr = 1;
+		function addItem()  {
+			var list = document .getElementById("list");
+			nr++;
+			var newNode = "<li>item" + nr + "</li>";
+			list.innerHTML += newNode;
+		}
+		
+	</script>
+</head>
+
+<body onload="addItem();">
+	<ul id="list">
+		<li>item 1</li>
+	</ul>
+	
+</body>
+</html>

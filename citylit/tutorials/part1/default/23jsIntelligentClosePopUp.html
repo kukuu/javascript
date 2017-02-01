@@ -1,0 +1,26 @@
+
+<html>
+<head>
+<title>closing a popup window</title>
+</head>
+<body>
+<div align="center"><strong>
+This is a test page <br />showing how closing the main window<br /> closes the popup window<br />TRY IT</strong></div>
+<script type="text/javascript">
+/* The call to the window.open method should be assigned to a global variable to create the window object.This object inherits the window.close method and can be use to close the popup intelligently. Alternatively, the popup page can be closed on it's own using javascripts window.close method within an anchor tag */
+var popwindow;
+function popup(){
+	popwindow = window.open( "c.html" , "popup" , "top = 40  , left = 40 , width = 200,  height = 200,  directories, location, menubar, resizable, scrollbars, toolbar " ); 
+}
+function close_popup (){
+	if (popwindow  !=  null) //if the window exists
+		popwindow.close(); //then close
+}
+window.onload = popup;//intialise open
+window.onunload = close_popup;//initialise close
+
+//<a href="#" onclick="window.close()">Close this window</a>
+
+</script>
+</body>
+</html>

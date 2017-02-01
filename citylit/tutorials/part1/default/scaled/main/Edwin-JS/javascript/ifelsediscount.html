@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>if/else example</title>
+    <script type="text/javascript">
+      // store 5% discount value in a var
+      var discountRate = 0.05;
+
+      // price of one apple
+      var applePrice = 2;
+
+      // quantify value
+      var quantity = 6;
+
+      var discountedTotal = 0;
+
+      var total = quantity * applePrice;
+
+      var infoText;
+      if (total >= 10) {
+        discountedTotal = total - (discountRate * total);
+
+        infoText = "You'll get your delicious apples at £" + discountedTotal;
+        infoText += " instead of at £" + total;
+        document.write(infoText);
+      }
+      else if (total == 8) {
+        alert("Just add a coupel more apple and get your discount!");
+        infoText = "Be sporty, buy a bit more and pay a bit less.";
+        document.write(infoText);
+      }
+      else {
+        alert("Sorry, you're not entitled to a discount.");
+        infoText="Your delicious apples cost £" + total;
+        document.write(infoText);
+      }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image lists.</title>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+<!--
+	var image_list = "one;two;three;four;five";
+	var image_names = image_list.split(";");
+	
+	for (var i = 0; i < image_names.length; i++) {
+		
+		//document.write('<br /><img src="./images/' + image_names[i] + '.jpg"'); 
+		
+		var para = document.createElement("p");
+		para.innerText = "This is image " + (i + 1) + " ";
+		document.body.appendChild(para);
+		
+		var img = document.createElement("img");
+		img.setAttribute('src', './images/' + image_names[i] + '.jpg');
+		img.style.border = "thick solid #0000FF";
+		img.style.opacity= "0." + (i + 4);
+		img.style.paddingLeft="50px";
+		para.appendChild(img);
+		//document.body.appendChild(img);
+
+	}
+//-->
+</script>
+</body>
+</html>

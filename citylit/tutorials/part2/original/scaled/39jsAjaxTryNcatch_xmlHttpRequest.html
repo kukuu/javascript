@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Creating an http request</title>
+	<script language="JavaScript" type="text/javascript">
+		function getXMLHttp() {
+			var XMLHttp = null;
+			if (window.XMLHttpRequest) {
+				try {
+					XMLHttp = new XMLHttpRequest()
+				}
+				catch (e){}
+			}
+			else if (window.ActiveXObject) {
+				try {
+					XMLHttp = new ActiveXObject("Msxml2.XMLHTTP");
+				}
+				catch(e) {
+					try {
+					XMLHttp = new ActiveXObject(Microsoft.XMLHttp);
+					}
+					catch (e) {}
+				}
+			
+			}
+			return XMLHttp;
+	}
+		
+	
+	</script>
+</head>
+
+<body>
+
+
+
+</body>
+</html>

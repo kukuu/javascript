@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>47jsSubmit</title>
+<script type="text/javascript">
+<!-- 
+function validation() {
+	if(document.f.email.value.indexOf("@") == -1) {
+		alert("Email address is absent or incorrect"); 
+		return false;
+	}
+	else if (document.f.email.value.indexOf(".") == -1) {
+		alert("there is no dot in the email address"); 
+		return false;
+	} 
+	else{
+	
+	}
+}
+//-->
+</script>
+</head>
+<body>
+<br /><br /><br />
+<div align="center">
+<form name="f" method="post" action="mailto:abc@aol.com" enctype="text/plain" onsubmit="return validation()">
+Enter your email address:<input type="text" name="email" value="">
+
+<input type="submit" value="submit">
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+
+<html>
+<head>
+	<title>Styled created table from JavaScript Data - 2</title>
+	<script language="JavaScript" type="text/javascript">
+	
+		//Author : Alexander Adu-Sarkodie
+//To be used with above instruction ONLY
+	
+	function createTable(data) {
+			/*var rand = Math.floor(Math.random() * 3);
+			var pix1 = new  Array("pic0.jpg", "pic1.jpg", "pic2.jpg");
+			document.write('<img src = "'+pix1[rand]+'"><br />');*/
+			var table = document.createElement(" ");
+			table.style.border = " ";
+			var thead = document.createElement(" ");
+			thead.style.padding = " ";
+			var tr = document.createElement(" ");
+			for (var i = 0; i < data[0].length; i++) {
+				var th = document.createElement(" ");
+				th.style.border = " ";
+				var newText = document.createTextNode(data[0][i]);
+				th.appendChild( );
+				tr.appendChild( );
+			}
+			thead.appendChild();
+			table.appendChild( );
+			
+			var tbody = document.createElement(" ");
+			for (var i =1; i < data.length; i++){
+				var tr = document.createElement(" ");
+				for (var j = 0; j < data[i].length; j++) {
+					var td = document.createElement(" ");
+					td.style.padding = "";
+					td.style.border = " ";
+					var newText = document.createTextNode(data[][]);
+					td.appendChild( );
+					tr.appendChild( );
+			}
+			tbody.appendChild( );
+			}
+			table.appendChild();
+			return table;	
+		}
+		
+		window.onload = function() {
+		var table = createTable ([
+		["1","2","3","4"],
+		["One","Two","Three","Four"],
+		["Un","Deux","Trois","Quatre"],
+		["eins","zwet","dret","vier"]
+		]);
+		document.body.appendChild( );
+		}
+	
+	</script>
+</head>
+
+<body>
+<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+</html>
+
+

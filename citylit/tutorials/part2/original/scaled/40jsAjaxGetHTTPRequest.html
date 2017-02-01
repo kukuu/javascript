@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>get HTTP Request</title>
+	<script language="JavaScript" type="text/javascript">
+	var XMLHttp = getXMLHttp();
+	XMLHttp.open ("GET","phrasebook.txt");
+	XMLHttp.onreadystatechange = handlerFunction;
+	XMLHttp.send(null);
+	
+	function handlerFunction() {
+		if(XML.readyState==4) {
+			window.alert("Returned data" : + XMLHttp.responseText);
+		}
+	}
+	</script>
+</head>
+
+<body>
+
+
+
+</body>
+</html>

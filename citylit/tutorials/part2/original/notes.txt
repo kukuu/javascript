@@ -1,0 +1,2002 @@
+0. email checker
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>47jsSubmit</title>
+<script type="text/javascript">
+<!-- 
+function validation() {
+	if(document.f.email.value.indexOf("@") == -1) {
+		alert("Email address is absent or incorrect"); 
+		return false;
+	}
+	else if (document.f.email.value.indexOf(".") == -1) {
+		alert("there is no dot in the email address"); 
+		return false;
+	} 
+	else{
+	
+	}
+}
+//-->
+</script>
+</head>
+<body>
+<br /><br /><br />
+<div align="center">
+<form name="f" method="post" action="mailto:abc@aol.com" enctype="text/plain" onsubmit="return validation()">
+Enter your email address:<input type="text" name="email" value="">
+
+<input type="submit" value="submit">
+</form>
+</div>
+</body>
+</html>
+
+
+
+0b email checker
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>email checker</title>
+	
+<script type = "text/javascript">
+<!--
+function send_if_valid() {
+	if (document.f.email.value.indexOf( "@" )== -1 ){
+		fail( "No '@' in address" );
+	}
+	else {
+		var adr = document.f.email.value.split ("@") ;
+		if (adr[0].length< 1 ) {
+			fail( "User address absent");
+		}
+		else if (adr[1].indexOf( "." ) == -1 ) {//checking . operator at 2nd position minimum
+		fail ( "No dot");
+		}
+		else if ( adr[1].length <3 ) { 
+			fail ( "Domain incorrect" );
+		}
+		else {
+		document.f.submit();
+		}
+	}
+}
+
+function fail(msg) {
+	alert ( "Email address Error :\n" +msg);
+}
+//-->
+</script>
+</head>
+<body>
+<form name = "f" method= "post" action= "#">
+	Enter email address.. <br>
+	<input name = "email" type = "text"  value = "">
+	<input type = "button""  value = "Submit form"
+onclick = "send_if_valid( )">
+</form>
+
+
+</body>
+</html>
+
+
+
+1.Random paging (paging) gallery
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>random content generator</title>
+</head>
+
+<body>
+
+	<script language="javascript" type="text/javascript">
+		<!--
+			//This interactive script generates random content in the body area each time the user re-loads the page.Note object properties are separated by the comma delimeter
+				var pix1 = new  Array("pic0.jpg", "pic1.jpg", "pic2.jpg","pic3.jpg","pic4.jpg", "pic5.jpg");
+				var pix2 = new  Array("This is label for dog 1", "This is label for dog 2", "This is label for dog 3","This is label for dog4","This is label for dog 5", "This is label for dog 6");
+				var pix3 = new  Array("This is summary for picture 1:<strong><br />Hi I am dog 1</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla tristique, nibh non imperdiet posuere, pede nulla cursus nunc, in nonummy nibh pede quis felis. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed condimentum, dui venenatis ullamcorper eleifend, ante est iaculis diam, eget viverra velit nulla sed nisi. Mauris pede. Maecenas iaculis, dui id pretium ornare, purus massa scelerisque eros,",
+
+ "This is summary for picture 2:<strong><br />Hi I am dog 2</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla tristique, nibh non imperdiet posuere, pede nulla cursus nunc, in nonummy nibh pede quis felis. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed condimentum, dui venenatis ullamcorper eleifend, ante est iaculis diam, eget viverra velit nulla sed nisi. Mauris pede. Maecenas iaculis, dui id pretium ornare, purus massa scelerisque eros,", 
+
+"This is summary for picture 3 :<br /><strong>Hi I am dog 3</strong>:Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla tristique, nibh non imperdiet posuere, pede nulla cursus nunc, in nonummy nibh pede quis felis. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed condimentum, dui venenatis ullamcorper eleifend, ante est iaculis diam, eget viverra velit nulla sed nisi. Mauris pede. Maecenas iaculis, dui id pretium ornare, purus massa scelerisque eros,",
+
+"This is summary for picture 4 : <strong><br />Hi I am dog 4</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla tristique, nibh non imperdiet posuere, pede nulla cursus nunc, in nonummy nibh pede quis felis. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed condimentum, dui venenatis ullamcorper eleifend, ante est iaculis diam, eget viverra velit nulla sed nisi. Mauris pede. Maecenas iaculis, dui id pretium ornare, purus massa scelerisque eros,", 
+
+"This is summary for picture 5 : <strong><br />Hi I am dog 5</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla tristique, nibh non imperdiet posuere, pede nulla cursus nunc, in nonummy nibh pede quis felis. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed condimentum, dui venenatis ullamcorper eleifend, ante est iaculis diam, eget viverra velit nulla sed nisi. Mauris pede. Maecenas iaculis, dui id pretium ornare, purus massa scelerisque eros,",
+
+
+"This is summary for picture 6 :<br /> <strong>Hi I am dog 6</strong>: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla tristique, nibh non imperdiet posuere, pede nulla cursus nunc, in nonummy nibh pede quis felis. In hac habitasse platea dictumst. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed condimentum, dui venenatis ullamcorper eleifend, ante est iaculis diam, eget viverra velit nulla sed nisi. Mauris pede. Maecenas iaculis, dui id pretium ornare, purus massa scelerisque eros,");
+				var rand = Math.floor(Math.random() * 6);
+				document.write('<div align="center">');
+				document.write('<img src = "'+pix1[rand]+'"><br />');
+				document.write(pix2[rand]);
+				document.write('</div>');
+				document.write(pix3[rand]);
+				
+		//-->
+	</script>
+
+</body>
+</html>
+
+
+
+
+2.Password
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>password</title>
+<script type="text/javascript">
+<!--
+function validate(){
+	var entry=document.f.pwd1.value.toLowerCase();//all entries are converted to lower case
+	if (entry=="user") window.location="messageboard.html";//if the password is ..user.. then open the page.. messageboard.html
+	else {
+		alert("Password incorrect. Please re-try");
+			document.f.pwd1.value=" ";
+	}
+}
+//-->
+</script>
+</head>
+<body>
+<br /><br /><br /><br /><br /><div align="center"><strong>Please enter password</strong></div><br /><br />
+<div align="center">
+<form name="f">
+	<input type="password" name="pwd1"  size="25" >
+	<input type="button" name="btn1"  value="Enter" onclick="validate( )">
+</form>
+</div>
+</body>
+</html>
+
+
+
+3 Rating/Polling
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Rating</title>
+<script type="text/javascript">
+<!--
+function doclick(str){
+	document.f.txt.value=str;
+}
+//-->
+
+</script>
+
+</head>
+<body>
+<div align="center"><strong>A simple rating application</strong>
+
+<div align="center"><strong>Which movie do you like most. Click the movie to confirm your choice.</strong></div>
+
+<form name="f" action="#">
+	<a href="#"><img src="health_index_splodge.gif" width="50" height="100" alt="The Lion King" border="0" onclick="doclick('The Lion King')"></a> &nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="promo_familymatters.jpg" width="50" height="100" alt="Lilo and Stich" border="0" onclick="doclick('Lilo and Stich')"></a> &nbsp;&nbsp;&nbsp;
+	<a href="#"><img src="promo_dirtmusic.jpg" width="50" height="100" alt="Little Mermaid" border="0" onclick="doclick('Little Mermaid')"></a>  &nbsp;&nbsp;&nbsp;
+	<input type="text" name="txt"  value="" width="60">&nbsp;<input type="button"   value="Send" name="Send" width=80 height=15 alt="send" border="0"> 
+</form>
+
+</div>
+
+
+
+</body>
+</html>
+
+
+
+3b. Rating/Polling
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>messageboard</title>
+		<script type="text/javascript">
+			<!--
+				function doclick(str) {
+					document.f.txt.value=str;
+				}
+			//-->
+		</script>
+
+</head>
+<body>
+<form name="f" action="/cgi-bin/" method="post">
+<table cellspacing="0" cellpadding="0" border="0" align="center">
+	
+<tr>
+    <td valign="top"><div align="center"><strong>A more complex rating application</strong></div></td>
+</tr>
+<tr>
+    <td valign="top"><div align="center"><strong>Which movie do you rate most. Click the movie to confirm your choice and give a star rating.</strong></div><br /></td>
+</tr>
+
+<tr>
+    <td valign="top" align="center">
+	
+	<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+    <td valign="top"><img src="health_index_splodge.gif" width="50" height="100" alt="The Lion King" border="0"></td>
+    <td valign="middle">&nbsp;&nbsp;<input type="radio" name="rate" value="*" onclick="doclick('The Lion King -  1 star')">*&nbsp;&nbsp;<input type="radio" name="rate" value="**" onclick="doclick('The Lion King -  2 star')">**&nbsp;&nbsp;<input type="radio" name="rate" value="***" onclick="doclick('The Lion King -  3 star')">***&nbsp;&nbsp;<input type="radio" name="rate" value="****" onclick="doclick('The Lion King -  4 star')">****&nbsp;&nbsp;<input type="radio" name="rate" value="*****" onclick="doclick('The Lion King -  5 star')">*****</td>
+</tr>
+<tr><td colspan="2" height="5"><img src="tiny.gif" width="1" height="5" alt="" border="0"></td></tr>
+<tr>
+    <td valign="top"><img src="promo_familymatters.jpg" width="50" height="100" alt="Lilo and Stich" border="0"></td>
+    <td valign="middle">&nbsp;&nbsp;<input type="radio" name="rate" value="1" onclick="doclick('Lilo and Stich  1 star')">*&nbsp;&nbsp;<input type="radio" name="rate" value="2" onclick="doclick('Lilo and Stich - 2 star')">**&nbsp;&nbsp;<input type="radio" name="rate" value="3" onclick="doclick('Lilo and Stich - 3 star')">***&nbsp;&nbsp;<input type="radio" name="rate" value="4" onclick="doclick('Lilo and Stich - 4 star')">****&nbsp;&nbsp;<input type="radio" name="rate" value="5" onclick="doclick('Lilo and Stich - 5*')">*****</td>
+</tr>
+<tr><td colspan="2" height="5"><img src="tiny.gif" width="1" height="5" alt="" border="0"></td></tr>
+<tr>
+    <td valign="top"><img src="promo_dirtmusic.jpg" width="50" height="100" alt="Little Mermaid" border="0"></td>
+    <td valign="middle">&nbsp;&nbsp;<input type="radio" name="rate" value="1" onclick="doclick('Little Mermaid - 1 star')">*&nbsp;&nbsp;<input type="radio" name="rate" value="2" onclick="doclick('Little Mermaid - 2 star')">**&nbsp;&nbsp;<input type="radio" name="rate" value="3" onclick="doclick('Little Mermaid - 3 star')">***&nbsp;&nbsp;<input type="radio" name="rate" value="4" onclick="doclick('Little Mermaid - 4 star')">****&nbsp;&nbsp;<input type="radio" name="rate" value="5" onclick="doclick('Little Mermaid - 5 star')">*****</td>
+</tr>
+</table>
+
+	</td>
+</tr>
+<tr><td valign="top" colspan="2"><div align="center"><input type="text" name="txt"  value="" width="60">&nbsp;<input type="button"   value="Send" name="Send" width=80 height=15 alt="send" border="0"></div></td></tr>
+
+</table>
+</form>
+
+
+</body>
+</html>
+
+
+
+
+4. Pop up window
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	
+<title>popup</title>
+
+</head>
+<body>
+hi you there
+
+<script type="text/javascript">
+
+
+function popup(){
+window.open("24jspoppage24.html","popup", "top = 40  , left = 40 , width = 500,  height = 300,scrollbars=yes,directories=yes,menubars=yes"); 
+}
+window.onload = popup;
+
+/*  Alternatively, the popup page can be closed on it's own using javascripts window.close method within an anchor tag <a href="#" onclick="window.close()">Close this window</a> */
+</script>
+</body>
+</html>
+
+
+
+4b Popup
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>js24-popup page</title>
+</head>
+
+<body>
+<strong><div align="center">pop up page<br /><br /><br /><img src="teddy.gif" width="70" height="101" alt="" border="0"></div></strong>
+
+<p>
+popup pop pop popup pop pop popup pop pop popup pop pop popup pop pop popup pop pop<br />
+popup pop pop popup pop poppopup pop pop popup pop pop popup pop pop popup pop pop popup pop pop popup pop pop<br />
+popup pop pop popup pop pop
+<div align="center">
+<a href="#" onclick="window.close()">Close this window</a></div>
+</p>
+</body>
+</html>
+
+
+4c Using unobtrusive approach to building pop up window
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<html lang="en-gb">
+
+<head>
+
+<title>oJS 5</title>
+
+
+
+
+
+<script type="text/javascript" src="popstuff.js"></script>
+</head>
+<body>
+<div align="center">The links below are opened in a pop up.The script for the popup is in the external  JavaScript file</div>
+<a href="poppage1.html"  class="popup">popup page1</span></a>
+<br />
+<a href="poppage2.html"  class="popup">popup page2</span></a>  
+<br />
+<a href="poppage3.html"  class="popup">popup page3</span></a>
+
+</body>
+</html> 
+
+
+4d. popstuff.js
+
+window.onload = prepareLinks;
+function prepareLinks() {
+	var links= document.getElementsByTagName("a") 
+	for( var i=0; i<links.length;i++) {
+	if(links[i].getAttribute("class")=="popup"){
+	links[i].onclick=function() {
+	popUp(this.getAttribute("href")); return false;
+			}
+		}
+	}
+}
+
+function popUp(winURL) {
+	window.open(winURL,"popup","width=320, height=480");
+
+}
+
+
+4d. Intelligent pop up
+
+
+<html>
+<head>
+<title>closing a popup window</title>
+</head>
+<body>
+<div align="center"><strong>
+This is a test page <br />showing how closing the main window<br /> closes the popup window<br />TRY IT</strong></div>
+<script type="text/javascript">
+/* The call to the window.open method should be assigned to a global variable to create the window object.This object inherits the window.close method and can be use to close the popup intelligently. Alternatively, the popup page can be closed on it's own using javascripts window.close method within an anchor tag */
+var popwindow;
+function popup(){
+	popwindow = window.open( "c.html" , "popup" , "top = 40  , left = 40 , width = 200,  height = 200,  directories, location, menubar, resizable, scrollbars, toolbar " ); 
+}
+function close_popup (){
+	if (popwindow  !=  null) //if the window exists
+		popwindow.close(); //then close
+}
+window.onload = popup;//intialise open
+window.onunload = close_popup;//initialise close
+
+//<a href="#" onclick="window.close()">Close this window</a>
+
+</script>
+</body>
+</html>
+
+
+4e. Recurring popup
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Re-curring popups</title>
+<script type="text/javascript">
+<!--
+
+function opennow(){
+	var win=window.open("a.html." , "pop1" , "top = 40  , left = 40 , width = 600,  height = 300, status");
+}
+
+function morestuff(){
+	var win=window.open("b.html." , "pop2" , "top = 40  , left = 40 , width = 600,  height = 300, status");
+}
+
+window.onload = opennow;
+window.onunload = morestuff;
+//-->
+</script>
+</head>
+
+<body>
+
+<div align="center"><br /><br /><br /><br /><br /><br />A second pop up page will load when the first is closed and the main (parent) window is exiting</div>
+
+</body>
+</html>
+
+
+
+4e. Closing pop-up
+
+<a href=”#” onclick=”window.close()”>Close window</a>
+
+
+5.Random paging (paging) gallery
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>generating random images with corresponding captions</title>
+</head>
+<body>
+
+<div align="center"><strong>this page tests random generation of images</strong></div>
+<script language= "javascript" type  ="text/javascript">
+<!--
+var pix1= new  Array("1.jpg", "2.jpg", "3.jpg","4.jpg","5.jpg", "6.jpg");
+var pix2= new  Array("This is picture 1", "This is picture 2", "This is picture 3","This is picture 4","This is picture 5","This is picture 6");
+var pix3= new  Array("This is more comment for picture 1", "This is more comment for picture 2", "This is more comment for picture 3","This is more comment for picture 4","This is more comment for picture 5","This is more comment for picture 6");
+var rand= Math.floor(Math.random()  * 6);                   
+document.write('<center>');                           
+document.write('<img src="'+pix1[rand]+'" /><br />');
+document.write(pix2[rand]);
+document.write('<br />' +pix3[rand]);
+document.write('</center>');  
+//-->
+</script>
+</body>
+</html>
+
+
+
+6.rollover
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>roll over</title>
+
+<script type="text/javascript" language="javascript">
+	<!--
+		var pics = new Array("promo_dirtmusic.jpg","promo_familymatters.jpg");
+		var preload = new Array();
+		for(var i=0;i < pics.length;i++) {
+			preload[i] = new Image();
+			preload[i].src = pics[i];
+		}
+		function swap(n) {
+			if( n == 0 ) document.images.click.src="promo_dirtmusic.jpg";
+			if( n == 1 ) document.images.click.src="promo_familymatters.jpg";
+		}
+	//-->
+</script>
+</head>
+<body>
+
+<br /><br />
+<div align ="center">
+<br /><br />A second popup window opens<br /><br />
+<a href="jscookie32.html"
+onmouseover="swap(1)"  onmouseout="swap(0)">
+<img name="click" src="promo_dirtmusic.jpg" width = "110" height = "90"  border = "0" alt="#">
+</a> 
+</div>
+</body>
+</html>
+
+
+7 - Accessing tag
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>dom 1 - Accessing tags</title>
+	<script language="JavaScript" type="text/javascript">
+		window.onload = function () {
+		window.alert(document.getElementsByTagName("p").length +  "p elements");
+	}
+	</script>
+</head>
+
+<body>
+<p>The following code just accesses all p elements and counts them</p>
+<p>JavaScript is great</p>
+<p>I love it</p>
+
+</body>
+</html>
+
+
+
+8. Dom - Removing elements
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>DOM 3 - Removing elements</title>
+	<script language="JavaScript" type="text/javascript">
+		function removeItem() {
+			var list = document.getElementById("list");
+			if(list.childNodes.length > 0) {
+				list.removeChild(list.lastChild)
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+<div>The removeChild method that every node has can be used to eliminate a node from the DOM tree. Note you will have to call this method from the parent element of the node and provide the node a parameter.
+<br />
+<br />
+The code in this example shows a list and removes the last item each time the button is clicked.
+</div>
+<br /><br />
+<ol id="list">
+	<li>item i</li>
+	<li>item 2</li>
+	<li>item 3</li>
+	<li>item 4</li>
+</ol>
+<form><input type="button"  name="btn" value="click to remove item" onclick="removeItem()"></form>
+</body>
+</html>
+
+
+
+
+9,Dom - create element
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>DOM 3 - Removing elements</title>
+	<script language="JavaScript" type="text/javascript">
+		function addItem() {
+			var list = document.getElementById("list");
+			var newNode = document.createElement("li");
+			list.appendChild(newNode);
+		}
+	</script>
+</head>
+
+<body>
+	<ul id="list">
+		<li>item</li>
+	</ul>
+	<form><input type="button"  name="btn" value="click to add item" onclick="addItem()"></form>
+</body>
+</html>
+
+
+10. DOM - Insert before
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>DOM 3 - Removing elements</title>
+	<script language="JavaScript" type="text/javascript">
+		initAddItem: function addItem() {
+			var list = document.getElementById("list");
+			var newNode = document.createElement("li");
+			var newTextNode = document.createTextNode("Hey, appended this text to the dynamically created list. Isn't this great! I love DOM");
+				newNode.appendChild(newTextNode);
+				list.appendChild(newNode);	
+				list.insertBefore(newNode,list.firstChild);
+		}
+		window.onload=addItem;
+	</script>
+</head>
+
+<body>
+	<ul id="list">
+		<li>item</li>
+	</ul>
+	<!-- <form><input type="button"  name="btn" value="click to add item" onclick="addItem()"></form> -->
+</body>
+</html>
+
+
+
+
+
+
+11.Using DOM to create a dynamic layout
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Create table from JavaScript Data</title>
+	<script language="JavaScript" type="text/javascript">
+		function createTable(data) {
+			var table = document.createElement("table");
+			var thead = document.createElement("thead");
+			var tr = document.createElement("tr");
+			for (var i = 0; i < data[0].length; i++) {
+				var th = document.createElement("th");
+				var newText = document.createTextNode(data[0][i]);
+				th.appendChild(newText);
+				tr.appendChild(th);
+			}
+			thead.appendChild(tr);
+			table.appendChild(thead);
+			
+			var tbody = document.createElement("tbody");
+			for (var i =1; i < data.length; i++){
+				var tr = document.createElement("tr");
+				for (var j = 0; j < data[i].length; j++) {
+					var td = document.createElement("td");
+					var newText = document.createTextNode(data[i][j]);
+					td.appendChild(newText);
+					tr.appendChild(td);
+			}
+			tbody.appendChild(tr);
+			}
+			table.appendChild(tbody);
+			return table;	
+		}
+		
+		window.onload = function() {
+		var table = createTable ([
+		["1","2","3","4"],
+		["One","Two","Three","Four"],
+		["Un","Deux","Trois","Quatre"],
+		["eins","zwet","dret","vier"]
+		]);
+		
+		document.body.appendChild(table)
+		}
+	</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+
+12, using external js
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Styled created table from JavaScript Data - 2</title>
+	<script language="JavaScript" type="text/javascript" src="jsTable.js"></script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+12b. external js
+
+//Author : Alexander Adu-Sarkodie
+//To be used with above instruction ONLY
+	
+	function createTable(data) {
+			var table = document.createElement("table");
+			table.style.border = "1px solid #ffcc33";
+			var thead = document.createElement("thead");
+			thead.style.padding = "5px";
+			var tr = document.createElement("tr");
+			for (var i = 0; i < data[0].length; i++) {
+				var th = document.createElement("th");
+				th.style.border = "2px solid #ff0000";
+				var newText = document.createTextNode(data[0][i]);
+				th.appendChild(newText);
+				tr.appendChild(th);
+			}
+			thead.appendChild(tr);
+			table.appendChild(thead);
+			
+			var tbody = document.createElement("tbody");
+			for (var i =1; i < data.length; i++){
+				var tr = document.createElement("tr");
+				for (var j = 0; j < data[i].length; j++) {
+					var td = document.createElement("td");
+					td.style.padding = "5px";
+					td.style.border = "2px solid #00ff00";
+					var newText = document.createTextNode(data[i][j]);
+					td.appendChild(newText);
+					tr.appendChild(td);
+			}
+			tbody.appendChild(tr);
+			}
+			table.appendChild(tbody);
+			return table;	
+		}
+		
+		window.onload = function() {
+		var table = createTable ([
+		["1","2","3","4"],
+		["One","Two","Three","Four"],
+		["Un","Deux","Trois","Quatre"],
+		["eins","zwet","dret","vier"]
+		]);
+		
+		document.body.appendChild(table)
+		}
+
+
+
+13- DOM - Adding an item- Using innerHTML
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>innerHtml -changing complete HTML Fragments </title>
+	<script language="JavaScript" type="text/javascript">
+		var nr = 1;
+		function addItem()  {
+			var list = document .getElementById("list");
+			nr++;
+			var newNode = "<li>item" + nr + "</li>";
+			list.innerHTML += newNode;
+		}
+		
+	</script>
+</head>
+
+<body onload="addItem();">
+	<ul id="list">
+		<li>item 1</li>
+	</ul>
+	
+</body>
+</html>
+
+
+
+
+
+13b. Using innerHTML 2
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>innerHtml -changing complete HTML Fragments </title>
+	<script language="JavaScript" type="text/javascript">
+		var nr = 1;
+		function addItem()  {
+			var list = document .getElementById("list");
+			nr++;
+			var newNode = "<li>item" + nr + "</li>";
+			list.innerHTML += newNode;
+		}
+	</script>
+</head>
+
+<body>
+	<ul id="list">
+		<li>item 1</li>
+	</ul>
+	<form><input type="button"  name="btn" value="add item" onclick="addItem();"></form>
+</body>
+</html>
+
+
+
+
+
+14. Accessing css Styles
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Accessing CSS</title>
+	<script language="JavaScript" type="text/javascript">
+		function makeBold(){
+			document.getElementById("para").style.fontWeight = "bold";
+			window.setTimeOut("makeLighter();",1000);
+		}
+		function makeLighter(){
+			document.getElementById("para").style.fontWeight = "lighter";
+			window.setTimeOut("makeBold();",1000);
+		}
+		window.onload=makeBold;
+	</script>
+</head>
+
+<body>
+
+<p id="para">Ad astra per aspera -  To the stars without dificulty</p>
+
+</body>
+</html>
+
+
+14b. Accessing CSS Classes
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Accessing CSS styles</title>
+	<script language="JavaScript" type="text/javascript">
+		function makeBold(){
+			document.getElementById("para").className = "emphatic-text";
+			window.setTimeOut("makeLighter();",1000);
+		}
+		function makeLighter(){
+			document.getElementById("para").className= "normal-text";
+			window.setTimeOut("makeBold();",1000);
+		}
+		window.onload=makeBold;
+	</script>
+	<style>
+		.emphatic-text{
+			font-weight:bold;
+		}
+		.normal-text{
+			font-weight:lighter;
+		}
+	
+	
+	</style>
+</head>
+
+<body>
+
+<p id="para">Ad astra per aspera -  To the stars without dificulty</p>
+
+</body>
+</html>
+
+
+14C Accessing individual stylesheets
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Accessing CSS</title>
+	<script language="JavaScript" type="text/javascript">
+		function makeBold(){
+			document.styleSheets[0].disabled = false;
+			document.styleSheets[1].disabled = true;
+			window.setTimeOut("makeLighter();",1000);
+		}
+		function makeLighter(){
+			document.styleSheets[0].disabled = true;
+			document.styleSheets[1].disabled = false;
+			window.setTimeOut("makeBold();",1000);
+		}
+		window.onload=makeBold;
+	</script>
+	<style type="text/css" id="strong">
+		p {
+			font-weight:bold;
+		}	
+	</style>
+	<style type="text/css" id="weak">
+		p {
+			font-weight:lighter;
+		}	
+	</style>
+</head>
+
+<body>
+
+<p>Ad astra per aspera -  To the stars without dificulty</p>
+
+</body>
+</html>
+
+
+
+14d. Letting the contents of a website disappear
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+ <title>disappearingContent-using tabbing</title>
+ <script language="javascript" type="text/javascript">
+  //Author :Alexander Adu-Sarkodie
+  //March 2008
+  //Use with acknowledgement
+  //Refrain from using absolute positioning as it may lead to subtle differences accross browsers
+  //A simple script that swaps content
+  
+  function showHide(show,hide){
+   document.getElementById(show).style.display = "block";
+   document.getElementById(hide).style.display = "none";
+  }
+ 
+ </script> 
+</head>
+<body>
+ <form>
+  <input type="button" value="tab 1" onclick="showHide('tab1','tab2');" />
+  <input type="button" value="tab 2" onclick="showHide('tab2','tab1');" />
+ </form>
+ <p id="tab1">tab 1</p>
+ <p id="tab2" style="display:none">tab 2</p>
+</body>
+</html>
+
+
+
+14e.  Applying JavaScript to CSS selectors (*****)
+
+`
+
+15. AJAX/XMLHttpRequest
+
+
+ XMLHttpRequest States
+.......................
+
+State			Description
+
+0			Uninitialised
+
+1			Loading
+
+2			Loaded
+
+3			Waiting
+
+4			Complete
+
+
+
+15b.
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Creating an http request</title>
+	<script language="JavaScript" type="text/javascript">
+		function getXMLHttp() {
+			var XMLHttp = null;
+			if (window.XMLHttpRequest) {
+				try {
+					XMLHttp = new XMLHttpRequest()
+				}
+				catch (e){}
+			}
+			else if (window.ActiveXObject) {
+				try {
+					XMLHttp = new ActiveXObject("Msxml2.XMLHTTP");
+				}
+				catch(e) {
+					try {
+					XMLHttp = new ActiveXObject(Microsoft.XMLHttp);
+					}
+					catch (e) {}
+				}
+			
+			}
+			return XMLHttp;
+	}
+		
+	
+	</script>
+</head>
+
+<body>
+
+
+
+</body>
+</html>
+
+
+
+15c. Get request
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>get HTTP Request</title>
+	<script language="JavaScript" type="text/javascript">
+	var XMLHttp = getXMLHttp();
+	XMLHttp.open ("GET","phrasebook.xt");
+	XMLHttp.onreadystatechange = handlerFunction;
+	XMLHttp.send(null);
+	
+	function handlerFunction() {
+		if(XML.readyState==4) {
+			window.alert("Returned data" : + XMLHttp.responseText);
+		}
+	}
+	</script>
+</head>
+
+<body>
+
+
+
+</body>
+</html>
+
+
+15d Using innerHTML to display data
+
+Call the  function below with the URL of the HTML fragment to be inserted and the ID of the element in which it should appear. It relies on the jibbering.com code to set up the xmlhttp variable.
+It’s definitely quick and dirty, but it’s also a great quick demonstration of the power of the XMLHttpRequest extension.
+
+
+
+function loadFragmentInToElement(fragment_url, element_id) {  
+    var element = document.getElementById(element_id);  
+    element.innerHTML = '<p><em>Loading ...</em></p>';  
+    xmlhttp.open("GET", fragment_url);  
+    xmlhttp.onreadystatechange = function() {  
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {  
+            element.innerHTML = xmlhttp.responseText;  
+        }  
+    }  
+    xmlhttp.send(null);  
+} 
+
+
+
+16. Set Cookies
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>cookie test data1</title>
+</head>
+<body>
+	<script type="text/javascript">
+	<!--
+	var useraccount="Mike McGrath, 00456";
+	var expiry= new Date();
+	expiry.setTime(expiry.getTime() + (7*24*60860*1000) );
+	document.cookie = "cookiedata="+escape(useraccount) + ";" + "expires=" +expiry.toGMTString() + ";" ;
+//-->
+</script>
+
+Testing the cookie. The input data in the cookie  here will be sought by and split into two parts by a similar cookie in the next page on loading.
+</body>
+</html>
+
+
+16b. Get cookies
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>cookie test data1</title>
+		
+
+</head>
+
+<body>
+	<script type="text/javascript">
+	<!--
+		var username="Guest",useracct="00000";
+		if  (document.cookie) {
+			var cookiedata=unescape(document.cookie) ;
+			var userdata=cookiedata.split("=");
+			if(userdata[0]=="cookiedata" ) {
+				var data=userdata[1].split (",") ;
+					username=data[0];
+					useracct=data[1]; 
+			}
+		}
+document.write ( "Welcome :"  +username+  "<br>");
+document.write ( "Account number: "  +useracct+  ".");
+//-->
+</script>
+
+
+<br /><br />
+As this second document is loaded into a web browser it first seeks the cookie set by the last example then extract the data value to write customized dynamic content
+</body>
+</html>
+
+
+
+
+
+
+Widgets
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+1.Carousel
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Javascript gallery</title>
+<link type="text/css" href="base.css" media="screen" rel="stylesheet" />
+<script type="text/javascript" src="global.js"></script>
+</head>
+
+<body>
+<div id="slideshow">
+    <div id="slideshow_wrapper">
+    	<ul id="slideshow_set">
+    		<li><img src="2.jpg" width="200" height="130" alt="Image 2" /></li>
+    		<li><img src="3.jpg" width="200" height="130" alt="Image 3" /></li>
+    		<li><img src="4.jpg" width="200" height="130" alt="Image 4" /></li>
+    		<li><img src="5.jpg" width="200" height="130" alt="Image 5" /></li>
+    	</ul>
+    </div>
+</div>
+</body>
+</html>
+
+
+7b, Global,js
+
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            oldonload();
+            func();
+        }
+    }
+}
+
+function moveSlideshow(elementID,final_x,final_y,interval) {
+    if (!document.getElementById) return false;
+    
+    // if the element does not exist we have nothing to do
+    if (!document.getElementById(elementID)) return false;
+    var elem = document.getElementById(elementID);
+    
+    // the slideshow events stack up and the animation is not smooth anymore
+    if (elem.movement) {
+        clearTimeout(elem.movement);
+    }
+    
+    // current slideshow position
+    var xpos = parseInt(elem.style.left);
+    var ypos = parseInt(elem.style.top);
+    if (xpos == final_x && ypos == final_y) {
+        return true;
+    }
+    
+    // restrict moving to white area
+    if (final_x <= -elem.max_x) {
+        final_x = -elem.max_x;
+    }
+	
+    if (final_x > 0) {
+	    final_x = 0;
+    }
+    
+    // animation bit (taken from the book DOM Scripting by Jeremy Keith)
+    if (xpos < final_x) {
+        var dist = Math.ceil((final_x - xpos)/10);
+        xpos = xpos + dist;
+    }
+    if (xpos > final_x) {
+        var dist = Math.ceil((xpos - final_x)/10);
+        xpos = xpos - dist;
+    }
+  
+    // again, restrict showing white area
+    if (xpos <= -elem.max_x) {
+	    xpos = -elem.max_x;
+    }
+    if (xpos > 0) {
+	    xpos = 0;
+    }
+    
+    // fix the elements position
+    elem.style.left = xpos + "px";
+    elem.style.top = ypos + "px";
+    
+    // and set up the event again after an interval
+    var repeat = "moveSlideshow('"+elementID+"',"+final_x+","+final_y+","+interval+")";
+    elem.movement = setTimeout(repeat,interval);
+}
+
+function prepareSlideshow() {
+	// first lets make sure the browser understands the DOM methods we will be using
+  	if (!document.getElementsByTagName) return false;
+  	if (!document.getElementById) return false;
+  	
+	// Make sure the elements exist
+  	if (!document.getElementById("slideshow")) return false;
+  	var slideshow = document.getElementById("slideshow");
+  	var wrapper = document.getElementById("slideshow_wrapper");
+  	wrapper.style.overflow = "hidden";
+  	
+  	// prepare the navigation bit we will be using
+  	// left
+  	var navigation = document.createElement("ul");
+  	navigation.setAttribute("id", "navigation");
+  	var li = document.createElement("li");
+  	var scroll_left = document.createElement("a");
+  	scroll_left.setAttribute("id", "scroll_left");
+  	scroll_left.href ="#";
+  	var text = document.createTextNode("Left");
+  	scroll_left.appendChild(text);
+  	li.appendChild(scroll_left);
+  	navigation.appendChild(li);
+  	slideshow.insertBefore(navigation, wrapper);
+  	
+  	//right
+  	var li = document.createElement("li");
+  	var scroll_right = document.createElement("a");
+  	scroll_right.setAttribute("id", "scroll_right");
+  	scroll_right.href ="#";
+  	var text = document.createTextNode("Right");
+  	scroll_right.appendChild(text);
+  	li.appendChild(scroll_right);
+  	navigation.appendChild(li);
+  	slideshow.insertBefore(navigation, wrapper);
+	
+	var slideshow_set = document.getElementById("slideshow_set");
+	slideshow_set.style.top = 0+"px";
+	slideshow_set.style.left = 0+"px";
+	
+	// to get the max y position of the gallery image track we need to count all
+	// the li items and multiply that number with 130
+	var li = slideshow_set.getElementsByTagName("li");
+	slideshow_set.max_x = (li.length-1) * 200;
+	slideshow_set.max_y = li.length * 130;
+	
+	// need the width of the gallery so that they do not scroll vertical
+	var width = li.length * 200;
+	slideshow_set.style.width = width + "px";
+	
+	// Attach onmouseover event for left
+  	scroll_left.onclick = function() {
+		// get the current position of the gallery element
+		var slideshow_set = document.getElementById("slideshow_set");
+		var x = parseInt(slideshow_set.style.left);
+		if (x % 200 == 0) {
+    		moveSlideshow("slideshow_set",x+200,0,10);
+		}
+		return false;
+	}
+	
+	// Attach onmouseover event for right
+  	scroll_right.onclick = function() {
+		// get the current position of the gallery element
+		var slideshow_set = document.getElementById("slideshow_set");
+		var x = parseInt(slideshow_set.style.left);
+    	if (x % 200 == 0) {
+    		moveSlideshow("slideshow_set",x-200,0,10);
+		}
+		return false;
+	}
+}
+addLoadEvent(prepareSlideshow);
+
+7c. base.css
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+#slideshow {
+    margin: 20px auto 0 auto;
+    width: 242px;
+    height: 140px;
+    background: #d5d5d5 url(slideshow_bg.gif) repeat-x;
+}
+
+#slideshow_wrapper {
+    /* we use relative to catch the children */
+	position: relative;
+	overflow: scroll;
+	width: 200px;
+	height: 130px;
+	left: 21px;
+	top: 5px;
+}
+
+#slideshow_set {
+	position: absolute;
+}
+
+#slideshow_set li {
+	float: left;
+	height: 130px;
+	width: 200px;
+}
+
+img {
+	border: 0;
+}
+
+#navigation {
+    position: absolute;
+    z-index: 10;
+}
+
+#scroll_left {
+	left: 0;
+	top: 0;
+	background: url(left.gif) no-repeat;
+}
+
+#scroll_right {
+	left: 221px;
+	top: 0;
+	background: url(right.gif) no-repeat;
+}
+
+#scroll_left, #scroll_right {
+    position: absolute;
+    overflow: hidden;
+    display: block;
+    padding: 0 0 0 21px;
+    height: 140px;
+    width: 0px !important; /* for most browsers */
+    width /**/: 21px; /* for IE5.5's bad box model */
+}
+
+
+
+2. Accordion
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Collapsible Panels Ex 1</title>
+<style type="text/css">
+
+.dhtmlgoodies_question {	
+	overflow:hidden;
+	cursor:pointer;
+}
+.dhtmlgoodies_answer {	
+	visibility:hidden;
+	height:0px;
+	overflow:hidden;
+	position:relative;
+
+}
+.dhtmlgoodies_answer_content{	
+	position:relative;
+}
+
+</style>
+
+
+<script type="text/javascript">
+var dhtmlgoodies_slideSpeed = 10;	// Higher value = faster
+var dhtmlgoodies_timer = 10;	// Lower value = faster
+
+var objectIdToSlideDown = false;
+var dhtmlgoodies_activeId = false;
+var dhtmlgoodies_slideInProgress = false;
+function showHideContent(e,inputId)
+{
+	if(dhtmlgoodies_slideInProgress)return;
+	dhtmlgoodies_slideInProgress = true;
+	if(!inputId)inputId = this.id;
+	inputId = inputId + '';
+	var numericId = inputId.replace(/[^0-9]/g,'');
+	var answerDiv = document.getElementById('dhtmlgoodies_a' + numericId);
+
+	objectIdToSlideDown = false;
+	
+	if(!answerDiv.style.display || answerDiv.style.display=='none'){		
+		if(dhtmlgoodies_activeId &&  dhtmlgoodies_activeId!=numericId){			
+			objectIdToSlideDown = numericId;
+			slideContent(dhtmlgoodies_activeId,(dhtmlgoodies_slideSpeed*-1));
+		}else{
+			
+			answerDiv.style.display='block';
+			answerDiv.style.visibility = 'visible';
+			
+			slideContent(numericId,dhtmlgoodies_slideSpeed);
+		}
+	}else{
+		slideContent(numericId,(dhtmlgoodies_slideSpeed*-1));
+		dhtmlgoodies_activeId = false;
+	}	
+}
+
+function slideContent(inputId,direction)
+{
+	
+	var obj =document.getElementById('dhtmlgoodies_a' + inputId);
+	var contentObj = document.getElementById('dhtmlgoodies_ac' + inputId);
+	height = obj.clientHeight;
+	if(height==0)height = obj.offsetHeight;
+	height = height + direction;
+	rerunFunction = true;
+	if(height>contentObj.offsetHeight){
+		height = contentObj.offsetHeight;
+		rerunFunction = false;
+	}
+	if(height<=1){
+		height = 1;
+		rerunFunction = false;
+	}
+
+	obj.style.height = height + 'px';
+	var topPos = height - contentObj.offsetHeight;
+	if(topPos>0)topPos=0;
+	contentObj.style.top = topPos + 'px';
+	if(rerunFunction){
+		setTimeout('slideContent(' + inputId + ',' + direction + ')',dhtmlgoodies_timer);
+	}else{
+		if(height<=1){
+			obj.style.display='none'; 
+			if(objectIdToSlideDown && objectIdToSlideDown!=inputId){
+				document.getElementById('dhtmlgoodies_a' + objectIdToSlideDown).style.display='block';
+				document.getElementById('dhtmlgoodies_a' + objectIdToSlideDown).style.visibility='visible';
+				slideContent(objectIdToSlideDown,dhtmlgoodies_slideSpeed);				
+			}else{
+				dhtmlgoodies_slideInProgress = false;
+			}
+		}else{
+			dhtmlgoodies_activeId = inputId;
+			dhtmlgoodies_slideInProgress = false;
+		}
+	}
+}
+
+
+
+function initShowHideDivs()
+{
+	var divs = document.getElementsByTagName('DIV');
+	var divCounter = 1;
+	for(var no=0;no<divs.length;no++){
+		if(divs[no].className=='dhtmlgoodies_question'){
+			divs[no].onclick = showHideContent;
+			divs[no].id = 'dhtmlgoodies_q'+divCounter;
+			var answer = divs[no].nextSibling;
+			while(answer && answer.tagName!='DIV'){
+				answer = answer.nextSibling;
+			}
+			answer.id = 'dhtmlgoodies_a'+divCounter;	
+			contentDiv = answer.getElementsByTagName('DIV')[0];
+			contentDiv.style.top = 0 - contentDiv.offsetHeight + 'px'; 	
+			contentDiv.className='dhtmlgoodies_answer_content';
+			contentDiv.id = 'dhtmlgoodies_ac' + divCounter;
+			answer.style.display='none';
+			answer.style.height='1px';
+			divCounter++;
+		}		
+	}	
+}
+window.onload = initShowHideDivs;
+</script>
+</head>
+
+<body>
+
+<div class="dhtmlgoodies_question">Q: What are the advantages of table less design?</div>
+<div class="dhtmlgoodies_answer">
+	<div>
+		Ohh! There are so many:
+		<ul>
+			<li>Faster loading pages</li>
+			<li>Smoother loading pages</li>
+			<li>Saved bandwidth</li>
+			<li>Separate layout and content</li>
+			<li>Easy to change layout</li>
+			<li>Increased accessibility</li>
+			<li>Different styling for different media(print, screen, pda)</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
+
+
+
+3. Dynamic Animation
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>animation</title>
+	
+	
+	
+<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+<!--
+function openWindow(file) { popupWin = window.open(file, 'popup', 'status=0,menubar="no",resizable="yes",width=400,height=400');  }
+//number will be given a value of 
+var number=6;
+src = [];
+for (y=number; y>0; y--) {
+	src[y-1] = y + ".jpg";
+}
+
+//set duration for each image
+duration = 6;
+
+ads=[]; ct=0;
+
+function switchPic() {
+var n=(ct+1)%src.length;
+if (ads[n] && (ads[n].complete || ads[n].complete==null)) {
+document["pic"].src = ads[ct=n].src;{
+
+if (document.all)
+pic.filters.blendTrans.apply();
+pic.filters.blendTrans.play();}
+}
+ads[n=(ct+1)%src.length] = new Image;
+ads[n].src = 'images/' + src[n];
+setTimeout("switchPic()",duration*1000);
+}
+function slide(){
+if (document.images)
+switchPic();
+}
+//-->
+</SCRIPT>
+</head>
+
+<body onLoad="slide();">
+ <br /><br /> 
+ 
+ <div align="center">
+<table cellspacing="0" cellpadding="0" border="0" align="center" width="360"><tr><td valign="middle"><img name="pic" src="images/1.jpg" width="360" height="130" border="0" style="filter:blendTrans(duration=4)" alt="where is this" /></td></tr></table>
+</div>
+<br />
+
+
+</body>
+</html>
+
+
+4a. Ticker 
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Ticker</title>
+	<link rel="stylesheet" href="main2.css" type="text/css"  media="all" />
+<style>
+h2.mainHeader{font-size:3.5em;padding:0px 0px 0px 5px;color:#000099; font-family:courier}
+
+p.whiteFont{color:#ffffff}
+
+</style>
+</head>
+
+<body>
+
+<div id="ticker"><script language="javascript" type="text/javascript" src="feed3.js"></script></div>
+
+</body>
+</html>
+
+
+
+4b.main2.css
+
+
+.default{color:#ffffff;font-weight:900:}
+.grey{color:#ff0000;}
+.blue{color:#0000ff;}
+green{color:#00ff00;}
+.red{color:#ff0000;}
+.mainHeader{font-size:3.5em;padding:0px 0px 7px 10px;color:#000099}
+h2.mainHeader{font-size:3.5em;padding:0px 0px 0px 5px;color:#000099; font-family:courier}
+
+td.gold{background-color:#ffcc33;}
+a.linkWhite{color:#ffffff;text-decoration:yes;}
+.gold{color:#ffcc33;}
+.white{color:#ffffff;}
+a.bodyNav{color:#000000;text-decoration:none;}
+a.bodyNav:hover{color:#ffcc33;text-decoration:none;}
+a.bodyNav2{color:#ffffff;text-decoration:none;}
+a.bodyNav2:hover{color:#ffcc33;text-decoration:none;}
+a.bodyNavRed{color:#ff0000;text-decoration:none;}
+a.bodyNavRed:hover{color:#ffffff;text-decoration:none;}
+a.red{color:#ff0000;text-decoration:none;font-weight:bold}
+.didyouknow{color:#000099;font-weight:bold;}
+.youknowtext{color:#666666;}
+
+#ticker {background-color: #EE351C;width: 100%;margin-bottom: 1px;font-size: 120%;}
+#tickerAnchor {padding-top: 4px;padding-left: 4px;padding-right: 4px;height: 19px;color: #ffcc33;font-weight:bold;}
+/* The star html hack will hide a rule from all browsers but IE */
+* html #tickerAnchor {height: 24px;}
+#ticker H2 {font-size: 100%;display: inline;padding-right: 1em;color:#ffffff;}
+
+
+
+4c. feed3.js
+
+
+//Allow IE4 to work with us.
+if(!document.getElementById && document.all){
+	document.getElementById = function(id) {return document.all[id];}
+	}
+
+/*ticker functions*/
+
+var theCharacterTimeout = 50;
+var theStoryTimeout     = 3000;
+var theWidgetOne        = "_";
+var theWidgetTwo        = "-";
+var theWidgetNone       = "";
+var theLeadString       = "<h2>Codeunique provides consultancy in</h2>";
+
+var theTips = new Array();
+
+//update or add tips here, single quotes are OK
+
+theTips[0] = "Web Programming, Web Design and Web Standards.";
+theTips[1] = "eCommerce";
+theTips[2] = "Internet and Interactive TV Broadcasting";
+theTips[3] = "Telematics Systems and Services";
+theTips[4] = "Web Hosting.";
+theTips[5] = "JavaScript";
+theTips[6] = "Cascading Stylesheets";
+theTips[7] = "Document Object Model";
+theTips[8] = "Data Binding";
+theTips[9] = "XML and XSLT";
+theTips[10] = "Java and JSP";
+theTips[11] = "User Data and CGI  Email. ";
+theTips[12] = "PHP. ";
+theTips[13] = "ORACLE.";
+theTips[14] = "SQL/PL.";
+theTips[15] = "Perl.";
+theTips[16] = "C/C++ Programming.";
+	
+//end tips
+	
+var theItemCount = theTips.length;
+
+if ((document.getElementById) && (document.body.innerHTML)) {
+	//write div for dhtml broswers to display tips
+	document.write("<div class='ticker' id='tickerAnchor'></div>");
+	}else{
+	//write div for non-dynamic browsers and display random tip	
+	document.write("<div class='ticker'>" + theLeadString + theTips[Math.round(Math.random() * (theTips.length -1))] + "</div>");
+	}	
+
+	
+// Ticker startup
+function startTicker()
+{
+	// Define run time values
+	theCurrentStory     = -1;
+	theCurrentLength    = 0;
+	// Locate base objects
+	if (document.getElementById) {	
+		    theAnchorObject     = document.getElementById("tickerAnchor");
+			runTheTicker();   	
+		 }	
+}
+
+// Ticker main run loop
+function runTheTicker()
+{
+	var myTimeout;  
+	// Go for the next story data block
+	if(theCurrentLength == 0)
+	{	
+		theCurrentStory++;
+		theCurrentStory      = theCurrentStory % theItemCount;
+		theStorySummary      = theTips[theCurrentStory].replace(/&quot;/g,'"');				
+		thePrefix 	     = "<span class=\"tickerLeadString\">" + theLeadString + "</span>";
+	}
+	// Stuff the current ticker text into the anchor
+	theAnchorObject.innerHTML = thePrefix + 
+	theStorySummary.substring(0,theCurrentLength) + whatWidget();
+	// Modify the length for the substring and define the timer
+	if(theCurrentLength != theStorySummary.length)
+	{
+		theCurrentLength++;
+		myTimeout = theCharacterTimeout;
+	}
+	else
+	{
+		theCurrentLength = 0;
+		myTimeout = theStoryTimeout;
+	}
+	// Call up the next cycle of the ticker
+	setTimeout("runTheTicker()", myTimeout);
+}
+
+// Widget generator
+function whatWidget()
+{
+	if(theCurrentLength == theStorySummary.length)
+	{
+		return theWidgetNone;
+	}
+
+	if((theCurrentLength % 2) == 1)
+	{
+		return theWidgetOne;
+	}
+	else
+	{
+		return theWidgetTwo;
+	}
+}
+
+startTicker();
+
+
+
+5. Calculatorr
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Untitled</title>
+</head>
+
+<body>
+<script language="JavaScript">
+<!--
+
+
+    function pence(amount) {
+    // returns the amount in the .99 format
+    return (amount == Math.floor(amount)) ? amount + '.00' : ( (amount*10 == Math.floor(amount*10)) ? amount + '0' : amount);
+}
+
+
+    function update(form) {
+    	var subtotal = (form.quantity.value - 0) * (form.unitcost.value - 0);
+    	subtotal = Math.floor(subtotal * 100)/100;
+    	form.subtotal.value = '£' + pence(subtotal);
+    	var tax = subtotal / 100 * (form.rate.value - 0);
+   	 tax = Math.floor(tax * 100)/100
+    	form.tax.value = '£' + pence(tax);
+    	total = subtotal + tax;
+    	total = Math.floor(total * 100)/100
+    	form.total.value = '£' + pence(total);
+}
+//-->
+</script>
+<form>
+	<table>
+		<tr><td>Quantity: </td><td><input type=text name="quantity" SIZE="8"></td></tr>
+		<tr><td>Unit Cost: </td><td><input type=text name="unitcost" VALUE="19.99" SIZE="8"></td></tr>
+		<tr><td>Tax Rate (%): </td><td><input type=text name="rate" VALUE="17.5"SIZE="8"></td></tr>
+		<tr><td>Subtotal: </td><td><input type=text name="subtotal"SIZE="8"></td></tr>
+		<tr><td>Tax: </td><td><input type=text name="tax"SIZE="8"></td></tr>
+		<tr><td>Total: </td><td><input type=text name="total"SIZE="8"></td></tr>
+		<tr><td> </td><td><input type = button onClick="update(this.form)" value="Click Me"></td></tr>
+	</table>
+</form>
+	
+
+
+</body>
+</html>
+
+
+5B. VAT calculator
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Untitled</title>
+</head>
+
+<body>
+<script language="JavaScript">
+<!--
+
+
+    function pence(amount) {
+    // returns the amount in the .99 format
+    return (amount == Math.floor(amount)) ? amount + '.00' : ( (amount*10 == Math.floor(amount*10)) ? amount + '0' : amount);
+}
+
+
+    function update(form) {
+    	var subtotal = (form.quantity.value - 0) * (form.unitcost.value - 0);
+    	subtotal = Math.floor(subtotal * 100)/100;
+    	form.subtotal.value = '£' + pence(subtotal);
+    	var tax = subtotal / 100 * (form.rate.value - 0);
+   	 tax = Math.floor(tax * 100)/100
+    	form.tax.value = '£' + pence(tax);
+    	total = subtotal + tax;
+    	total = Math.floor(total * 100)/100
+    	form.total.value = '£' + pence(total);
+}
+//-->
+</script>
+<form>
+	<table>
+		<tr><td>Quantity: </td><td><input type="text" name="quantity" SIZE="8"></td></tr>
+		<tr><td>Unit Cost: </td><td><input type="text" name="unitcost" VALUE="19.99" SIZE="8"></td></tr>
+		<tr><td>Tax Rate (%): </td><td><input type="text" name="rate" VALUE="17.5" size="8"></td></tr>
+		<tr><td>Subtotal: </td><td><input type="text" name="subtotal"SIZE="8"></td></tr>
+		<tr><td>Tax: </td><td><Iinput type="text" name="tax"size="8"></td></tr>
+		<tr><td>Total: </td><td><input type="text" name="total"SIZE="8"></td></tr>
+		<tr><td> </td><td><input type="BUTTON" onClick="update(this.form)" value="Click Me"></td></tr>
+	</table>
+</form>
+	
+
+
+</body>
+</html>
+
+
+
+6. Tooltip
+
+
+<html>
+<head>
+<title>tooltip</title>
+<meta name="description" content="blurb" />
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function resizeFix(){void 0}
+function showElement(){void 0}
+function hideElement(){void 0}
+function positionElement(){void 0}
+//-->
+</script>
+<script language="JavaScript1.1" src="tooltip.js" type="text/javascript">
+
+
+
+</script>
+
+<style type="text/css">
+	
+	
+	.tooltip-content-main {
+	top:40px;
+	left:70px;
+	min-height:80px;
+	border:2px solid #ffcc33;
+	/*background: url('tooltipbottom.gif') no-repeat;*/
+	
+}
+
+.tooltip-content-common {
+	position:absolute;
+	visibility: hidden; 
+	width: 233px;
+}
+
+.tooltip-content {
+	width:233px;
+}
+
+.tooltip-subcontent {
+	padding:10px 10px 0 10px;
+	width:233px;
+	opacity:1;
+	filter: alpha(opacity=1);
+	z-index:2;
+	line-height:1.5em;
+	color:#595959;
+	background-position:bottom left;
+	min-height:80px;
+}
+
+
+* html .tooltip-subcontent {
+	opacity:100;
+	filter: alpha(opacity=100);
+	height:80px;
+	margin-right:15px;
+	
+}
+
+</style>
+
+
+</head>
+<body>
+<div style="margin:175px 0 0 0;"></div>
+<div id="learning-zone-main">
+	<!-- Begin featured clip -->
+		<a href="#1" onmouseOut="hideElement('showme');" 
+onmouseOver="showElement('showme');"><img src="s_biol_ec_00117_4x3.jpg" width="146" height="82" alt="love this recipe" border="0" class="img-primary" /></a>
+	<!-- end featured clip	 -->
+</div>
+<div class="dataSpacer2">&nbsp;</div>
+	<!-- Begin tooltip content -->
+		<div id="showme"  class="tooltip-content-main tooltip-content-common">
+	<div class="tooltip-content">
+			<p class="tooltip-subcontent"><span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla tristique, nibh non imperdiet posuere, pede nulla cursus nunc, in nonummy nibh pede quis felis. </span></p>
+	</div>
+</div>	
+	<!-- end tooltip content	 -->
+
+</body>
+</html>
+
+
+7. Preview checkboxes
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>jseh_with_Multi_SwapMO39.html</title>
+<script type="text/javascript" language="Javascript">
+<!--
+	var str,str2,str3;
+	function checkboxes(n) {
+		if(n==0){
+		 	var str = '<img src="sydney.jpg" width="300" height="300" alt="sydney">';
+			var str2 = '';
+			var str3 = '';
+		 }
+		 
+		 if(n==1){
+		 	var str = '';
+			var str2 = '<img src="hong_kong.jpg" width="300" height="300" alt="sydney">';
+			var str3 = '';
+		 }
+		 
+		 if(n==2){
+		 	var str = '';
+			var str2 = '';
+			var str3 = '<img src="venice.jpg" width="300" height="300" alt="sydney">';
+		 }
+		 
+		
+		with(document.getElementById){
+			textstring3.innerHTML = str;
+			textstring4.innerHTML = str2;
+			textstring5.innerHTML = str3;
+		}
+}
+
+//-->
+</script>
+</head>
+<body>
+
+
+<div><p><strong>Click to preview</strong></p></div>
+<div>
+<img src="sydney.jpg" width="100" height="50" alt="Sydney" border="0"> <img src="venice.jpg" width="100" height="50" alt="" border="0"> <img src="hong_kong.jpg" width="100" height="50" alt="Accra" border="0">
+</div>
+
+<form name="f">
+	<input type="checkbox" name="textstring3"  value="Sydney" onclick="checkboxes(0)">Sydney Sydney Opera House <input type="checkbox" name="textstring4"  value="Venice" onclick="checkboxes(1)"> Venice Venice Port <input type="checkbox" name="textstring5"  value="Venice" onclick="checkboxes(2)"> Hong Kong 
+	
+
+<div>
+<br />
+	<span id="textstring3"></span><span id="textstring4"></span><span id="textstring5"></span>
+</div>
+
+
+</form>
+
+</body>
+</html>
+ 

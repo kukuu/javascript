@@ -1,0 +1,27 @@
+.default{color:#ffffff;font-weight:900:}
+.grey{color:#ff0000;}
+.blue{color:#0000ff;}
+green{color:#00ff00;}
+.red{color:#ff0000;}
+.mainHeader{font-size:3.5em;padding:0px 0px 7px 10px;color:#000099}
+h2.mainHeader{font-size:3.5em;padding:0px 0px 0px 5px;color:#000099; font-family:courier}
+
+td.gold{background-color:#ffcc33;}
+a.linkWhite{color:#ffffff;text-decoration:yes;}
+.gold{color:#ffcc33;}
+.white{color:#ffffff;}
+a.bodyNav{color:#000000;text-decoration:none;}
+a.bodyNav:hover{color:#ffcc33;text-decoration:none;}
+a.bodyNav2{color:#ffffff;text-decoration:none;}
+a.bodyNav2:hover{color:#ffcc33;text-decoration:none;}
+a.bodyNavRed{color:#ff0000;text-decoration:none;}
+a.bodyNavRed:hover{color:#ffffff;text-decoration:none;}
+a.red{color:#ff0000;text-decoration:none;font-weight:bold}
+.didyouknow{color:#000099;font-weight:bold;}
+.youknowtext{color:#666666;}
+
+#ticker {background-color: #EE351C;width: 100%;margin-bottom: 1px;font-size: 120%;}
+#tickerAnchor {padding-top: 4px;padding-left: 4px;padding-right: 4px;height: 19px;color: #ffcc33;font-weight:bold;}
+/* The star html hack will hide a rule from all browsers but IE */
+* html #tickerAnchor {height: 24px;}
+#ticker H2 {font-size: 100%;display: inline;padding-right: 1em;color:#ffffff;}

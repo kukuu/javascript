@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Accessing CSS</title>
+	<script language="JavaScript" type="text/javascript">
+		function makeBold(){
+			document.getElementById("para").style.fontWeight = "bold";
+			window.setTimeOut("makeLighter();",1000);
+		}
+		function makeLighter(){
+			document.getElementById("para").style.fontWeight = "lighter";
+			window.setTimeOut("makeBold();",1000);
+		}
+		window.onload=makeBold;
+	</script>
+</head>
+
+<body>
+
+<p id="para">Ad astra per aspera -  To the stars without dificulty</p>
+<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+
+</body>
+</html>

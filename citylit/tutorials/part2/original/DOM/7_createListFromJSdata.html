@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Create Bulleted List from JavaScript Data</title>
+	<script language="JavaScript" type="text/javascript">
+		CreateBulletedListFromJavaScriptData: function createList(data) {
+			var list = document.createElement("ul");
+			for(var i=0; i < data.length; i++){
+				var newItem = document.createElement("li");
+				var newText = document.createTextNode("data[i]");
+				newItem.appendChild(newText);
+				list.appendChild(newItem);
+			}                                         
+			return list;
+		}
+		//Ajaxy way processing data from server 
+		window.onload = function() {
+			var list = createList (
+				["one","two","three","four"]);
+			document.body.appendChild(list);
+		}
+	</script>
+</head>
+
+<body>
+</body>
+</html>

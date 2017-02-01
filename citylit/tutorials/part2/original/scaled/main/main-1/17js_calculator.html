@@ -1,0 +1,46 @@
+
+<html>
+<head>
+	<title>Untitled</title>
+</head>
+
+<body>
+<script language="JavaScript">
+<!--
+
+
+    function pence(amount) {
+    // returns the amount in the .99 format
+    return (amount == Math.floor(amount)) ? amount + '.00' : ( (amount*10 == Math.floor(amount*10)) ? amount + '0' : amount);
+}
+
+
+    function update(form) {
+    	var subtotal = (form.quantity.value - 0) * (form.unitcost.value - 0);
+    	subtotal = Math.floor(subtotal * 100)/100;
+    	form.subtotal.value = '£' + pence(subtotal);
+    	var tax = subtotal / 100 * (form.rate.value - 0);
+   	 	tax = Math.floor(tax * 100)/100
+    	form.tax.value = '£' + pence(tax);
+    	total = subtotal + tax;
+    	total = Math.floor(total * 100)/100
+    	form.total.value = '£' + pence(total);
+}
+//-->
+</script>
+<form>
+	<table>
+		<tr><td>Quantity: </td><td><input type=text name="quantity" SIZE="8"></td></tr>
+		<tr><td>Unit Cost: </td><td><input type=text name="unitcost" VALUE="19.99" SIZE="8"></td></tr>
+		<tr><td>Tax Rate (%): </td><td><input type=text name="rate" VALUE="17.5"SIZE="8"></td></tr>
+		<tr><td>Subtotal: </td><td><input type=text name="subtotal"SIZE="8"></td></tr>
+		<tr><td>Tax: </td><td><input type=text name="tax"SIZE="8"></td></tr>
+		<tr><td>Total: </td><td><input type=text name="total"SIZE="8"></td></tr>
+		<tr><td> </td><td><input type = button onClick="update(this.form)" value="Click Me"></td></tr>
+	</table>
+</form>
+	
+<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+
+</body>
+</html>

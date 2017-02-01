@@ -1,0 +1,37 @@
+<html>
+<head>
+<title> using the if-else branching with alert confirmation</title>
+	<script language="javascript" type="text/javascript">
+		function validate (){
+			if(document.myform.firstname.value == "") {
+					alert ( "You must enter your first name" );
+					return ;////code execution terminates.
+			}
+			else if(document.myform.surname.value == "") { //more intermittent  validation
+				alert("You must enter your surname.");
+			return;//code execution terminates
+		}
+	
+		//submitnow = confirm("Do you want to submit now ?")//a  DISCLAIMER (argument) is created to hold the string
+		
+		//the CONDITION is tested for true.
+		//if(submitnow) {
+			//document.myform.submit( );//use the library submit function to send the form
+		//}
+		//the ELSE  statement is use at the end of the routine test
+		else {
+			return;//code execution terminates
+	}
+}
+</script>
+</head>
+<body>
+<!--<form  name ="myform" action="mailto:bob.bobby.co.uk">-->
+<form  name ="myform" action="#">
+	<h1>booking form</h1>
+	first name : <input name = "firstname">
+	<p>surname : <input name ="surname">
+	<p><input type = "button"  value = "book now" onClick="validate()">
+</form>
+</body>
+</html>

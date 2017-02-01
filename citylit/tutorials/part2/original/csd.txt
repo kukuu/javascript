@@ -1,0 +1,16 @@
+Name|Surname|Like to be called|Tel|email|Room|Hobby
+!Alexander!|!Adu-Sarkodie!|!Alex!|!056!|!alex.sarkodie@bbc.co.uk!|!2431!|!Travelling,swimming,reading,football and golf.Hardly in-doors weekends!
+!Michael!|!Green!|!Mike!|!0945!|!a.mike@kp.co.uk!|!8906!|!partying!
+!John!|!Robins!|!Jay!|!9034!|!john.robins@kp.co.uk!|!4327!|!partying!
+!Christopher!|!Cock!|!Chris!|!xxx!|!pending!|!hot!|!travelling!
+!James!|!Pratt!|!Jimmy!|!4986!|!pending!|!00549!|!swimming!
+!Frances!|!Jacobs!|!Frank!|!096714!|!pending!|!990077!|!footie!
+!Michael!|!Davids!|!Miki!|!345678!|!pending!|!5680!|!partying!
+!John!|!Davids!|!John!|!78903!|!pending!|!5680!|!partying!
+!Andrew!|!Davids!|!Andy!|!4323277!|!pending!|!5680!|!partying!
+!Ian!|!Davids!|!Ian!|!67903!|!pending!|!5680!|!partying!
+
+
+
+
+

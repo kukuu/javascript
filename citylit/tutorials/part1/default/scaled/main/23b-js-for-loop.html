@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Loops 1</title>
+	Select ActionSelect AllTry It<script type="text/javascript">
+
+document.write("<h1>Multiplication table</h1>");
+document.write("<table border=2 width=50%"); 
+
+for (var i = 1; i <= 9; i++ ) {   //this is the outer loop
+  document.write("<tr>");
+  document.write("<td>" + i + "</td>");
+  
+   for ( var j = 2; j <= 9; j++ ) { // inner loop
+        document.write("<td>" + i * j + "</td>");
+    }
+
+   document.write("</tr>");
+} 
+
+document.write("</table>"); 
+
+</script>
+</head>
+
+<body>
+<p>
+
+The For Loop<br />
+
+The For loop is executed till a specified condition returns false. It has basically the same syntax then in other languages. It takes 3 arguments and looks as follows:<br /><br /> 
+
+for (initialization; condition; increment) <br />
+{     <br />       
+   // statements<br />
+}<br /><br /><br />
+When the For loop executes, the following occurs:<br />
+
+The initializing expression is executed. This expression usually initializes one or more loop counters, but the syntax allows an expression of any degree of complexity. <br />
+The condition expression is evaluated. If the value of condition is true, the loop statements execute. If the value of condition is false, the for loop terminates.<br /> 
+The update expression increment executes. <br />
+The statements execute, and control returns to step 2.<br />
+The following example generates a multiplication table 2 through 9. Outer loop is responsible for generating a list of dividends, and inner loop will be responsible for generating lists of dividers for each individual number:
+
+
+</p>
+
+
+</body>
+</html>

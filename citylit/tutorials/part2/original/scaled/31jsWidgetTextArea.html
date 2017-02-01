@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title> dynamic form validation</title>
+<script type="text/javascript" language="Javascript">
+<!--
+var str,str2;
+	function textboxes() {
+		var str = document.f.txt.value;
+		with(document.getElementById){
+			textstring3.innerHTML = str;
+		}
+	submitnow=confirm ("Do you want to submit now");
+		if(submitnow){
+			document.submit();
+		}
+		else {
+			with(document.f){
+				txt.value=str;
+			}
+		}
+	}
+	//-->
+	
+</script>
+	<link rel="stylesheet" href="library.css" type="text/css" media="all" />
+	<style>
+	.boxWidth {
+		width:200px;
+		margin:18px 0 0 0
+	}
+	
+	.floatLeft {
+		float:left
+	}
+	
+	</style>
+</head>
+<body>
+		
+	<div class="formObject">
+		<p><strong>Please fill in the form,  click to preview,confirm and then submit</strong></p>
+		<form name="f">
+	<div>
+			<div class="floatLeft">Your Comment:<br /> <textarea  name="txt"  rows="4" cols="20"></textarea>&nbsp;</div><div  class="floatLeft"><span id="textstring3"  class="boxWidth"></span>
+</div>
+	</div>
+	
+	<br clear="all">
+			<div class="floatLeft">
+						<input type="button" name="btn"  value="Preview" onclick="textboxes()">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="btn2" value="submit"></div>
+	</form>
+	</div>
+	
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>form elements accessing a buttons attributes</title>
+</head>
+<body>
+	<script type ="text/javascript">
+<!--
+function run()
+{
+var msg = "Element type:"  + document.f.btn1.type;
+msg  += "Element Name:"   + document.f.btn1.name;
+msg  += "Element Value:"   + document.f.btn1.value;
+msg  += "Element Onclick:"     + document.f.btn1.onclick;
+document.write(msg);
+{
+alert( "hi");
+}
+}
+//-->
+</script>
+<form name="f">
+<input   name="btn1" type="button" value ="click me"  onclick="run()">
+</form>
+</body>
+</html>

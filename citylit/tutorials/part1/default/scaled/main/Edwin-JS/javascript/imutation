@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var a = {name : "Fred"};
+      a.name = "Will";
+
+      console.log(a);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Accessing CSS</title>
+	<script language="JavaScript" type="text/javascript">
+		function makeBold(){
+			document.styleSheets[0].disabled = false;
+			document.styleSheets[1].disabled = true;
+			window.setTimeOut("makeLighter();",1000);
+		}
+		function makeLighter(){
+			document.styleSheets[0].disabled = true;
+			document.styleSheets[1].disabled = false;
+			window.setTimeOut("makeBold();",1000);
+		}
+		window.onload=makeBold;
+	</script>
+	<style type="text/css" id="strong">
+		p {
+			font-weight:bold;
+		}	
+	</style>
+	<style type="text/css" id="weak">
+		p {
+			font-weight:lighter;
+		}	
+	</style>
+</head>
+
+<body>
+
+<p>Ad astra per aspera -  To the stars without dificulty</p>
+
+</body>
+</html>

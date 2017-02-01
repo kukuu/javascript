@@ -1,0 +1,163 @@
+<html>
+  <head> 
+    <title>JS tabs and Tab Content</title>
+ 	<style>
+		body { 
+		 	font-size: 80%;
+			font-family:Arial, Sans-Serif; 
+		}
+		  
+		 ul#tabs { 
+		  	list-style-type:none;
+			margin: 30px 0 0 0;
+			padding: 0 0 0.3em 0; 
+		}
+		 
+		ul#tabs li { 
+		 	display: inline; 
+		}
+		 
+		ul#tabs li a { 
+		 	color: #42454a; 
+			background-color: #dedbde;
+			border: 1px solid #c9c3ba;
+			border-bottom: none;
+			padding: 0.3em;
+			text-decoration: none; 
+		}
+		
+		ul#tabs li a:hover { 
+		 	background-color: #f1f0ee; 
+		}
+		 
+		ul#tabs li a.selected { 
+		 	color: #000; 
+			background-color: #f1f0ee; 
+			font-weight: bold;
+			 padding: 0.4em 0.3em 0.38em  
+		}
+		 
+		div.tabContent { 
+			border: 1px solid #c9c3ba; 
+			padding: 0.5em; 
+			background-color: #f1f0ee; 
+		}
+		 
+		div.tabContent.hide { 
+		 	display: none; 
+		}
+	</style>
+    <script type="text/javascript" language="javascript">
+			//We create 2 arrays as containers for the tabs and content divs
+    	var tabLinks = new Array();
+    	var contentDivs = new Array();
+ 
+ 	//Setting up the tabs
+    function init() {
+ 
+      // Get all tab links and content divs from the page
+      var tabListItems = document.getElementById('tabs').childNodes;
+      for ( var i = 0; i < tabListItems.length; i++ ) {
+        if ( tabListItems[i].nodeName == "LI" ) {
+          var tabLink = getFirstChildWithTagName( tabListItems[i], 'A' );
+          var id = getHash( tabLink.getAttribute('href') );
+          tabLinks[id] = tabLink;
+          contentDivs[id] = document.getElementById( id );
+        }
+      }
+ 
+      // Assign onclick events to the tab links, and
+      // highlight the first tab
+      var i = 0;
+ 
+      for ( var id in tabLinks ) {
+        tabLinks[id].onclick = showTab;
+        tabLinks[id].onfocus = function() { this.blur() };
+        if ( i == 0 ) {
+		tabLinks[id].className = 'selected';
+	   }
+        i++;
+      }
+ 
+      // Hide all content divs except the first
+      var i = 0;
+ 
+      for ( var id in contentDivs ) {
+        if ( i != 0 ) contentDivs[id].className = 'tabContent hide';
+        i++;
+      }
+    }
+ 
+    function showTab() {
+      var selectedId = getHash( this.getAttribute('href') );
+ 
+      //tabs and content divs:
+      // Highlight the selected tab, and dim all others.
+      // Also show the selected content div, and hide all others.
+      for ( var id in contentDivs ) {
+        if ( id == selectedId ) {
+          tabLinks[id].className = 'selected';
+          contentDivs[id].className = 'tabContent';
+        } else {
+          tabLinks[id].className = '';
+          contentDivs[id].className = 'tabContent hide';
+        }
+      }
+ 
+      // Stop the browser following the link and adding url to the browser history
+      return false;
+    }
+
+//Event Delegation
+ 
+    function getFirstChildWithTagName( element, tagName ) {
+      for ( var i = 0; i < element.childNodes.length; i++ ) {
+        if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
+      }
+    }
+
+// Now get URL for each tab
+ 
+    function getHash( url ) {
+      var hashPos = url.lastIndexOf ( '#' );
+      return url.substring( hashPos + 1 );
+    }
+	
+	</script>
+  </head>
+  <body onload="init()">
+    <h1>JavaScript tabs</h1>
+ 
+    <ul id="tabs">
+      <li><a href="#top10">Top 10 albums</a></li>
+      <li><a href="#top20">Top 20 albums</a></li>
+      <li><a href="#top100">Top 100 albums</a></li>
+    </ul>
+ 
+    <div class="tabContent" id="top10">
+      <h2>Ten of the best</h2>
+      <div>
+        <p>Quisque rutrum cursus euismod! Etiam bibendum tempor nunc at semper. Aenean viverra orci a dui vehicula interdum. Sed tempus imperdiet velit, quis scelerisque ipsum facilisis quis.</p> 
+		</p>raesent ornare varius lorem et cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      </div>
+    </div>
+ 
+    <div class="tabContent" id="top20">
+      <h2>Twenty top songs</h2>
+      <div>
+        <p>Quisque rutrum cursus euismod! Etiam bibendum tempor nunc at semper. Aenean viverra orci a dui vehicula interdum. Sed tempus imperdiet velit, quis scelerisque ipsum facilisis quis.</p> 
+		</p>raesent ornare varius lorem et cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      </div>
+    </div>
+ 
+    <div class="tabContent" id="top100">
+      <h2>The best of the summer</h2>
+      <div>
+        <p>Quisque rutrum cursus euismod! Etiam bibendum tempor nunc at semper. Aenean viverra orci a dui vehicula interdum. Sed tempus imperdiet velit, quis scelerisque ipsum facilisis quis.</p> 
+		</p>raesent ornare varius lorem et cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      </div>
+    </div>
+	<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+  </body>
+</html>
+

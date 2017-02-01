@@ -1,0 +1,118 @@
+How do I use $.get()?
+
+As nice and simple as $.load() is, it can't perform all types of content requests. A more flexible approach is offered by the $.get() method.
+
+You can use $.get() to load data from the server with a GET HTTP request - that is, via a query string (see Lesson 10: Passing variables in a URL in the PHP tutorial on HTML.net for a great introduction to query strings).
+
+$.get(url, {dataKey1 : 'dataValue1', dataKey2 : 'dataValue2'}, optionalSuccessFunction) takes in 3 arguments:
+
+    theURL where the data you want to retrieve is stored;
+    optionally, some data, if you want to send data to the server with the request. This is done using either a string or what is called object literal or map, that is, comma-separated key:value pairs inside curly braces. For instance: {'First Name' : 'John', 'Last Name' : 'Smith'} sends the First Name and Last Name values to the server together with the AJAX GET request;
+    and a function that deals with the returned data if you want to display or process the successful response in any way.
+
+Let's see how to use jQuery .get() to retrieve the XML document you used back in lesson 18.
+
+The HTML page that makes the AJAX request remains unchanged from the previous example. Rewrite the JavaScript code as follows:
+
+		
+		$(document).ready(function()
+		
+		{
+		
+		//Store the URL value in a variable
+		
+		var url = "content.xml";
+		
+		
+		/*************************************/
+		
+		
+		//Package the result-handling code
+		
+		//in its own function: it's more readable
+		
+		function processData(data)
+		
+		{
+		
+		//This variable will hold the result
+		
+		//converted into a string for display
+		
+		var resultStr = "";
+		
+		//use jQuery .find() to extract the language
+		
+		//element from the returned data
+		
+		//and store it in an array
+		
+		var items = $(data).find('language');
+		
+		//loop over each language item with
+		
+		//jQuery .each() function
+		
+		$(items).each(function(i)
+		
+		{
+		
+		//extract the text of each language item and
+		
+		//add it to the resultStr variable with a line break.
+		
+		//Notice the use of $(this)
+		
+		//to refer to the item currently being
+		
+		//inspected by the loop
+		
+		resultStr += $(this).text() + '<br />';
+		
+		//add the final string result to div element
+		
+		//with the id of result using .html()
+		
+		$('#result').html(resultStr);
+		
+		});
+		
+		}
+		
+		
+		/****************************************/
+		
+		
+		//Attach a click handler to the link element:
+		
+		//when the user clicks on the link, the AJAX
+		
+		//request is sent to the server:
+		
+		$('a').click(function()
+		
+		{
+		
+		//use $.get() passing the url variable and
+		
+		//the name of the result-handling function
+		
+		//as arguments:
+		
+		$.get(url, processData);
+		
+		});
+		
+		});
+		
+		
+
+Save all your files on the server and click on the link. If all goes well, you should see a list of programming languages being displayed on the page without a full page refresh.
+
+In the example above, you came across jQuery .find() and jQuery .each().
+
+$.find() is used to find a DOM element's descendants or children. In the example above, you used it to find all children called language of the root XML element contained in the variable called data. Further details on $.find() can be accessed on http://api.jquery.com/find/.
+
+$.each(index) is a for ... loop done the jQuery way. It's extremely concise and efficient. Notice the use of $(this) inside the $.each() function block. This is a snappy way of referring to the item the loop is currently processing: in our example above $(this) refers to one of the language items in the items array.
+
+More details on $.each() can be found on http://api.jquery.com/each/.

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<!--#include virtual="/mystory/inc/site.sssi" -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+<head profile="http://dublincore.org/documents/dcq-html/">
+<title>BBC - My Story - Contact us</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Use this page to contact the BBC My Story team" />
+<meta name="keywords" content="My Story, contact us, email, contact" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<meta name="DCTERMS.created" content="2009-08-20T12:00:00Z" />
+<meta name="DCTERMS.modified" content="2009-08-20T12:00:00Z" />
+
+<!--#include virtual="/includes/blq/include/blq_head.sssi" -->
+	<style type="text/css" media="all">
+		@import "<!--#echo var="csspath" -->/main.css";
+		@import "<!--#echo var="csspath" -->/contact-us.css";	
+		@import "<!--#echo var="csspath" -->/backgrounds/<!--#echo var="ms_current_theme" -->-bg.css";	
+	</style>
+	<!--[if IE 6]>
+	<link rel="stylesheet" type="text/css" media="all" title="IE Fixer" href="<!--#echo var="csspath" -->/main_ie6.css" />
+<![endif]-->
+<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" media="all" title="IE Fixer" href="<!--#echo var="csspath" -->/main_ie7.css" />
+<![endif]--> 
+
+</head>
+
+<body id="ms-contact-us">
+	<!--#include virtual="/includes/blq/include/blq_body_first.sssi" -->
+	<!-- start blq-main -->
+	<!--#include virtual="$incpath/navigation/main_nav.sssi" -->
+	
+		<div id="blq-content" class="blq-clearfix">
+			<div id="ms-content">
+				<h1>Contact us</h1>
+				<p>If you can't find the answer you need in the FAQs, or have some feedback for us, use this form to send us your comments.</p>
+					<div class="ms-content-section blq-clearfix">
+						<h2 class="ms-content-section-title">Your comments</h2>
+						<p class="ms-content-section-annotation">Use the form to send your comments to the My Story team.</p>
+						<div class="ms-content-section-detail">
+						<form action="<!--#echo var="appspath" -->/contact-us/sendemail" method="get" id="ms-contact-form">
+							<input type="hidden" name="SuccessPage" value="<!--#echo var='sitepath' -->/contact-us-success.shtml">
+							<input type="hidden" name="EmailRecipient" value="mystory@bbc.co.uk" />
+					         <input type="hidden" name="http_user_agent" value="<!--#echo var='HTTP_USER_AGENT' -->">
+							<input type="hidden" name="http_referer" value="<!--#echo var='HTTP_REFERER' -->">
+							<input type="hidden" name="remote_addr" value="<!--#echo var='REMOTE_ADDR' -->">
+							<label for="ms-contact-form-name" class="yourname-prompt">Your name *</label>
+							<input type="text"  id="ms-contact-form-name" name="yourname"  />
+							<label for="ms-contact-form-email" class="EmailSender-prompt">Email address *</label>
+							<input type="text"  id="ms-contact-form-email"  name="EmailSender"  />
+							<label for="ms-contact-form-subject">Subject *</label>
+							<input type="text"  id="ms-contact-form-subject" name="subject"  />
+							<label for="ms-contact-form-comment">Comments *</label>
+							<textarea id="ms-contact-form-comment"  name="comment"  cols="20" rows="20"></textarea>
+							<input type="submit"  class="ms-button-submit"  value="submit" />
+						</form>	
+					</div>
+					</div>
+			</div>
+			<div id="ms-related-content">
+				<!-- begin related content widgets -->
+				<!--#include virtual="$incpath/widgets/send_us_your_story.sssi" -->
+				<!--#include virtual="$incpath/widgets/top_ten_stories.sssi" -->
+			</div>
+		</div>
+
+		
+	<!-- end blq-main -->
+	<!--#include virtual="/includes/blq/include/blq_body_last.sssi" -->
+	
+	<script type="text/javascript">
+		    gloader.load(
+		        ["glow", "1", "glow.forms"],
+		        {		           
+		            onLoad: function(glow) {		
+					var myForm = new glow.forms.Form("#ms-contact-form");	
+					myForm.addTests(
+					 "yourname",   
+					  ["required", {message: "Please enter your name"}]					   
+					).addTests(
+					    "EmailSender",
+					    ["required", {message: "A valid email address is required."}],
+						["isEmail", {message: "A valid email address is required."}] 		
+					).addTests(
+					    "subject",
+					    ["required", {message: "Please enter a subject"}]		
+					).addTests(
+					    "comment",
+					    ["required", {message: "Please enter your comment"}]		
+					);
+		            }
+		        }
+		    );
+		
+		</script>
+	<script type="text/javascript" src="<!--#echo var="sitepath" -->/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title> PREVIEW TEST FIELD</title>
+<script type="text/javascript" language="Javascript">
+<!--
+		var str,str2;
+		function textArea() {
+		var str = document.f.txt.value;
+		var str2 = document.f.txt2.value;
+		
+		with(document.getElementById){
+			textstring3.innerHTML = str;
+			textstring4.innerHTML = str2;
+			
+		}
+	submitnow=confirm ("Do you want to submit now");
+		if(submitnow){
+			document.submit();
+		}
+		else {
+			with(document.f){
+				txt.value=str;
+				txt2.value=str2;
+			
+			}
+		}
+	}
+	
+	
+	var vtr,vtr2,vtr3;
+	function radiobuttons(n) {
+		if(n==0){
+		 	var vtr = '<img src="../sydney.jpg" width="100" height="50">';
+			var vtr2 = '';
+			var vtr3 = '';
+		 }
+		if(n==1){
+			var vtr ='';
+			var vtr2 ='<img src="../venice.jpg" width="100" height="50">';
+			var vtr3 ='';
+		}
+		
+		if(n==2){
+			var vtr ='';
+			var vtr2 ='';
+			var vtr3 ='<img src="../hong_kong.jpg" width="100" height="50">';
+		}
+		with(document.getElementById){
+			vextstring3.innerHTML = vtr;
+			vextstring4.innerHTML = vtr2;
+			vextstring5.innerHTML = vtr3;
+		}
+}
+
+
+
+var stra,str2a;
+	function textboxes() {
+		var stra = document.f.txta.value;
+		with(document.getElementById){
+			textstring3a.innerHTML = stra;
+		}
+	submitnow=confirm ("Do you want to submit now");
+		if(submitnow){
+			document.submit();
+		}
+		else {
+			with(document.f){
+				txta.value=stra;
+			}
+		}
+	}
+
+	//-->
+</script>
+
+	<link rel="stylesheet" href="library.css" type="text/css" media="all" />
+<style>
+.radios  {
+
+}
+
+.previewZone {
+
+}
+
+.previewZone2 {
+
+	width:500px;
+	margin:00;
+}
+
+	.boxWidth {
+		width:200px;
+		margin:18px 0 0 10px;
+		font-weight:bold;
+	}
+	
+	.floatLeft {
+		float:left
+		
+	}
+	
+	#vextstring3{
+	margin:0 0 0 10px
+}
+
+#vextstring4 {
+	margin:0 0 0 0;
+}
+
+
+</style>
+</head>
+<body>
+		
+	<div class="formObject2">
+		<p><strong>Please fill in the form,  click to preview,confirm and then submit</strong></p>
+		<form name="f">
+		<div>
+		<div style="float:left">
+		Your Name: <input type="text" name="txt"  class="textFieldHeight" value=""><br />
+		email: <input type="text" name="txt2"  class="textFieldHeight2" value=""><br />
+
+		
+<br /><br />
+<input type="button" name="btn" class="buttonStyle2b" value="Preview" onclick="textArea()">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="btn2" value="submit">
+		</div>
+		</form>
+		<div style="float:left;margin:0 0 0 10px;border-left:1px solid #808080;height:300px;">
+		<span id="textstring3"></span> <br />
+			<span id="textstring4"></span><br />
+		
+			
+		</div>
+			</div>
+			
+			
+<br /> 
+
+	
+	</div>
+
+</body>
+
+</html>

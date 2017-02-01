@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Moving Elements</title>
+	<script language="JavaScript" type="text/javascript">
+		//this is a hekper function to return 0 as a number and not isNaN
+		function myParseInt(s) {
+			var ret = parseInt(s);
+			return(isNaN(ret) ? 0: ret);
+		}
+	</script>
+	<script language="JavaScript" type="text/javascript">
+		//the code below animates the banner and stops after 50 iterations
+		var nr = 0;
+		var id = null;
+		function animate() {
+			nr++;
+			if(nr > 50){
+				window.clearInterval(id);
+				document.getElementById("element").style.visibility = "hidden";
+			}
+			else {
+				var el = document.getElementById("element");
+				el.style.left = (myParseInt(el.style.left) + 5) + "px";
+				el.style.posLeft +=5;
+				el.style.top = (myParseInt(el.style.left) + 5) + "px";
+				el.style.posTop +=5;
+			}
+		}
+		window.onload = function() {
+			id = window.setInterval("animate();",100);
+		};
+	</script>
+	
+</head>
+
+<body>
+<h1>My Portal</h1>
+<div id="element"  style="position:absolute;background-color:#eee;border:;1px solid #ffcc33">Welcome to The City Lit</div>
+
+
+</body>
+</html>

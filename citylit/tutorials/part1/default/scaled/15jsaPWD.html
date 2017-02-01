@@ -1,0 +1,29 @@
+
+<html>
+<head>
+<title>password</title>
+	<script language="javascript"  type="text/javascript">
+		<!--
+			function validate(){
+				var entry=document.f.pwd1.value.toLowerCase();//all entries are converted to lower case
+				if (entry=="user") {
+					window.location="messageboard.html";//if the password is ..user.. then re-direct to  messageboard.html
+				}
+				else {
+					alert("Password incorrect. Please re-try");
+					document.f.pwd1.value=" ";
+				}
+			}
+		//-->
+	</script>
+</head>
+<body>
+<br /><br /><div align="center"><strong>Please enter password</strong></div><br /><br />
+	<div align="center">
+		<form name="f">
+			<input type="password" name="pwd1"  size="25">
+			<input type="button" name="btn1"  value="Enter" onClick="validate()">
+		</form>
+</div>
+</body>
+</html>

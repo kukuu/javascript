@@ -1,0 +1,56 @@
+	
+
+
+#textAreaPadding {
+	padding:7px 0 7px 80px;
+}
+
+
+
+* html #textAreaPadding {
+	padding:7px 0 7px 70px;
+}
+
+
+.namePad {
+	psdding-top:10px;
+}
+
+#ffyournamef {
+	padding:0 0 10px 0;
+}
+.ffyournamefL {
+	float:left;
+	padding:3px 10px 0 0;
+}
+
+
+.ffyournamefR {
+	float:left;
+}
+
+
+#femailf {
+	padding:10px 0 10px 0;
+	clear:both;
+}
+
+.femailfL {
+	float:left;
+	padding:3px 10px 0 0;
+}
+
+
+.femailfR {
+	float:left;
+}
+
+
+
+
+
+
+#fyourcommentf {
+	clear:both;
+	padding:5px 0 0 0;
+}

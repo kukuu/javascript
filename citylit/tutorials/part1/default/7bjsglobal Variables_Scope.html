@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>globalVariables</title>
+<script type="text/javascript">
+<!-- 
+//find the difference between 2 numbers and perform another operation with the number
+var stored_num;       //this is a global variable. It has been declared outside the function
+function  create_arguments(num1,num2){
+	stored_num = num1 - num2;  //the global variable is retrieved and stored
+	calculate();
+	alert ("the value is " +stored_num );
+}
+function  calculate(){
+	stored_num = stored_num*9;  
+ 
+}
+
+//-->
+</script>
+</head>
+<body onload="create_arguments(5,3)">
+</body>
+</html>

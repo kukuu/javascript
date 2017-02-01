@@ -1,0 +1,31 @@
+
+<html>
+<head id="addTitle">
+	<script language="JavaScript" type="text/javascript">
+		function addItem() {
+			var listTitle = document.getElementById("addTitle");
+			var newNode = document.createElement("title");
+			var newTextNode = document.createTextNode("Welcome home - DOM/JS]");
+				newNode.appendChild(newTextNode);
+		        listTitle.appendChild(newNode);	
+				listTitle.insertBefore(newNode,listTitle.firstChild);
+			    document.getElementById("msg").innerHTML = "Welcome home DOM/JS" ;
+				document.getElementById("buttonID").onclick = function(){
+					alert("This is message from the button");
+					//document.write("This is message from the button");
+				}
+				
+				 ;
+				//alert("Welcome home DOM/JS");	
+		}
+		window.onload=addItem;
+		
+	</script>
+</head>
+
+<body>
+	<p id="msg"></p>
+	<input type="button" name="button" value="submit" id="buttonID"  />
+	<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+</html>

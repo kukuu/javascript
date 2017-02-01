@@ -1,0 +1,37 @@
+
+<html>
+<head>
+	<title>Counter</title>
+<link rel="stylesheet" href="counter.css">
+<script language="JavaScript" type="text/javascript">
+<!--
+	var charsCount;
+	function keyup(ta){
+		//find the length of the argument
+		charsCount = (ta.value).length;
+		document.getElementById('charCountMsg').innerHTML = charsCount;
+		if (charsCount > 160)
+		ta.value = (ta.value).substring(0, 160);
+	}
+//-->
+</script>
+</head>
+
+<body>
+
+<form>
+	<input type="hidden" value="Green - competition form" name="green_competition">
+
+		<div id="fyourcommentf">
+			<label for="fyourcomment"><strong>Your comment</strong>:(<span id="charCountMsg">0</span> / 160 characters only)</label>&nbsp;&nbsp;
+			
+			<div id="textAreaPadding"><textarea cols="40" rows="5" name="yourcomment" id="fyourcomment" class="text" tabindex="3" onkeyup="keyup(this);"></textarea></div>
+			<!--<p>
+			<input type="submit" name="submit" id="submit" value="Submit" alt="Submit" width="80" height="19" border="0" style="width:80px">
+			</p>-->
+		</div>
+  
+</form>
+<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+</html>

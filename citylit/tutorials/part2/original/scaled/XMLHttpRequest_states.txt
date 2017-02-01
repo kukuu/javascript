@@ -1,0 +1,14 @@
+5 XMLHttpRequest States
+.......................
+
+State			Description
+
+0			Uninitialised
+
+1			Loading
+
+2			Loaded
+
+3			Waiting
+
+4			Complete

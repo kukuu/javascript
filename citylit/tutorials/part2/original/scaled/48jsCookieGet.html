@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>cookie test data1</title>
+		
+
+</head>
+
+<body>
+	<script type="text/javascript">
+	<!--
+		var username="Guest",useracct="00000";
+		if  (document.cookie) {
+			var cookiedata=unescape(document.cookie) ;
+			var userdata=cookiedata.split("=");
+			if(userdata[0]=="cookiedata" ) {
+				var data=userdata[1].split (",") ;
+					username=data[0];
+					useracct=data[1]; 
+			}
+		}
+document.write ( "Welcome :"  +username+  "<br>");
+document.write ( "Account number: "  +useracct+  ".");
+//-->
+</script>
+
+
+<br /><br />
+As this second document is loaded into a web browser it first seeks the cookie set by the last example then extract the data value to write customized dynamic content
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>SendingNameValuePairsTo ServerUsingWith</title>
+</head>
+<body>
+<script type = "text/javascript">
+<!--
+function  set()
+{
+with(document.f.s)          
+{
+option [0].text = "One" ; option [0].value = "1";
+option [1].text = "Two" ; option [1].value = "2";
+option [2].text = "Three" ; option [2].value = "3";
+}
+}
+//-->
+/*error:option is undefined*/
+</script>
+<form name ="f">
+<select name="s">
+<option value="1">One</options>
+<option value="2">Two</options>
+<option value="3">Three</options>
+</select>
+<input type ="button"   value ="set options"
+onclick="set()">
+</form>
+</body>
+</html>

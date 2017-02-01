@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>46jsreset</title>
+	<script type="text/javascript" type="text/javascript">
+	<!-- 
+	function showvalue()
+	{
+	document.f1.r[0].value= "Pepper";
+	document.f3.txt.value=document.f1.r[0].value;
+	}
+	//-->
+	</script>
+	
+		<script type="text/javascript" type="text/javascript">
+	<!-- 
+	function showvalue2()
+	{
+	document.f2.r2[0].value= "Towel";
+	document.f3.txt.value=document.f2.r2[0].value;
+	}
+	//-->
+	</script>
+	
+	<style>
+	
+	.pepper{
+	color:#ffcc33;
+	size:13px;
+	
+	}
+	
+	
+		.towel{
+	color:#ff9933;
+	size:13px;
+	
+	}
+	</style>
+	
+	
+</head>
+
+
+<body>
+ <!-- In implementing this script, each product is made unique with its own form defining unique options to the form -->
+ 
+  <!-- form1 -->
+ <span class="pepper"><strong>Pepper:</strong></span>
+<form name="f1" onreset="showvalue()">
+<input type="radio" name="r" value="red" checked>Red  
+<input type="radio" name="r" value="green" checked>Green 
+<input type="radio" name="r" value="yellow" checked>Yellow 
+<input type="reset" value="Reset"> <input type="button" name="btn1" value="Send">
+</form>
+<!-- end form one -->
+
+
+<!-- form2 -->
+  <span class="towel"><strong>Towel: -</strong></span>
+<form name="f2" onreset="showvalue2()">
+<input type="radio" name="r2" value="brown" checked>brown 
+<input type="radio" name="r2" value="pink" checked>Pink 
+<input type="radio" name="r2" value="beige" checked>beige 
+<input type="reset" value="Reset2"> <input type="button" name="btn2" value="Send">
+</form>
+<!-- end form two -->
+
+
+
+
+<!-- this last form is referred to in both scripts within the header. The text box here is used to accept and output choices from the options in the 2 other forms. -->
+ 
+<form name="f3">
+<input type="text" name="txt" value="">
+</form>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>converting line breaks</title>
+	<script>
+			function fx_cr2br(obj){
+			var data = obj.form.crlf2brData.value;
+			obj.form.brData.value = return2br(data);
+		}//eof
+	</script>
+</head>
+
+<body>
+<form id="crlf2br" name="crlf2br" action="#doNothing" onsubmit="return false">
+			<div>
+				<fieldset>
+					<legend>Put Line Breaks in Data by Pressing Enter:</legend>
+					<textarea class="textarea" id="crlf2brData" name="crlf2brData" rows="5" 
+					cols="75" >Insert line breaks into this string by pressing enter with 
+						the cursor between the words.</textarea>
+
+				</fieldset>
+				<fieldset>
+					<legend>Converted Data</legend>
+					<textarea class="textarea readonly" readonly="readonly" id="brData" 
+						name="brData" rows="5" cols="75" ></textarea>
+				</fieldset>
+				<fieldset class="actions">
+					<legend>Choose an Action</legend>
+
+					<div>
+						<input class="reset" type="reset" value="Reset">
+						<input type="button" value="Convert to Tag" onclick="fx_cr2br(this);">
+					</div>
+				</fieldset>
+			</div>
+		</form>
+
+
+</body>
+</html>

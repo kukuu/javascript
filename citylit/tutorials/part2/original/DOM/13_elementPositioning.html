@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>positioning elements</title>
+	<script language="JavaScript" type="text/javascript">
+		function position() {
+			var el = document.getElementById("element");
+			el.style.left = "0px";
+			el.style.posLeft = 0;
+			el.style.top = "0px";
+			el.style.posTop = "0px";
+		}
+		window.onload = position;
+	</script>
+</head>
+
+<body>
+	<h1>My Portal</h1>
+	<p>Some sample text. Some sample text. Some sample text.<br /> Some sample text. Some sample text.
+	Some sample text. Some sample text.<br /> 
+	Some sample text. Some sample text.<br /> 
+	</p>
+	
+	<div id="element" style="position:absolute;background-color:#eee;border:1px solid #ffcc33">JavaScript Phrasebook</div>
+</body>
+</html>

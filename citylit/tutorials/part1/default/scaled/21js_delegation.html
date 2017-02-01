@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Event Delegation versus Event Handling</title>
+	<script src="delegation.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="delegation.css" />
+</head>
+
+<body>
+
+<div id="chunk">
+
+<h1>Event Delegation versus Event Handling</h1>
+
+<p>To test. Click to open and collapse items on the left, bound with event handlers per item. Second, click to open and collapse items on the right for event delegation.</p>
+
+<p>Finally, click the "add more list items" button and observe that event delegation persists and event handlers die. Also, delegation is more efficient.</p>
+
+<ul id="collapse_one">
+	<li><a href="#">Testing Link One</a>
+		<ul>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Testing Link Two</a>
+		<ul>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+		</ul>
+	</li>
+</ul>
+
+<ul id="collapse_two">
+	<li><a href="#">Testing Link One</a>
+		<ul>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Testing Link Two</a>
+		<ul>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+			<li><a href="#">Handlers Test</a></li>
+		</ul>
+	</li>
+</ul>
+
+<hr />
+
+<p>Add more elements: <input type="button" id="myButton" value="add more list items" /></p>
+
+
+
+</div>
+
+</body>
+</html>

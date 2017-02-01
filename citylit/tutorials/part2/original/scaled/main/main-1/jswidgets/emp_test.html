@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+
+<head profile="http://dublincore.org/documents/dcq-html/">
+
+<script type="text/javascript" src="http://www.bbc.co.uk/glow/gloader.js"></script>
+<script type="text/javascript" src="http://www.bbc.co.uk/emp/embed_glow.js"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+gloader.load(["glow", "1"], {
+	async: true,
+	onLoad: function (glow) {
+		glow.ready(function () {
+			var emp = new embeddedMedia.Player();
+			emp.setWidth("512");
+			emp.setHeight("323");
+			emp.setDomId("emp1");
+			emp.setPlaylist("http://www.bbc.co.uk/iplayer/playlist/p007gpvs/");
+			emp.write();
+		});
+	}
+});
+</script>
+
+<div id="emp1"></div>
+
+</body>
+</html>

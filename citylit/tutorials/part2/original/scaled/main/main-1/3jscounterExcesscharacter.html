@@ -1,0 +1,35 @@
+
+
+<html>
+<head>
+	<title>LimitingCharacters in Text Area Boxes</title>
+<script type="text/javascript">
+	//Author :Alexander Adu-Sarkodie
+	//Use with acknowledgement
+<!--
+function ok(maxchars) {
+ 	if(document.ourform.box.value.length > maxchars) {
+  			 alert('Too much data in the text box! Please remove '+ (document.ourform.box.value.length - maxchars)+ ' characters');
+   			return false; 
+	}
+ 	else {
+   		return true;
+	} 
+}
+    //-->
+ </script>
+</head>
+
+<body>
+
+
+ <form action="#"
+   method="post" name="ourform" onsubmit="return ok(42)">
+	 Please enter data, at most 42 characters:<br>
+	 <textarea name="box" rows="5" cols="30">
+	 </textarea>
+	 <br><input type="submit">
+ </form>
+ <p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>random content generator</title>
+</head>
+
+<body>
+
+	<script language="javascript" type="text/javascript">
+		<!--
+			//This interactive script generates random content in the body area each time the user re-loads the page.Note object properties are separated by the comma delimeter
+				var pix1 = new  Array("pic0.jpg", "pic1.jpg", "pic2.jpg");
+				var pix2 = new  Array("This is summary for picture 1:<strong><br />Hi I am dog 1</strong>: Lorem ipsum dolor <br />sit amet, consectetuer adipiscing elit.",
+
+ "This is summary for picture 2:<strong><br />Hi I am dog 2</strong>: Lorem ipsum dolor sit amet,<br /> consectetuer adipiscing elit. Nulla tristique, nibh ", 
+
+"This is summary for picture 3 :<br /><strong>Hi I am dog 3</strong>:Lorem ipsum dolor sit amet,<br /> consectetuer adipiscing elit. Nulla tristique,"
+);
+	var rand = Math.floor(Math.random() * 3);
+	document.write('<img src = "'+pix1[rand]+'"><br />');
+	document.write(pix2[rand]);
+				
+		//-->
+	</script>
+	<p class="home"><a href="http://www.goldhawk-college.com/istudio/responsive-design/responsive-design-1.html">Home</a></p>
+</body>
+</html>
+
+

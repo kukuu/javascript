@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Untitled</title>
+<script>
+	var links= document.getElementsByTagName("a") 
+	for( var i=0; i<links.length;i++) {
+	if(links[i].getAttribute("class")=="stay"){
+	links[i].onclick=function() {
+	 return false;
+			}
+		}
+	}
+</script>
+
+</head>
+
+<body>
+<a href ="a.html" class="stay">Drive C</a>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>DOM 2 - determining node information</title>
+<script language="JavaScript" type="text/javascript">
+	window.onload = function() {
+		var s ="";
+		with(document.getElementById("para")) {
+			for (var i=0; i<childNodes.length; i++) {
+				with (childNodes[i]) {
+				s += nodeName + ":" + nodeValue +  "(" + nodeType + ")\n";
+				
+				}
+			}
+		}
+	document.write(s);
+	}
+</script>
+</head>
+
+<body>
+<p id="para"><em>JavaScript</em> Framework</p>
+<br /><br />
+<strong>Node types</strong><br /><br />
+<table cellspacing="2" cellpadding="2" border="0">
+<tr>
+    <td valign="top">Node type</td>
+    <td valign="top">Description</td>
+</tr>
+<tr>
+    <td valign="top">1<br />2<br />3<br />8<br />9<br />10<br />11</td>
+    <td valign="top">Tag<br />Attribute<br />Text (include whitespace)<br />HTML Comment<br />Document<br />DTD<br />Fragment</td>
+</tr>
+</table>
+
+<div>
+The  code in the header analyzea  simple DOM structure and outputs information regarding all child nodes
+</div>
+
+
+</body>
+</html>

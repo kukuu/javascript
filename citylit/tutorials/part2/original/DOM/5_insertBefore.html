@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>DOM 3 - Removing elements</title>
+	<script language="JavaScript" type="text/javascript">
+		function addItem() {
+			var list = document.getElementById("list");
+			var newNode = document.createElement("li");
+			list.insertBefore(newNode,list.firstChild);
+		}
+	</script>
+</head>
+
+<body>
+	<ul id="list">
+		<li>item</li>
+	</ul>
+	<form><input type="button"  name="btn" value="click to add item" onclick="addItem()"></form>
+</body>
+</html>

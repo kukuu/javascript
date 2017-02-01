@@ -1,0 +1,62 @@
+  <!DOCTYPE html>
+	  <html>
+	  <head>
+	  <title>Switch Statements</title>
+	  </head>
+	  <body>
+	  <h1>Using Switch</h1>
+	  
+	  <script type="text/javascript">
+	
+		  //pick a day of the week and store it in a var
+		
+		  var today = "Friday";// Change to Saturday or Sunday
+		
+		  //check today var value and act accordingly
+		  
+		  //Try using the date Object
+		  //var date = new Date();
+		  //and modify other aspects of script.
+		
+		  switch(today){
+		
+		  //in case value corresponds to Saturday or to Sunday do this:
+		
+		  	case "Saturday":
+			
+			case "Sunday":
+		
+			  alert("It's the weekend: great!");
+			
+			  document.write("Today is " + today);
+			
+			  //no need to keep going:
+			
+			  break;
+		
+			  //in case value corresponds to Friday do this
+			
+			  case "Friday":
+			
+			  alert("Almost weekend time!");
+			
+			  document.write("Today is " + today);
+			
+			  //no need to keep going
+			
+			  break;
+			
+			  //in all other cases do this instead
+			
+			  default:
+			
+			  alert("Just an ordinary weekday: keep up the good work");
+			
+			  document.write("Today is " + today);
+		
+		  }
+	
+	  </script>
+		
+	  </body>
+	  </html>

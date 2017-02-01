@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>jseh_with_Multi_SwapMO39.html</title>
+<script type="text/javascript" language="Javascript">
+<!--
+	var str,str2,str3;
+	function checkboxes(n) {
+		if(n==0){
+		 	var str = '<img src="sydney.jpg" width="300" height="300" alt="sydney">';
+			var str2 = '';
+			var str3 = '';
+		 }
+		 
+		 if(n==1){
+		 	var str = '';
+			var str2 = '<img src="hong_kong.jpg" width="300" height="300" alt="sydney">';
+			var str3 = '';
+		 }
+		 
+		 if(n==2){
+		 	var str = '';
+			var str2 = '';
+			var str3 = '<img src="venice.jpg" width="300" height="300" alt="sydney">';
+		 }
+		 
+		
+		with(document.getElementById){
+			textstring3.innerHTML = str;
+			textstring4.innerHTML = str2;
+			textstring5.innerHTML = str3;
+		}
+}
+
+//-->
+</script>
+</head>
+<body>
+
+
+<div><p><strong>Click to preview</strong></p></div>
+<div>
+<img src="sydney.jpg" width="100" height="50" alt="Sydney" border="0"> <img src="venice.jpg" width="100" height="50" alt="" border="0"> <img src="hong_kong.jpg" width="100" height="50" alt="Accra" border="0">
+</div>
+
+<form name="f">
+	<input type="checkbox" name="textstring3"  value="Sydney" onclick="checkboxes(0)">Sydney Sydney Opera House <input type="checkbox" name="textstring4"  value="Venice" onclick="checkboxes(1)"> Venice Venice Port <input type="checkbox" name="textstring5"  value="Venice" onclick="checkboxes(2)"> Hong Kong 
+	
+
+<div>
+<br />
+	<span id="textstring3"></span><span id="textstring4"></span><span id="textstring5"></span>
+</div>
+
+
+</form>
+
+</body>
+</html>
+ 
