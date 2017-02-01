@@ -1,1 +1,0 @@
-<A HREF="javascript:print(document)">print this page</A>

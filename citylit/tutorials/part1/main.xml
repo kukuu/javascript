@@ -1,9 +1,0 @@
-[EACH  ITEM]
-<question type="multi" template="radio" />
-
-<prompt>[INSERT  QU_TXT]</prompt>
-
-
-<question>
-
-[END EACH]
