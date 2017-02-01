@@ -29,6 +29,6 @@ var mondeo = new Car( "Ford Mondeo", 2010, 5000 );
  
 // and then open our browser console to view the
 // output of the toString() method being called on
-// these objects
+// Call the object as a depenency on the ethod (object.method)
 console.log( civic.toString() );
 console.log( mondeo.toString() );
