@@ -1,3 +1,0 @@
-http://javascript.info/tutorial/event-delegation
-
-http://javascript.info/play/tutorial/browser/events/delegation/menu/index.html

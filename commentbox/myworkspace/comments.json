@@ -1,6 +1,0 @@
- [
-	{id: 1, author: "Luca", text: "This is Luca's comment"},
-	{id: 2, author: "Tahir", text: "This is a  comment from Tahir"},
-	{id: 3, author: "Anthony", text: "This is Anthony's comment"},
-	{id: 4, author: "Dan", text: "This is a  comment from Dan"}
-]
