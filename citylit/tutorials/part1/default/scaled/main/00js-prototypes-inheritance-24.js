@@ -13,6 +13,9 @@ trouble when enumerating properties of objects and (as Crockford recommends)
   }
 };
  
+
+ //The parent inherited class is the first argument.
+ //The second is an object literal of the prototype
 var car = Object.create(vehicle, {
  
   "id": {
