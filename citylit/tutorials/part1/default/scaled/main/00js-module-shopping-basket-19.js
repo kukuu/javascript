@@ -87,3 +87,5 @@ console.log( basketModule.basket );
 // basketModule closure, but not in the returned public object
 console.log( basket );
 
+//The methods above are effectively namespaced inside basketModule.
+
