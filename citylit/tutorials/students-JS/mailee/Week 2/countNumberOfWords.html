@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Scripting 1</title>
+			<script language="JavaScript" type="text/javascript">
+				function countit(){
+					// Retrieve Texts in the Text Area in the Form
+					var formContent = document.wordCountForm.textAreas.value;
+					// Split the Texts by white space
+					var content = formContent.split(" ");
+				document.wordCountForm.countResults.value = content.length;
+				}	
+			</script>
+	</head>
+	<body>
+				<form name="wordCountForm">
+					<textarea rows=10 name="textAreas" cols="40" wrap="virtual"></textarea><br>
+					<input type="button" value="Count Number of Words" onclick="countit()">
+					<input type="text" name="countResults" size="17">
+
+	
+	</body>
+</html>

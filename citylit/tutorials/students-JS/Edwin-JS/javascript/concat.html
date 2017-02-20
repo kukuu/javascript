@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>email split</title>
+    <script language="javascript" type="text/javascript">
+      function myFunction() {
+        var hege = ["Cecilie", "Lone"];
+        var stale = ["Emil", "Tobias", "Linus"];
+        var kai = ["Robin"];
+        var children = hege.concat(stale, kai);
+        var x = document.getElementById("demo");
+        x.innerHTML=children;
+      }
+    </script>
+  </head>
+  <body>
+    <p>Click the button to join three arrays.</p>
+    <button onclick="myFunction()">Launch</button>
+    <p  id="demo"/>
+  </body>
+</html>

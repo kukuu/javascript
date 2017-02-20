@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Scripting 1</title>
+			<script language="JavaScript" type="text/javascript">
+				var sentence="This is the Internet. in the year 2016"
+				var my_sentence_slice=sentence.split(".")
+				var who_said="He"
+				document.write(my_sentence_slice+"<br />")
+				document.write("<br />"+who_said+" said: \""+my_sentence_slice[0])
+				document.write("<br />but not"+my_sentence_slice[1]+"!\"<br />")
+
+				var name=prompt("What do you think of the Internet?", "Please enter your full name.");
+				var name_split=name.split(" ")
+				document.write("<br /> Your first name is "+name_split[0])
+				document.write("<br /> Your last name is "+name_split[1])
+				who_said=name_split[0]
+				document.write("<br />"+who_said+" said: \""+my_sentence_slice[0]+";")
+				document.write("<br /> now"+my_sentence_slice[1]+"\"")
+
+				</script>
+	</head>
+	<body>
+	</body>
+</html>

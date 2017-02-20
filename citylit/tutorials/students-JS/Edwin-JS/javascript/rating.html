@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Polling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      function doClick() {
+        var inputs = document.getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; i++) {
+          if (inputs[i].getAttribute('type') == 'radio') {
+            inputs[i].onClick = function() {
+              var str = this.getAttribute('title');
+              document.f.txt.value = str;
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body onload="doClick();">
+    <div class="container">
+      <h1 class="page-header text-center">A simple rating script</h1>
+      <h3>Which picture do you like most. Click the image to confirm your choice and give a star rating.</h3>
+    </div>
+    <form class="form" name="f" action="#">
+      <div class="row">
+        <div class="col-md-4">
+          <img class="image-responsive" src="imgs/avocado_toast.jpg" alt="Avocado Toast" title="Avocado Toast">
+          <div>1 star<input type="radio" name="rate" value="1" title="Avocado Toast" />&nbsp;
+               2 star<input type="radio" name="rate" value="2" title="Avocado Toast" />&nbsp;
+               3 star<input type="radio" name="rate" value="3" title="Avocado Toast" />&nbsp;
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <img class="image-responsive" src="imgs/mince_pie.jpg" alt="Mince pie" title="Mince Pie">
+          <div>1 star<input type="radio" name="rate" value="1" title="Mince Pie" />&nbsp;
+               2 star<input type="radio" name="rate" value="2" title="Mince Pie" />&nbsp;
+               3 star<input type="radio" name="rate" value="3" title="Mince Pie" />&nbsp;
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <img class="image-responsive" src="imgs/plantain_curry.jpg" alt="Plantain Curry" title="Plantain Curry">
+          <div>1 star<input type="radio" name="rate" value="1" title="Plantain Curry" />&nbsp;
+               2 star<input type="radio" name="rate" value="2" title="Plantain Curry" />&nbsp;
+               3 star<input type="radio" name="rate" value="3" title="Plantain Curry" />&nbsp;
+          </div>
+        </div>
+      </div> <!-- row -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <input type="text" name="txt" value="">&nbsp;
+          <input type="button" class="btn btn-success" name="Send" value="Send">
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
