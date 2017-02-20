@@ -1,0 +1,179 @@
+At the end of last lesson I was given the instructions:
+
+Next task: write a html document with some p, div etc.
+
+Tasks for this personal session:
+
+	1: Familiarize myself with the usage of p, div etc
+	2: Research some simple CSS and add it to my test site
+	3: Map out what I want my test site to include
+	4: Make a shell test site for use next lesson
+	
+1: HTML Revision
+
+The <p> tag denotes a paragraph
+The <div> tag defines a division or a section in an HTML document.
+The <div> tag is used to group block-elements to format them with CSS.
+
+
+2. CSS Notes
+
+What is CSS?
+	CSS stands for Cascading Style Sheets
+	CSS describes how HTML elements are to be displayed on screen, paper, or in other media
+	CSS saves a lot of work. It can control the layout of multiple web pages all at once
+	External stylesheets are stored in CSS files
+	
+CSS Syntax
+
+A CSS rule-set consists of a selector and declartion block:
+
+Selector		Declaration			Declaration
+
+h1				{color:blue;		font-size:12px;}
+				 property value		property   value
+
+The selector points to the HTML element you want to style.
+
+The declaration block contains one or more declarations separated by semicolons.
+
+Each declaration includes a CSS property name and a value, separated by a colon.
+
+A CSS declaration always ends with a semicolon, and declaration blocks are surrounded by curly braces.
+
+In the following example all <p> elements will be center-aligned, with a red text color:
+
+	p {
+    color: red;
+    text-align: center;
+	}			
+
+CSS Selectors
+
+The Element Selector
+
+The element selector selects elements based on the element name.
+
+For example, you could select all <p> or <div> tags, see the example above.
+
+The ID Selector
+
+The id selector uses the id attribute of the HTML element to select a specific element.
+
+To select an element with a specific id, write a # followed by the id of the elemtent:
+
+	HTML:
+	
+	<p id="para1"> blabla </p>
+	
+	CSS:
+	
+	#para1 {text-align: center; color: red;}
+
+The class Selector
+
+The class selector selects elements with a specific class attribute.
+
+To select elements with a specific class, write a period (.) followed by the name of the class
+
+
+	HTML:
+	
+	<h1 class="center">Red and center-aligned heading.</h1>
+	
+	<p class="center">Red and center-aligned paragraph.</p>
+	
+	CSS:
+	
+	.center {
+    text-align: center;
+    color: red;
+	}
+
+You can also specify that only specific HTML elements should be affected by a class.
+
+In the example below, only <p> elements with class="center" will be center-aligned:
+
+	p.center {
+    text-align: center;
+    color: red;
+	}
+
+HTML elements can also refer to more than one class.
+
+In the example below, the <p> element will be styled according to class="center" and to class="large":
+
+<p class="center large">This paragraph refers to two classes.</p>
+	
+	Note: A class name cannot start with a number!
+
+Grouping Selectors
+
+If you have elements with the same style definitions, like this:
+
+h1 {
+    text-align: center;
+    color: red;
+}
+
+h2 {
+    text-align: center;
+    color: red;
+}
+
+p {
+    text-align: center;
+    color: red;
+}
+
+Could be grouped to minimize the code using commas to separate each selector:
+
+h1, h2, p {
+    text-align: center;
+    color: red;
+}
+
+
+3. Map out my test site
+
+What do I want my blog to reflect about me?
+
+I'd like to gradually create a portfolio of my capabilities and a blog about my experiences.
+
+I'd like the portfolio site to predominantly include well documented projects and code snippets.
+
+These could include:
+
+	Raspberry Pi projects
+	Arduino projects
+	jQuery examples
+	CSS/HTML examples
+	Python scripts
+
+Currently I have only followed recepies and I haven't embarked on a project individual enough to warrant documenting / writing in detail about.
+I need to change this, getting used to writing, making and documenting will reflect well upon myself.
+
+My interests include:
+
+	Skateboarding
+	Basketball
+	Real ale
+	Cocktails
+	Piano
+	Film
+	Music
+	Literature
+
+I could split the blog into sections relating to my hobbies and interests.
+
+I could detail my forray into new programming languages and my attempt to go from no experienece to employed in the UX/UI or QA sector.
+
+List of things to do:
+
+Settle on a final list of headers / sections for my blog site.
+
+Create a shell of the blog, maybe focusing on just one page for now so I can present it in this Thursdays session.
+
+
+
+	

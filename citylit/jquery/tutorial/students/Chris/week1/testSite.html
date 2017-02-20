@@ -1,0 +1,66 @@
+<html>
+
+	<head>
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#accordion").accordion();
+				$("button").click(function(){
+					$("#accordion").hide();
+				});
+			});
+		</script>
+	<!--<style>
+		
+		.ui-accordion .ui-accordion-header {
+		
+			margin-top 5px;
+		}
+		
+	</style>-->
+	</head>
+
+	<body style="font-size:88%;">
+		<center>
+			<h1>Chris's Test Site</h1>
+	
+			<p>This is the opening paragraph of the test site.</p>
+			<p>This is the following paragraph, it is less impressive.</p>
+			<p>Finally we end with a third paragraph.</p>
+		</center>
+		
+		
+		<button>Click to hide the following frogs</button>
+	<center>
+		<div id="accordion">
+		
+			<h3><a href="#">Happy</a></h3>
+			<div>
+				<img src="http://vignette3.wikia.nocookie.net/pepe-the-frog/images/d/dc/Happy_Pepe.jpg/revision/latest?cb=20150909232018">
+			</div>
+			
+			<h3><a href="#">Sad</a></h3>
+			<div>
+				<p>
+				jQuery is an open source  multi-browser JavaScript library,  allowing you to write less and do more. It is designed to simplify client side scripting of HTML. It was released in January 2006 by John Resig. 
+				</p>
+			</div>
+			
+			<h3><a href="#">Angry</a></h3>
+			<div>
+				<p>
+				jQuery is an open source  multi-browser JavaScript library,  allowing you to write less and do more. It is designed to simplify client side scripting of HTML. It was released in January 2006 by John Resig. 
+					<ul>
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+					</ul>
+				</p>
+			</div>
+		</div>
+	</center>
+	</body>
+
+</html>

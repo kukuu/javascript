@@ -1,0 +1,77 @@
+/*body {
+  background: #201E1F;url(bg_body.jpg) repeat-x top left;
+}*/
+
+#joinDiscussion {
+	margin-top:30px;
+}
+
+h1 {
+
+	background:none;
+	
+}
+	
+#slideshow {
+	margin:0 auto;
+	width:640px;
+	height:263px;
+	position:relative;
+}
+
+
+#slideshow p {
+	padding-right:10px;
+}
+
+#slideshow #slidesContainer {
+  margin:0 auto;
+  width:560px;
+  height:263px;
+  overflow:auto; /* allow scrollbar */
+  position:relative;
+}
+
+#slideshow #slidesContainer .slide {
+  margin:0 auto;
+  width:540px; /* reduce by 20 pixels of #slidesContainer to avoid horizontal scroll */
+  height:263px;
+  background-color:#201E1F;
+}
+ 
+/** 
+ * Slideshow controls style rules.
+ */
+.control {
+	margin:0 auto;
+  display:block;
+  width:39px;
+  height:273px;
+  text-indent:-10000px;
+  position:absolute;
+  cursor: pointer;
+}
+#leftControl {
+  top:0px;
+  left:0;
+  background:transparent url(./f/control_left.jpg) no-repeat 0 0;
+  height:273px;
+}
+
+#rightControl {
+	margin:0 auto;
+  top:0px;
+  right:0;
+  background:transparent url(./f/control_right.jpg) no-repeat 0 0;
+  height:273px;
+}
+
+#slideshow img {
+	padding:10px;
+	float:left;
+}
+
+#slideshow p {
+	color:#fff;
+}
+ 

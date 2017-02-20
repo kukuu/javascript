@@ -1,0 +1,33 @@
+.ui-accordion .ui-accordion-header {
+		
+		margin-top 5px;
+	}
+		
+		
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+.bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #eee;
+  padding: 20px;
+}
+
+.bar-element {
+	width: 20%;
+	flex: 2;
+}
+h1 {
+
+		text-align:center;
+	}
+
+h4 {
+
+		text-align:center;
+	}
