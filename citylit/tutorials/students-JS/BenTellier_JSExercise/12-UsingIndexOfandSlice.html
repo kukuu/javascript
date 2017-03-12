@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Using INdexOf and Slice to collect Domain Part of an Email</title>
+</head>
+<body>
+	<script language="javascript" type="text/javascript">
+		var myEmail="bentellier@gmail.com";
+		var ind = myEmail.indexOf("@"); // Define the position of @ in the string
+		var mySlice = myEmail.slice((ind+1), myEmail.length) //slice after the position untill the end of the string 
+		document.write(mySlice); //return in the HTML the sliced part of the string
+
+	</script>
+</body>
+</html>

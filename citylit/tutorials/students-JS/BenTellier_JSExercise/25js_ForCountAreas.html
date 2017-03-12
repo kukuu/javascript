@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JS Count Selected Areas</title>
+	<script language="javascript" type="text/javascript" >
+
+		function howMany(selectItem) {
+			var numberSelected = 0; 
+			for (var i=0; i < selectItem.options.length; i++) {
+				if (selectItem.options[i].selected == true) {
+					numberSelected++;
+				}
+			}
+			return numberSelected;
+		}
+
+	</script>
+	<style>
+		h2 {
+			margin:20px 0 20px 200px;
+		}
+		form {
+			margin:20px 0 20px 200px;	
+		}
+	</style>
+</head>
+<body>
+<h2>Count number of option selected</h2>
+<form name="selectForm">
+	<p>Choose some book types, then click the button below</p>
+		<select multiple name="bookTypes" size="8">
+			<option selected>Classic</option>
+			<option>Information Books</option>
+			<option>Fantasy</option>
+			<option>Mystery</option>
+			<option>Poetry</option>
+			<option>Humor</option>
+			<option>Biography</option>
+		</select>
+	<input type="button" value="How many area are selected?" onclick="alert ('Number of options selected: ' + howMany(document.selectForm.bookTypes))">
+</form>
+</body>
+</html>
+

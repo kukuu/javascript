@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Count Words</title>
+</head>
+<body>
+
+<form name="wordcount1">
+	<textarea name="wordcount2" id="" cols="38" rows="15" wrap="virtual">
+
+	</textarea><br>
+	<input type="button" value="Calculate Words" onClick="countit()">
+	<input type="text" name="wordcount3" size="22">
+</form>
+
+	<script language="javascript" type="text/javascript">
+		function countit () {
+			var formContent = document.wordcount1.wordcount2.value; //This variable return the content of the box
+			var content = formContent.split(" "); //This variable will split the string to an array
+			// var content = document.wordcount1.wordcount2.value.split(" ");
+			document.wordcount1.wordcount3.value = content.length; //This will return the length of the array therfore the number of word
+		}
+	</script>
+</body>
+</html>

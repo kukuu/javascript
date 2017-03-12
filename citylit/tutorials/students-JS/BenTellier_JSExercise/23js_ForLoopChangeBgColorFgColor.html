@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JS Calendar</title>
+	<script language="javascript" type="text/javascript" >
+		function poll() {
+			for (var i=0; i<document.f.rad1.length; i++) {
+				if (document.f.rad1[i].checked) {
+					// to change the color of the font
+					// document.fgColor = document.f.rad1[i].value;
+					
+					// to change the color of the background
+					document.bgColor = document.f.rad1[i].value;
+				}
+			}
+		}
+	</script>
+	<style>
+		h2 {
+			margin:20px 0 20px 200px;
+		}
+		form {
+			margin:20px 0 20px 200px;	
+		}
+	</style>
+</head>
+<body>
+<h2>Changing BG/FG Color</h2>
+<form name="f">
+	<input type="radio" name="rad1" value="white" onClick="poll()">white
+	<input type="radio" name="rad1" value="silver" onClick="poll()">silver
+	<input type="radio" name="rad1" value="skyblue" onClick="poll()">skyblue
+</form>
+</body>
+</html>
+

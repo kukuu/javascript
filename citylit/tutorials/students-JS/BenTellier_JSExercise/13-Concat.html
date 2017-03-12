@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Concat: Gather arrays together</title>
+</head>
+<body>
+
+<p id="demo">
+	Click the button below to see the arrays together<br>
+	<button onclick="myFunction()">Do it</button>
+</p>
+
+	<script language="javascript" type="text/javascript">
+	function myFunction () {
+		var group1 = ["Ben", "Grace"];
+		var group2 = ["Amos", "Zephir", "Esther"];
+		var group3 = ["Dan"];
+		var all = group1.concat(group2, group3);
+		var x = document.getElementById("demo");
+		x.innerHTML=all;
+	}
+	</script>
+</body>
+</html>

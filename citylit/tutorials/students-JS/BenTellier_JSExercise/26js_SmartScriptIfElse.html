@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JS Count Selected Areas</title>
+	<script language="javascript" type="text/javascript" >
+		var discountRate = 0.05; 
+		var applePrice = 2; 
+		var quantity = 4; 
+		var dicscountedTotal = 0; 
+		var total = quantity * applePrice; 
+
+		if (total >= 10) {
+			alert ("You are entitled to a discount");
+			dicscountedTotal = total - (discountRate * total);
+			var infoText = "You'll get your delicious apple at £" + dicscountedTotal;
+			infoText += " intead of at £" + total;
+			document.write(infoText);
+		}
+		else if (total == 8) {
+			alert("Just add a couple more...");
+			var infoText = "Be sporty...";
+			document.write(infoText);
+		}
+		else {
+			alert("Sorry, no discount");
+			var infoText = "Your apple cost £" + total;
+			document.write(infoText);	
+		}
+	</script>
+	<style>
+	</style>
+</head>
+<body>
+<h2>More on If Statement</h2>
+<p>
+	
+</p>
+</body>
+</html>
+

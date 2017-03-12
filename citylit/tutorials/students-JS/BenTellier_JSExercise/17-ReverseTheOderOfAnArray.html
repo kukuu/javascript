@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Concat: Gather arrays together</title>
+</head>
+<body>
+
+<p >
+	Click the button below to see the Array without the last element<br>
+	<button onclick="myFunction()" >Do it</button>
+	<p id="demo"></p>
+</p>
+
+	<script language="javascript" type="text/javascript">
+	var citiesEurope = ["London", "Barcelona", "Roma", "Paris", "Lisbon"];
+
+	function myFunction () {
+		citiesEurope.reverse();
+
+			var x = document.getElementById("demo");
+			x.innerHTML=citiesEurope;
+
+	}
+
+	</script>
+</body>
+</html>

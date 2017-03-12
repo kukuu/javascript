@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JS Calendar</title>
+	<script language="javascript" type="text/javascript" >
+		
+		// create an array for the months 
+		var month_array = new Array ();
+
+		month_array[0] = "January";
+		month_array[1] = "February";
+		month_array[2] = "March";
+		month_array[3] = "April";
+		month_array[4] = "May";
+		month_array[5] = "June";
+		month_array[6] = "July";
+		month_array[7] = "August";
+		month_array[8] = "September";
+		month_array[9] = "October";
+		month_array[10] = "November";
+		month_array[11] = "December";
+
+		// Create the form for the days, open the select 
+		document.write ('<select name="day">');
+		// Variable starts at 1 because it is the first day of the month 
+		var i = 1;
+		// We create a while loop that goes all the way up to 31 each time it create a new document.write for option tag
+		while ( i <= 31 ) {
+			document.write ('<option value=' + i + '>' + i + '</option>');
+			i++;
+		}
+		// close the select of the form for the months 
+		document.write ('</select>');
+
+		// Create the form for the months, open the select 
+		document.write ('<select name="month">');
+		// Variable starts at 0 because it is the first occurence of the array
+		var i = 0;
+		// We create a while loop that goes all the way up to 11 each time it create a new document.write for option tag
+		while ( i < month_array.length ) {
+			document.write ('<option value=' + i + '>' + month_array[i] + '</option>');
+			i++;
+		}
+		// close the select of the form for the months 
+		document.write ('</select>');
+
+		document.write ('<select name="year">');
+		var i = 1900;
+		while ( i <= 2017 ) {
+			document.write ('<option value=' + i + '>' + i + '</option>');
+			i++;
+		}
+		document.write ('</select>');
+
+	</script>
+</head>
+<body>
+<div align="center">
+	Here is a JS Calendar: PLease select day month and year 
+</div>
+</body>
+</html>
+
