@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Count Words - Using split function</title>
+		<script language="javascript" type="text/javascript">
+			<!--
+				// use length and split methods
+			function countit(){
+				var formcontent = document.wordcount.wordcount2.value; //go to the relevant name to extract the value
+				var content = formcontent.split(" "); //use the split method to create an array with the number of words in the textarea
+				document.wordcount.wordcount3.value = content.length //return the length of the split
+			}	
+			
+			-->
+		</script>
+	</head>
+	<body>
+	
+	<!-- Create an HTML form -->
+	<form name="wordcount">
+		<textarea name="wordcount2" rows="10" cols="36"></textarea><br/>
+		<!-- Call function countit();-->
+		<input type="button" value="Calculate Words" onClick="countit();"/> 
+		<input type="text" name="wordcount3" size="20" />
+	</form>
+	
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Changing Background Color</title>
+		<script language="javascript" type="text/javascript">
+			function poll() {
+				for (var i=0; i < document.f.radio1.length; i++)	{
+					if (document.f.radio1[i].checked){
+						document.fgColor = document.f.radio1[i].value;
+					}
+				}		
+				
+				
+			}
+
+		</script>
+		<style>
+		h2{
+			margin: 20px 0 20px 200px;
+		}
+		form {
+			margin: 20px 0 20px 200px;
+		}
+		</style>
+	</head>
+
+	<body>
+		<h2>Changing background colour</h2>
+		<form name="f">
+			<input type="radio" name="radio1" value="purple" onClick="poll()">Purple
+			<input type="radio" name="radio1" value="silver" onClick="poll()">Silver
+			<input type="radio" name="radio1" value="skyblue" onClick="poll()">skyblue
+		</form>
+	</body>
+</html>

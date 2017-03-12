@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Package your Javascript Code with Functions</title>
+		<style>
+			input{border:none;}
+		</style>
+	</head>
+
+	<body>
+		<h1>Package your Javascript Code with Functions</h1>
+		
+		<div>
+		<h2>Today date is:</h2>
+		<span id="calendar"></span>
+		<input type="button" id="myButton" value="Get Date" onClick="showDate();"/>
+		</div>
+		
+		<script language="javascript" type="text/javascript">
+		function showDate() {
+			var today = new Date();
+			var myCalendar = document.getElementById("calendar");
+			var myButton = document.getElementById("myButton");
+			myCalendar.innerHTML = today.toDateString();
+			myButton.value = "Well done! You've just won a prize";
+			document.getElementById("myButton").style.border = "2px solid purple";
+			document.getElementById("myButton").style.background = "#fff";
+		}
+		</script>
+	</body>
+
+
+</html>

@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Splice</title>
+		<script language="javascript" type="text/javascript">
+		function myFunction() {
+			var fruits = ["Banana","Orange","Apple","Mango","Kiwi"];
+			fruits.splice(2,3, "lemon","grapes");
+			var x = document.getElementById("demo");
+			x.innerHTML = fruits;
+		}
+		</script>
+	</head>
+
+	<body>
+		<p id="demo">Click the button to add elements to the array</p>
+		
+		<p>
+		In this example there is reshuffling. Orange moves to the first position and Banana to the last. 
+		Note when you positioning or adding an element as last item in the array,
+		the elements in between to the added reshuffled ones are removed. If the added elements
+		are placed following each other then subsequent items in the array will be shown. Again if the added element
+		is positioned as last, the element in between the positioned elements will not be shown.
+		</p>
+		
+		<button onClick="myFunction()">Try it</button>
+		
+		<p class="home"></p>
+	
+	</body>
+
+
+</html>
