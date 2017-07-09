@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Author: Aleexander Adu-Sarkodie - Make Donation</title>
+    <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/78060/animate.min.css" rel="stylesheet" type="text/css">
+    <script type='text/javascript' src="js/swap-image.js"></script>
+  </head>
+  <body>
+    <div class="donate">    
+        <h1 class="main-text">DONATE TODAY</h1>
+        <P class="main-text">Help protecting the planet today, become a Little Zebra Ambassador</P>
+        <h3 class="main-text">Make a Donation</h3>
+        <div class="main-text help">I want to help <br /><br />
+          <input type="checkbox"  value="monthlydon" name="monthlydon" id="monthlydon" style="display: absolute;"> Monthly donation<br /><br />
+           <select name="kitchen_color" id="kitchen_color" onchange="setImage(this);">
+              <option value="images/giraffe.jpg">Giraffe</option>
+              <option value="images/tiger.jpg">Tiger</option>
+              <option value="images/rhino-2.jpg">Rhino</option>
+          </select><br /><br />
+          <img src="images/giraffe.jpg" name="image-swap" />
+        </div>
+
+        <button><small><small>I want to donate</small></small></button>
+        <form name="donAmount" id="donAmount">
+          <input type="radio" class="donateCheck" value="3" name="amount" id="three">
+          <label for="three">£3</label>
+          <input type="radio" class="donateCheck" value="5" name="amount" id="five">
+          <label for="five">£5</label>
+          <input type="radio" class="donateCheck" value="10" name="amount" id="ten">
+          <label for="ten">£10</label>
+          <input type="radio" class="donateCheck" value="other" name="amount" id="other">
+          <label for="other">Other</label>
+        </form> 
+        <br /><br />  
+    </div>
+
+    <div id="custom">
+      <h2>Donation Amount</h2>
+      <form name="customDonation" id="customDonation">
+      <div class="input-group-1">
+        <label for="custom-amount">£</label>
+        <input id="custom-amount" name="custom-amount" type="text">
+        <div class="warn"></div>
+      </div>
+      </form>
+      <div class="clearfix">
+        <button class="back" type="button">Back</button>
+        <button class="next" type="button">Next</button>
+      </div>
+    </div>
+
+    <!--Basic Informarion-->
+    <section id="details">
+      <div class="contact-info">
+      <h2>Basic Information</h2>
+      <form class="clearfix">
+        <div class="input-group-2">
+        <label>First Name</label>
+        <input type="text">
+        </div>
+        <div class="input-group-2">
+        <label>Last Name</label>
+        <input type="text">
+        </div>
+        <div class="input-group-1">
+        <label>Email Address</label>
+        <input type="text">
+        </div>
+        <hr>
+      </form>
+      <div class="clearfix">
+        <button class="back" type="button">Back</button>
+        <button class="next" type="button">Next</button>
+      </div>
+      </div>
+    </section>
+
+    <!--Card details-->
+    <section id="card">
+      <div class="contact-info">
+        <h2>Payment Information</h2>
+        <form class="clearfix">
+          <div class="input-group-1">
+          <label>Card Number</label>
+          <input type="text">
+          </div>
+          <div class="clearfix">
+          <div class="input-group-2">
+          <label>Expiration Date</label>
+          <input type="text">
+          </div>
+          
+          <div class="input-group-2">
+            <label>Security Code (CVV)</label>
+            <input type="text">
+          </div>
+          </div>
+          <hr>
+        </form>
+        <div class="clearfix">
+          <button class="back" type="button">Back
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <button class="next" type="button">Review</button>
+        </div>
+      </div>
+    </section>
+
+    <!--Processing progress spinner-->
+    <section class="processing">
+      <div class="check">
+        <span></span>
+        <div class="mask">
+        </div>
+        <span></span>
+      </div>
+
+      <div class="outer">
+        <div class="inner">
+        </div>
+        <div class="progress">
+        </div>
+      </div>
+      <span class="message">Processing</span>
+    </section>
+
+    <!--Payment Confirmation-->
+    <section id="check">
+      <h2>Confirm Payment</h2>
+      <p>Please confirm your contribution of</p>
+      <span></span>
+      <button class="next" type="button">Confirm</button>
+    </section>
+
+    <section id="confirm">
+      <h2>Thank You!</h2>
+    </section>
+
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <script src="js/index.js"></script>
+    
+  </body>
+</html>
